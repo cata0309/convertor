@@ -10,7 +10,7 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
 
-The C compiler identification is GNU, found in "/home/rustyboy/CLionProjects/convertor/CMakeFiles/3.16.1/CompilerIdC/a.out"
+The C compiler identification is GNU, found in "/home/rustyboy/CLionProjects/convertor/CMakeFiles/3.15.3/CompilerIdC/a.out"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler: /usr/bin/c++ 
@@ -23,18 +23,20 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
 
-The CXX compiler identification is GNU, found in "/home/rustyboy/CLionProjects/convertor/CMakeFiles/3.16.1/CompilerIdCXX/a.out"
+The CXX compiler identification is GNU, found in "/home/rustyboy/CLionProjects/convertor/CMakeFiles/3.15.3/CompilerIdCXX/a.out"
 
 Determining if the C compiler works passed with the following output:
 Change Dir: /home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake cmTC_76332/fast && /usr/bin/gmake -f CMakeFiles/cmTC_76332.dir/build.make CMakeFiles/cmTC_76332.dir/build
-gmake[1]: Entering directory '/home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_76332.dir/testCCompiler.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_76332.dir/testCCompiler.c.o   -c /home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_76332
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_76332.dir/link.txt --verbose=1
-/usr/bin/cc      CMakeFiles/cmTC_76332.dir/testCCompiler.c.o  -o cmTC_76332 
+Run Build Command(s):/usr/bin/gmake cmTC_e88d1/fast && gmake[1]: Entering directory '/home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_e88d1.dir/build.make CMakeFiles/cmTC_e88d1.dir/build
+gmake[2]: Entering directory '/home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e88d1.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_e88d1.dir/testCCompiler.c.o   -c /home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_e88d1
+/home/rustyboy/.local/share/JetBrains/Toolbox/apps/CLion/ch-1/193.5233.144/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e88d1.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_e88d1.dir/testCCompiler.c.o  -o cmTC_e88d1 
+gmake[2]: Leaving directory '/home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp'
 gmake[1]: Leaving directory '/home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp'
 
 
@@ -42,18 +44,19 @@ gmake[1]: Leaving directory '/home/rustyboy/CLionProjects/convertor/CMakeFiles/C
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake cmTC_7675f/fast && /usr/bin/gmake -f CMakeFiles/cmTC_7675f.dir/build.make CMakeFiles/cmTC_7675f.dir/build
-gmake[1]: Entering directory '/home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_7675f.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc   -v -o CMakeFiles/cmTC_7675f.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c
+Run Build Command(s):/usr/bin/gmake cmTC_a130a/fast && gmake[1]: Entering directory '/home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_a130a.dir/build.make CMakeFiles/cmTC_a130a.dir/build
+gmake[2]: Entering directory '/home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a130a.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc   -v -o CMakeFiles/cmTC_a130a.dir/CMakeCCompilerABI.c.o   -c /home/rustyboy/.local/share/JetBrains/Toolbox/apps/CLion/ch-1/193.5233.144/bin/cmake/linux/share/cmake-3.15/Modules/CMakeCCompilerABI.c
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 Target: x86_64-solus-linux
 Configured with: ../configure --prefix=/usr --with-pkgversion=Solus --libdir=/usr/lib64 --libexecdir=/usr/lib64 --with-system-zlib --enable-shared --enable-threads=posix --enable-gnu-indirect-function --enable-__cxa_atexit --enable-plugin --enable-gold --enable-ld=default --enable-clocale=gnu --enable-multilib --with-multilib-list=m32,m64 --enable-lto --with-gcc-major-version-only --with-bugurl=https://dev.getsol.us/ --with-arch_32=i686 --enable-linker-build-id --with-linker-hash-style=gnu --with-gnu-ld --build=x86_64-solus-linux --target=x86_64-solus-linux --enable-languages=c,c++,fortran
 Thread model: posix
 gcc version 9.2.0 (Solus) 
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_7675f.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
- /usr/lib64/gcc/x86_64-solus-linux/9/cc1 -quiet -v /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_7675f.dir/CMakeCCompilerABI.c.o -version -o /tmp/cckcSVh8.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a130a.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ /usr/lib64/gcc/x86_64-solus-linux/9/cc1 -quiet -v /home/rustyboy/.local/share/JetBrains/Toolbox/apps/CLion/ch-1/193.5233.144/bin/cmake/linux/share/cmake-3.15/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_a130a.dir/CMakeCCompilerABI.c.o -version -o /tmp/ccMOHiaS.s
 GNU C17 (Solus) version 9.2.0 (x86_64-solus-linux)
 	compiled by GNU C version 9.2.0, GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.21-GMP
 
@@ -71,15 +74,15 @@ GNU C17 (Solus) version 9.2.0 (x86_64-solus-linux)
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: c5ab9092c676a712230a4d7751f4b934
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_7675f.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
- as -v --64 -o CMakeFiles/cmTC_7675f.dir/CMakeCCompilerABI.c.o /tmp/cckcSVh8.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a130a.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ as -v --64 -o CMakeFiles/cmTC_a130a.dir/CMakeCCompilerABI.c.o /tmp/ccMOHiaS.s
 GNU assembler version 2.32 (x86_64-solus-linux) using BFD version (GNU Binutils) 2.32
 COMPILER_PATH=/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/:/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/
 LIBRARY_PATH=/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-solus-linux/9/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_7675f.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
-Linking C executable cmTC_7675f
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7675f.dir/link.txt --verbose=1
-/usr/bin/cc     -v CMakeFiles/cmTC_7675f.dir/CMakeCCompilerABI.c.o  -o cmTC_7675f 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a130a.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+Linking C executable cmTC_a130a
+/home/rustyboy/.local/share/JetBrains/Toolbox/apps/CLion/ch-1/193.5233.144/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a130a.dir/link.txt --verbose=1
+/usr/bin/cc     -v CMakeFiles/cmTC_a130a.dir/CMakeCCompilerABI.c.o  -o cmTC_a130a 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib64/gcc/x86_64-solus-linux/9/lto-wrapper
@@ -89,9 +92,10 @@ Thread model: posix
 gcc version 9.2.0 (Solus) 
 COMPILER_PATH=/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/:/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/
 LIBRARY_PATH=/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-solus-linux/9/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_7675f' '-mtune=generic' '-march=x86-64'
- /usr/lib64/gcc/x86_64-solus-linux/9/collect2 -plugin /usr/lib64/gcc/x86_64-solus-linux/9/liblto_plugin.so -plugin-opt=/usr/lib64/gcc/x86_64-solus-linux/9/lto-wrapper -plugin-opt=-fresolution=/tmp/cc0PsGia.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /usr/lib64/ld-linux-x86-64.so.2 -o cmTC_7675f /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crt1.o /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crti.o /usr/lib64/gcc/x86_64-solus-linux/9/crtbegin.o -L/usr/lib64/gcc/x86_64-solus-linux/9 -L/usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/gcc/x86_64-solus-linux/9/../../.. CMakeFiles/cmTC_7675f.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib64/gcc/x86_64-solus-linux/9/crtend.o /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_7675f' '-mtune=generic' '-march=x86-64'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_a130a' '-mtune=generic' '-march=x86-64'
+ /usr/lib64/gcc/x86_64-solus-linux/9/collect2 -plugin /usr/lib64/gcc/x86_64-solus-linux/9/liblto_plugin.so -plugin-opt=/usr/lib64/gcc/x86_64-solus-linux/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccjaDkeR.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /usr/lib64/ld-linux-x86-64.so.2 -o cmTC_a130a /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crt1.o /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crti.o /usr/lib64/gcc/x86_64-solus-linux/9/crtbegin.o -L/usr/lib64/gcc/x86_64-solus-linux/9 -L/usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/gcc/x86_64-solus-linux/9/../../.. CMakeFiles/cmTC_a130a.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib64/gcc/x86_64-solus-linux/9/crtend.o /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_a130a' '-mtune=generic' '-march=x86-64'
+gmake[2]: Leaving directory '/home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp'
 gmake[1]: Leaving directory '/home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp'
 
 
@@ -115,20 +119,21 @@ Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/gmake cmTC_7675f/fast && /usr/bin/gmake -f CMakeFiles/cmTC_7675f.dir/build.make CMakeFiles/cmTC_7675f.dir/build]
-  ignore line: [gmake[1]: Entering directory '/home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_7675f.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_7675f.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c]
+  ignore line: [Run Build Command(s):/usr/bin/gmake cmTC_a130a/fast && gmake[1]: Entering directory '/home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/gmake -f CMakeFiles/cmTC_a130a.dir/build.make CMakeFiles/cmTC_a130a.dir/build]
+  ignore line: [gmake[2]: Entering directory '/home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_a130a.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_a130a.dir/CMakeCCompilerABI.c.o   -c /home/rustyboy/.local/share/JetBrains/Toolbox/apps/CLion/ch-1/193.5233.144/bin/cmake/linux/share/cmake-3.15/Modules/CMakeCCompilerABI.c]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [Target: x86_64-solus-linux]
   ignore line: [Configured with: ../configure --prefix=/usr --with-pkgversion=Solus --libdir=/usr/lib64 --libexecdir=/usr/lib64 --with-system-zlib --enable-shared --enable-threads=posix --enable-gnu-indirect-function --enable-__cxa_atexit --enable-plugin --enable-gold --enable-ld=default --enable-clocale=gnu --enable-multilib --with-multilib-list=m32,m64 --enable-lto --with-gcc-major-version-only --with-bugurl=https://dev.getsol.us/ --with-arch_32=i686 --enable-linker-build-id --with-linker-hash-style=gnu --with-gnu-ld --build=x86_64-solus-linux --target=x86_64-solus-linux --enable-languages=c,c++,fortran]
   ignore line: [Thread model: posix]
   ignore line: [gcc version 9.2.0 (Solus) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_7675f.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
-  ignore line: [ /usr/lib64/gcc/x86_64-solus-linux/9/cc1 -quiet -v /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_7675f.dir/CMakeCCompilerABI.c.o -version -o /tmp/cckcSVh8.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a130a.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ /usr/lib64/gcc/x86_64-solus-linux/9/cc1 -quiet -v /home/rustyboy/.local/share/JetBrains/Toolbox/apps/CLion/ch-1/193.5233.144/bin/cmake/linux/share/cmake-3.15/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_a130a.dir/CMakeCCompilerABI.c.o -version -o /tmp/ccMOHiaS.s]
   ignore line: [GNU C17 (Solus) version 9.2.0 (x86_64-solus-linux)]
-  ignore line: [	compiled by GNU C version 9.2.0  GMP version 6.1.2  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.21-GMP]
+  ignore line: [	compiled by GNU C version 9.2.0, GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.21-GMP]
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [ignoring nonexistent directory "/usr/lib64/gcc/x86_64-solus-linux/9/../../../../x86_64-solus-linux/include"]
@@ -140,19 +145,19 @@ Parsed C implicit link information from above output:
   ignore line: [ /usr/include]
   ignore line: [End of search list.]
   ignore line: [GNU C17 (Solus) version 9.2.0 (x86_64-solus-linux)]
-  ignore line: [	compiled by GNU C version 9.2.0  GMP version 6.1.2  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.21-GMP]
+  ignore line: [	compiled by GNU C version 9.2.0, GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.21-GMP]
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: c5ab9092c676a712230a4d7751f4b934]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_7675f.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
-  ignore line: [ as -v --64 -o CMakeFiles/cmTC_7675f.dir/CMakeCCompilerABI.c.o /tmp/cckcSVh8.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a130a.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_a130a.dir/CMakeCCompilerABI.c.o /tmp/ccMOHiaS.s]
   ignore line: [GNU assembler version 2.32 (x86_64-solus-linux) using BFD version (GNU Binutils) 2.32]
   ignore line: [COMPILER_PATH=/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/:/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/]
   ignore line: [LIBRARY_PATH=/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-solus-linux/9/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_7675f.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
-  ignore line: [Linking C executable cmTC_7675f]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7675f.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc     -v CMakeFiles/cmTC_7675f.dir/CMakeCCompilerABI.c.o  -o cmTC_7675f ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a130a.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [Linking C executable cmTC_a130a]
+  ignore line: [/home/rustyboy/.local/share/JetBrains/Toolbox/apps/CLion/ch-1/193.5233.144/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a130a.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc     -v CMakeFiles/cmTC_a130a.dir/CMakeCCompilerABI.c.o  -o cmTC_a130a ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib64/gcc/x86_64-solus-linux/9/lto-wrapper]
@@ -162,13 +167,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 9.2.0 (Solus) ]
   ignore line: [COMPILER_PATH=/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/:/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/]
   ignore line: [LIBRARY_PATH=/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-solus-linux/9/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_7675f' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib64/gcc/x86_64-solus-linux/9/collect2 -plugin /usr/lib64/gcc/x86_64-solus-linux/9/liblto_plugin.so -plugin-opt=/usr/lib64/gcc/x86_64-solus-linux/9/lto-wrapper -plugin-opt=-fresolution=/tmp/cc0PsGia.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /usr/lib64/ld-linux-x86-64.so.2 -o cmTC_7675f /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crt1.o /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crti.o /usr/lib64/gcc/x86_64-solus-linux/9/crtbegin.o -L/usr/lib64/gcc/x86_64-solus-linux/9 -L/usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/gcc/x86_64-solus-linux/9/../../.. CMakeFiles/cmTC_7675f.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib64/gcc/x86_64-solus-linux/9/crtend.o /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_a130a' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib64/gcc/x86_64-solus-linux/9/collect2 -plugin /usr/lib64/gcc/x86_64-solus-linux/9/liblto_plugin.so -plugin-opt=/usr/lib64/gcc/x86_64-solus-linux/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccjaDkeR.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /usr/lib64/ld-linux-x86-64.so.2 -o cmTC_a130a /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crt1.o /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crti.o /usr/lib64/gcc/x86_64-solus-linux/9/crtbegin.o -L/usr/lib64/gcc/x86_64-solus-linux/9 -L/usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/gcc/x86_64-solus-linux/9/../../.. CMakeFiles/cmTC_a130a.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib64/gcc/x86_64-solus-linux/9/crtend.o /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crtn.o]
     arg [/usr/lib64/gcc/x86_64-solus-linux/9/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib64/gcc/x86_64-solus-linux/9/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib64/gcc/x86_64-solus-linux/9/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/cc0PsGia.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccjaDkeR.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -182,7 +187,7 @@ Parsed C implicit link information from above output:
     arg [-dynamic-linker] ==> ignore
     arg [/usr/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_7675f] ==> ignore
+    arg [cmTC_a130a] ==> ignore
     arg [/usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crt1.o] ==> ignore
     arg [/usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crti.o] ==> ignore
     arg [/usr/lib64/gcc/x86_64-solus-linux/9/crtbegin.o] ==> ignore
@@ -191,7 +196,7 @@ Parsed C implicit link information from above output:
     arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
     arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
     arg [-L/usr/lib64/gcc/x86_64-solus-linux/9/../../..] ==> dir [/usr/lib64/gcc/x86_64-solus-linux/9/../../..]
-    arg [CMakeFiles/cmTC_7675f.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_a130a.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--push-state] ==> ignore
     arg [--as-needed] ==> ignore
@@ -218,13 +223,15 @@ Parsed C implicit link information from above output:
 Determining if the CXX compiler works passed with the following output:
 Change Dir: /home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake cmTC_87037/fast && /usr/bin/gmake -f CMakeFiles/cmTC_87037.dir/build.make CMakeFiles/cmTC_87037.dir/build
-gmake[1]: Entering directory '/home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_87037.dir/testCXXCompiler.cxx.o
-/usr/bin/c++     -o CMakeFiles/cmTC_87037.dir/testCXXCompiler.cxx.o -c /home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_87037
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_87037.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_87037.dir/testCXXCompiler.cxx.o  -o cmTC_87037 
+Run Build Command(s):/usr/bin/gmake cmTC_2dc55/fast && gmake[1]: Entering directory '/home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_2dc55.dir/build.make CMakeFiles/cmTC_2dc55.dir/build
+gmake[2]: Entering directory '/home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_2dc55.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTC_2dc55.dir/testCXXCompiler.cxx.o -c /home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_2dc55
+/home/rustyboy/.local/share/JetBrains/Toolbox/apps/CLion/ch-1/193.5233.144/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2dc55.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_2dc55.dir/testCXXCompiler.cxx.o  -o cmTC_2dc55 
+gmake[2]: Leaving directory '/home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp'
 gmake[1]: Leaving directory '/home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp'
 
 
@@ -232,18 +239,19 @@ gmake[1]: Leaving directory '/home/rustyboy/CLionProjects/convertor/CMakeFiles/C
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake cmTC_720d2/fast && /usr/bin/gmake -f CMakeFiles/cmTC_720d2.dir/build.make CMakeFiles/cmTC_720d2.dir/build
-gmake[1]: Entering directory '/home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_720d2.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++    -v -o CMakeFiles/cmTC_720d2.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp
+Run Build Command(s):/usr/bin/gmake cmTC_fec19/fast && gmake[1]: Entering directory '/home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_fec19.dir/build.make CMakeFiles/cmTC_fec19.dir/build
+gmake[2]: Entering directory '/home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_fec19.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++    -v -o CMakeFiles/cmTC_fec19.dir/CMakeCXXCompilerABI.cpp.o -c /home/rustyboy/.local/share/JetBrains/Toolbox/apps/CLion/ch-1/193.5233.144/bin/cmake/linux/share/cmake-3.15/Modules/CMakeCXXCompilerABI.cpp
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 Target: x86_64-solus-linux
 Configured with: ../configure --prefix=/usr --with-pkgversion=Solus --libdir=/usr/lib64 --libexecdir=/usr/lib64 --with-system-zlib --enable-shared --enable-threads=posix --enable-gnu-indirect-function --enable-__cxa_atexit --enable-plugin --enable-gold --enable-ld=default --enable-clocale=gnu --enable-multilib --with-multilib-list=m32,m64 --enable-lto --with-gcc-major-version-only --with-bugurl=https://dev.getsol.us/ --with-arch_32=i686 --enable-linker-build-id --with-linker-hash-style=gnu --with-gnu-ld --build=x86_64-solus-linux --target=x86_64-solus-linux --enable-languages=c,c++,fortran
 Thread model: posix
 gcc version 9.2.0 (Solus) 
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_720d2.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib64/gcc/x86_64-solus-linux/9/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_720d2.dir/CMakeCXXCompilerABI.cpp.o -version -o /tmp/ccAXGvsq.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fec19.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib64/gcc/x86_64-solus-linux/9/cc1plus -quiet -v -D_GNU_SOURCE /home/rustyboy/.local/share/JetBrains/Toolbox/apps/CLion/ch-1/193.5233.144/bin/cmake/linux/share/cmake-3.15/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_fec19.dir/CMakeCXXCompilerABI.cpp.o -version -o /tmp/cc5RnLB0.s
 GNU C++14 (Solus) version 9.2.0 (x86_64-solus-linux)
 	compiled by GNU C version 9.2.0, GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.21-GMP
 
@@ -264,15 +272,15 @@ GNU C++14 (Solus) version 9.2.0 (x86_64-solus-linux)
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: 5fc5a0c63917e0b4a009dae6726c0688
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_720d2.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- as -v --64 -o CMakeFiles/cmTC_720d2.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccAXGvsq.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fec19.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ as -v --64 -o CMakeFiles/cmTC_fec19.dir/CMakeCXXCompilerABI.cpp.o /tmp/cc5RnLB0.s
 GNU assembler version 2.32 (x86_64-solus-linux) using BFD version (GNU Binutils) 2.32
 COMPILER_PATH=/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/:/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/
 LIBRARY_PATH=/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-solus-linux/9/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_720d2.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
-Linking CXX executable cmTC_720d2
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_720d2.dir/link.txt --verbose=1
-/usr/bin/c++      -v CMakeFiles/cmTC_720d2.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_720d2 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fec19.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+Linking CXX executable cmTC_fec19
+/home/rustyboy/.local/share/JetBrains/Toolbox/apps/CLion/ch-1/193.5233.144/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fec19.dir/link.txt --verbose=1
+/usr/bin/c++      -v CMakeFiles/cmTC_fec19.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_fec19 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib64/gcc/x86_64-solus-linux/9/lto-wrapper
@@ -282,9 +290,10 @@ Thread model: posix
 gcc version 9.2.0 (Solus) 
 COMPILER_PATH=/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/:/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/
 LIBRARY_PATH=/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-solus-linux/9/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_720d2' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib64/gcc/x86_64-solus-linux/9/collect2 -plugin /usr/lib64/gcc/x86_64-solus-linux/9/liblto_plugin.so -plugin-opt=/usr/lib64/gcc/x86_64-solus-linux/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccFOauSt.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /usr/lib64/ld-linux-x86-64.so.2 -o cmTC_720d2 /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crt1.o /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crti.o /usr/lib64/gcc/x86_64-solus-linux/9/crtbegin.o -L/usr/lib64/gcc/x86_64-solus-linux/9 -L/usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/gcc/x86_64-solus-linux/9/../../.. CMakeFiles/cmTC_720d2.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib64/gcc/x86_64-solus-linux/9/crtend.o /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_720d2' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_fec19' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib64/gcc/x86_64-solus-linux/9/collect2 -plugin /usr/lib64/gcc/x86_64-solus-linux/9/liblto_plugin.so -plugin-opt=/usr/lib64/gcc/x86_64-solus-linux/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccJo4V42.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /usr/lib64/ld-linux-x86-64.so.2 -o cmTC_fec19 /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crt1.o /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crti.o /usr/lib64/gcc/x86_64-solus-linux/9/crtbegin.o -L/usr/lib64/gcc/x86_64-solus-linux/9 -L/usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/gcc/x86_64-solus-linux/9/../../.. CMakeFiles/cmTC_fec19.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib64/gcc/x86_64-solus-linux/9/crtend.o /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_fec19' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+gmake[2]: Leaving directory '/home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp'
 gmake[1]: Leaving directory '/home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp'
 
 
@@ -314,20 +323,21 @@ Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/gmake cmTC_720d2/fast && /usr/bin/gmake -f CMakeFiles/cmTC_720d2.dir/build.make CMakeFiles/cmTC_720d2.dir/build]
-  ignore line: [gmake[1]: Entering directory '/home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_720d2.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++    -v -o CMakeFiles/cmTC_720d2.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Run Build Command(s):/usr/bin/gmake cmTC_fec19/fast && gmake[1]: Entering directory '/home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/gmake -f CMakeFiles/cmTC_fec19.dir/build.make CMakeFiles/cmTC_fec19.dir/build]
+  ignore line: [gmake[2]: Entering directory '/home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_fec19.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++    -v -o CMakeFiles/cmTC_fec19.dir/CMakeCXXCompilerABI.cpp.o -c /home/rustyboy/.local/share/JetBrains/Toolbox/apps/CLion/ch-1/193.5233.144/bin/cmake/linux/share/cmake-3.15/Modules/CMakeCXXCompilerABI.cpp]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [Target: x86_64-solus-linux]
   ignore line: [Configured with: ../configure --prefix=/usr --with-pkgversion=Solus --libdir=/usr/lib64 --libexecdir=/usr/lib64 --with-system-zlib --enable-shared --enable-threads=posix --enable-gnu-indirect-function --enable-__cxa_atexit --enable-plugin --enable-gold --enable-ld=default --enable-clocale=gnu --enable-multilib --with-multilib-list=m32,m64 --enable-lto --with-gcc-major-version-only --with-bugurl=https://dev.getsol.us/ --with-arch_32=i686 --enable-linker-build-id --with-linker-hash-style=gnu --with-gnu-ld --build=x86_64-solus-linux --target=x86_64-solus-linux --enable-languages=c,c++,fortran]
   ignore line: [Thread model: posix]
   ignore line: [gcc version 9.2.0 (Solus) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_720d2.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  ignore line: [ /usr/lib64/gcc/x86_64-solus-linux/9/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_720d2.dir/CMakeCXXCompilerABI.cpp.o -version -o /tmp/ccAXGvsq.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fec19.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [ /usr/lib64/gcc/x86_64-solus-linux/9/cc1plus -quiet -v -D_GNU_SOURCE /home/rustyboy/.local/share/JetBrains/Toolbox/apps/CLion/ch-1/193.5233.144/bin/cmake/linux/share/cmake-3.15/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_fec19.dir/CMakeCXXCompilerABI.cpp.o -version -o /tmp/cc5RnLB0.s]
   ignore line: [GNU C++14 (Solus) version 9.2.0 (x86_64-solus-linux)]
-  ignore line: [	compiled by GNU C version 9.2.0  GMP version 6.1.2  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.21-GMP]
+  ignore line: [	compiled by GNU C version 9.2.0, GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.21-GMP]
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [ignoring nonexistent directory "/usr/lib64/gcc/x86_64-solus-linux/9/../../../../x86_64-solus-linux/include"]
@@ -342,19 +352,19 @@ Parsed CXX implicit link information from above output:
   ignore line: [ /usr/include]
   ignore line: [End of search list.]
   ignore line: [GNU C++14 (Solus) version 9.2.0 (x86_64-solus-linux)]
-  ignore line: [	compiled by GNU C version 9.2.0  GMP version 6.1.2  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.21-GMP]
+  ignore line: [	compiled by GNU C version 9.2.0, GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.21-GMP]
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: 5fc5a0c63917e0b4a009dae6726c0688]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_720d2.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  ignore line: [ as -v --64 -o CMakeFiles/cmTC_720d2.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccAXGvsq.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fec19.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_fec19.dir/CMakeCXXCompilerABI.cpp.o /tmp/cc5RnLB0.s]
   ignore line: [GNU assembler version 2.32 (x86_64-solus-linux) using BFD version (GNU Binutils) 2.32]
   ignore line: [COMPILER_PATH=/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/:/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/]
   ignore line: [LIBRARY_PATH=/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-solus-linux/9/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_720d2.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  ignore line: [Linking CXX executable cmTC_720d2]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_720d2.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++      -v CMakeFiles/cmTC_720d2.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_720d2 ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fec19.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [Linking CXX executable cmTC_fec19]
+  ignore line: [/home/rustyboy/.local/share/JetBrains/Toolbox/apps/CLion/ch-1/193.5233.144/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fec19.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++      -v CMakeFiles/cmTC_fec19.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_fec19 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib64/gcc/x86_64-solus-linux/9/lto-wrapper]
@@ -364,13 +374,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 9.2.0 (Solus) ]
   ignore line: [COMPILER_PATH=/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/:/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/]
   ignore line: [LIBRARY_PATH=/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-solus-linux/9/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_720d2' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib64/gcc/x86_64-solus-linux/9/collect2 -plugin /usr/lib64/gcc/x86_64-solus-linux/9/liblto_plugin.so -plugin-opt=/usr/lib64/gcc/x86_64-solus-linux/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccFOauSt.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /usr/lib64/ld-linux-x86-64.so.2 -o cmTC_720d2 /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crt1.o /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crti.o /usr/lib64/gcc/x86_64-solus-linux/9/crtbegin.o -L/usr/lib64/gcc/x86_64-solus-linux/9 -L/usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/gcc/x86_64-solus-linux/9/../../.. CMakeFiles/cmTC_720d2.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib64/gcc/x86_64-solus-linux/9/crtend.o /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_fec19' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib64/gcc/x86_64-solus-linux/9/collect2 -plugin /usr/lib64/gcc/x86_64-solus-linux/9/liblto_plugin.so -plugin-opt=/usr/lib64/gcc/x86_64-solus-linux/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccJo4V42.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /usr/lib64/ld-linux-x86-64.so.2 -o cmTC_fec19 /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crt1.o /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crti.o /usr/lib64/gcc/x86_64-solus-linux/9/crtbegin.o -L/usr/lib64/gcc/x86_64-solus-linux/9 -L/usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/gcc/x86_64-solus-linux/9/../../.. CMakeFiles/cmTC_fec19.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib64/gcc/x86_64-solus-linux/9/crtend.o /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crtn.o]
     arg [/usr/lib64/gcc/x86_64-solus-linux/9/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib64/gcc/x86_64-solus-linux/9/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib64/gcc/x86_64-solus-linux/9/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccFOauSt.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccJo4V42.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -384,7 +394,7 @@ Parsed CXX implicit link information from above output:
     arg [-dynamic-linker] ==> ignore
     arg [/usr/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_720d2] ==> ignore
+    arg [cmTC_fec19] ==> ignore
     arg [/usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crt1.o] ==> ignore
     arg [/usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crti.o] ==> ignore
     arg [/usr/lib64/gcc/x86_64-solus-linux/9/crtbegin.o] ==> ignore
@@ -393,7 +403,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
     arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
     arg [-L/usr/lib64/gcc/x86_64-solus-linux/9/../../..] ==> dir [/usr/lib64/gcc/x86_64-solus-linux/9/../../..]
-    arg [CMakeFiles/cmTC_720d2.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_fec19.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -425,7 +435,7 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
 
-The C compiler identification is GNU, found in "/home/rustyboy/CLionProjects/convertor/CMakeFiles/3.15.3/CompilerIdC/a.out"
+The C compiler identification is GNU, found in "/home/rustyboy/CLionProjects/convertor/CMakeFiles/3.16.1/CompilerIdC/a.out"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler: /usr/bin/c++ 
@@ -438,18 +448,18 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
 
-The CXX compiler identification is GNU, found in "/home/rustyboy/CLionProjects/convertor/CMakeFiles/3.15.3/CompilerIdCXX/a.out"
+The CXX compiler identification is GNU, found in "/home/rustyboy/CLionProjects/convertor/CMakeFiles/3.16.1/CompilerIdCXX/a.out"
 
 Determining if the C compiler works passed with the following output:
 Change Dir: /home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake cmTC_088cb/fast && /usr/bin/gmake -f CMakeFiles/cmTC_088cb.dir/build.make CMakeFiles/cmTC_088cb.dir/build
+Run Build Command(s):/usr/bin/gmake cmTC_30e49/fast && /usr/bin/gmake -f CMakeFiles/cmTC_30e49.dir/build.make CMakeFiles/cmTC_30e49.dir/build
 gmake[1]: Entering directory '/home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_088cb.dir/testCCompiler.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_088cb.dir/testCCompiler.c.o   -c /home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_088cb
-/home/rustyboy/.local/share/JetBrains/Toolbox/apps/CLion/ch-1/193.5233.144/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_088cb.dir/link.txt --verbose=1
-/usr/bin/cc      CMakeFiles/cmTC_088cb.dir/testCCompiler.c.o  -o cmTC_088cb 
+Building C object CMakeFiles/cmTC_30e49.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_30e49.dir/testCCompiler.c.o   -c /home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_30e49
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_30e49.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_30e49.dir/testCCompiler.c.o  -o cmTC_30e49 
 gmake[1]: Leaving directory '/home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp'
 
 
@@ -457,18 +467,18 @@ gmake[1]: Leaving directory '/home/rustyboy/CLionProjects/convertor/CMakeFiles/C
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake cmTC_da598/fast && /usr/bin/gmake -f CMakeFiles/cmTC_da598.dir/build.make CMakeFiles/cmTC_da598.dir/build
+Run Build Command(s):/usr/bin/gmake cmTC_8d211/fast && /usr/bin/gmake -f CMakeFiles/cmTC_8d211.dir/build.make CMakeFiles/cmTC_8d211.dir/build
 gmake[1]: Entering directory '/home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_da598.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc   -v -o CMakeFiles/cmTC_da598.dir/CMakeCCompilerABI.c.o   -c /home/rustyboy/.local/share/JetBrains/Toolbox/apps/CLion/ch-1/193.5233.144/bin/cmake/linux/share/cmake-3.15/Modules/CMakeCCompilerABI.c
+Building C object CMakeFiles/cmTC_8d211.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc   -v -o CMakeFiles/cmTC_8d211.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 Target: x86_64-solus-linux
 Configured with: ../configure --prefix=/usr --with-pkgversion=Solus --libdir=/usr/lib64 --libexecdir=/usr/lib64 --with-system-zlib --enable-shared --enable-threads=posix --enable-gnu-indirect-function --enable-__cxa_atexit --enable-plugin --enable-gold --enable-ld=default --enable-clocale=gnu --enable-multilib --with-multilib-list=m32,m64 --enable-lto --with-gcc-major-version-only --with-bugurl=https://dev.getsol.us/ --with-arch_32=i686 --enable-linker-build-id --with-linker-hash-style=gnu --with-gnu-ld --build=x86_64-solus-linux --target=x86_64-solus-linux --enable-languages=c,c++,fortran
 Thread model: posix
 gcc version 9.2.0 (Solus) 
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_da598.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
- /usr/lib64/gcc/x86_64-solus-linux/9/cc1 -quiet -v /home/rustyboy/.local/share/JetBrains/Toolbox/apps/CLion/ch-1/193.5233.144/bin/cmake/linux/share/cmake-3.15/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_da598.dir/CMakeCCompilerABI.c.o -version -o /tmp/cci2zbkx.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8d211.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ /usr/lib64/gcc/x86_64-solus-linux/9/cc1 -quiet -v /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_8d211.dir/CMakeCCompilerABI.c.o -version -o /tmp/ccSdXiui.s
 GNU C17 (Solus) version 9.2.0 (x86_64-solus-linux)
 	compiled by GNU C version 9.2.0, GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.21-GMP
 
@@ -486,15 +496,15 @@ GNU C17 (Solus) version 9.2.0 (x86_64-solus-linux)
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: c5ab9092c676a712230a4d7751f4b934
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_da598.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
- as -v --64 -o CMakeFiles/cmTC_da598.dir/CMakeCCompilerABI.c.o /tmp/cci2zbkx.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8d211.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ as -v --64 -o CMakeFiles/cmTC_8d211.dir/CMakeCCompilerABI.c.o /tmp/ccSdXiui.s
 GNU assembler version 2.32 (x86_64-solus-linux) using BFD version (GNU Binutils) 2.32
 COMPILER_PATH=/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/:/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/
 LIBRARY_PATH=/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-solus-linux/9/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_da598.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
-Linking C executable cmTC_da598
-/home/rustyboy/.local/share/JetBrains/Toolbox/apps/CLion/ch-1/193.5233.144/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_da598.dir/link.txt --verbose=1
-/usr/bin/cc     -v CMakeFiles/cmTC_da598.dir/CMakeCCompilerABI.c.o  -o cmTC_da598 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8d211.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+Linking C executable cmTC_8d211
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8d211.dir/link.txt --verbose=1
+/usr/bin/cc     -v CMakeFiles/cmTC_8d211.dir/CMakeCCompilerABI.c.o  -o cmTC_8d211 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib64/gcc/x86_64-solus-linux/9/lto-wrapper
@@ -504,9 +514,9 @@ Thread model: posix
 gcc version 9.2.0 (Solus) 
 COMPILER_PATH=/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/:/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/
 LIBRARY_PATH=/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-solus-linux/9/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_da598' '-mtune=generic' '-march=x86-64'
- /usr/lib64/gcc/x86_64-solus-linux/9/collect2 -plugin /usr/lib64/gcc/x86_64-solus-linux/9/liblto_plugin.so -plugin-opt=/usr/lib64/gcc/x86_64-solus-linux/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccWtRcvG.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /usr/lib64/ld-linux-x86-64.so.2 -o cmTC_da598 /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crt1.o /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crti.o /usr/lib64/gcc/x86_64-solus-linux/9/crtbegin.o -L/usr/lib64/gcc/x86_64-solus-linux/9 -L/usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/gcc/x86_64-solus-linux/9/../../.. CMakeFiles/cmTC_da598.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib64/gcc/x86_64-solus-linux/9/crtend.o /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_da598' '-mtune=generic' '-march=x86-64'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8d211' '-mtune=generic' '-march=x86-64'
+ /usr/lib64/gcc/x86_64-solus-linux/9/collect2 -plugin /usr/lib64/gcc/x86_64-solus-linux/9/liblto_plugin.so -plugin-opt=/usr/lib64/gcc/x86_64-solus-linux/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccqZ6tUn.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /usr/lib64/ld-linux-x86-64.so.2 -o cmTC_8d211 /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crt1.o /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crti.o /usr/lib64/gcc/x86_64-solus-linux/9/crtbegin.o -L/usr/lib64/gcc/x86_64-solus-linux/9 -L/usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/gcc/x86_64-solus-linux/9/../../.. CMakeFiles/cmTC_8d211.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib64/gcc/x86_64-solus-linux/9/crtend.o /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8d211' '-mtune=generic' '-march=x86-64'
 gmake[1]: Leaving directory '/home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp'
 
 
@@ -530,20 +540,20 @@ Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/gmake cmTC_da598/fast && /usr/bin/gmake -f CMakeFiles/cmTC_da598.dir/build.make CMakeFiles/cmTC_da598.dir/build]
+  ignore line: [Run Build Command(s):/usr/bin/gmake cmTC_8d211/fast && /usr/bin/gmake -f CMakeFiles/cmTC_8d211.dir/build.make CMakeFiles/cmTC_8d211.dir/build]
   ignore line: [gmake[1]: Entering directory '/home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_da598.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_da598.dir/CMakeCCompilerABI.c.o   -c /home/rustyboy/.local/share/JetBrains/Toolbox/apps/CLion/ch-1/193.5233.144/bin/cmake/linux/share/cmake-3.15/Modules/CMakeCCompilerABI.c]
+  ignore line: [Building C object CMakeFiles/cmTC_8d211.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_8d211.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [Target: x86_64-solus-linux]
   ignore line: [Configured with: ../configure --prefix=/usr --with-pkgversion=Solus --libdir=/usr/lib64 --libexecdir=/usr/lib64 --with-system-zlib --enable-shared --enable-threads=posix --enable-gnu-indirect-function --enable-__cxa_atexit --enable-plugin --enable-gold --enable-ld=default --enable-clocale=gnu --enable-multilib --with-multilib-list=m32,m64 --enable-lto --with-gcc-major-version-only --with-bugurl=https://dev.getsol.us/ --with-arch_32=i686 --enable-linker-build-id --with-linker-hash-style=gnu --with-gnu-ld --build=x86_64-solus-linux --target=x86_64-solus-linux --enable-languages=c,c++,fortran]
   ignore line: [Thread model: posix]
   ignore line: [gcc version 9.2.0 (Solus) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_da598.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
-  ignore line: [ /usr/lib64/gcc/x86_64-solus-linux/9/cc1 -quiet -v /home/rustyboy/.local/share/JetBrains/Toolbox/apps/CLion/ch-1/193.5233.144/bin/cmake/linux/share/cmake-3.15/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_da598.dir/CMakeCCompilerABI.c.o -version -o /tmp/cci2zbkx.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8d211.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ /usr/lib64/gcc/x86_64-solus-linux/9/cc1 -quiet -v /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_8d211.dir/CMakeCCompilerABI.c.o -version -o /tmp/ccSdXiui.s]
   ignore line: [GNU C17 (Solus) version 9.2.0 (x86_64-solus-linux)]
-  ignore line: [	compiled by GNU C version 9.2.0, GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.21-GMP]
+  ignore line: [	compiled by GNU C version 9.2.0  GMP version 6.1.2  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.21-GMP]
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [ignoring nonexistent directory "/usr/lib64/gcc/x86_64-solus-linux/9/../../../../x86_64-solus-linux/include"]
@@ -555,19 +565,19 @@ Parsed C implicit link information from above output:
   ignore line: [ /usr/include]
   ignore line: [End of search list.]
   ignore line: [GNU C17 (Solus) version 9.2.0 (x86_64-solus-linux)]
-  ignore line: [	compiled by GNU C version 9.2.0, GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.21-GMP]
+  ignore line: [	compiled by GNU C version 9.2.0  GMP version 6.1.2  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.21-GMP]
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: c5ab9092c676a712230a4d7751f4b934]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_da598.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
-  ignore line: [ as -v --64 -o CMakeFiles/cmTC_da598.dir/CMakeCCompilerABI.c.o /tmp/cci2zbkx.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8d211.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_8d211.dir/CMakeCCompilerABI.c.o /tmp/ccSdXiui.s]
   ignore line: [GNU assembler version 2.32 (x86_64-solus-linux) using BFD version (GNU Binutils) 2.32]
   ignore line: [COMPILER_PATH=/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/:/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/]
   ignore line: [LIBRARY_PATH=/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-solus-linux/9/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_da598.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
-  ignore line: [Linking C executable cmTC_da598]
-  ignore line: [/home/rustyboy/.local/share/JetBrains/Toolbox/apps/CLion/ch-1/193.5233.144/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_da598.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc     -v CMakeFiles/cmTC_da598.dir/CMakeCCompilerABI.c.o  -o cmTC_da598 ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8d211.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [Linking C executable cmTC_8d211]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8d211.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc     -v CMakeFiles/cmTC_8d211.dir/CMakeCCompilerABI.c.o  -o cmTC_8d211 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib64/gcc/x86_64-solus-linux/9/lto-wrapper]
@@ -577,13 +587,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 9.2.0 (Solus) ]
   ignore line: [COMPILER_PATH=/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/:/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/]
   ignore line: [LIBRARY_PATH=/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-solus-linux/9/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_da598' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib64/gcc/x86_64-solus-linux/9/collect2 -plugin /usr/lib64/gcc/x86_64-solus-linux/9/liblto_plugin.so -plugin-opt=/usr/lib64/gcc/x86_64-solus-linux/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccWtRcvG.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /usr/lib64/ld-linux-x86-64.so.2 -o cmTC_da598 /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crt1.o /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crti.o /usr/lib64/gcc/x86_64-solus-linux/9/crtbegin.o -L/usr/lib64/gcc/x86_64-solus-linux/9 -L/usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/gcc/x86_64-solus-linux/9/../../.. CMakeFiles/cmTC_da598.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib64/gcc/x86_64-solus-linux/9/crtend.o /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8d211' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib64/gcc/x86_64-solus-linux/9/collect2 -plugin /usr/lib64/gcc/x86_64-solus-linux/9/liblto_plugin.so -plugin-opt=/usr/lib64/gcc/x86_64-solus-linux/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccqZ6tUn.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /usr/lib64/ld-linux-x86-64.so.2 -o cmTC_8d211 /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crt1.o /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crti.o /usr/lib64/gcc/x86_64-solus-linux/9/crtbegin.o -L/usr/lib64/gcc/x86_64-solus-linux/9 -L/usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/gcc/x86_64-solus-linux/9/../../.. CMakeFiles/cmTC_8d211.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib64/gcc/x86_64-solus-linux/9/crtend.o /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crtn.o]
     arg [/usr/lib64/gcc/x86_64-solus-linux/9/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib64/gcc/x86_64-solus-linux/9/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib64/gcc/x86_64-solus-linux/9/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccWtRcvG.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccqZ6tUn.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -597,7 +607,7 @@ Parsed C implicit link information from above output:
     arg [-dynamic-linker] ==> ignore
     arg [/usr/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_da598] ==> ignore
+    arg [cmTC_8d211] ==> ignore
     arg [/usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crt1.o] ==> ignore
     arg [/usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crti.o] ==> ignore
     arg [/usr/lib64/gcc/x86_64-solus-linux/9/crtbegin.o] ==> ignore
@@ -606,7 +616,7 @@ Parsed C implicit link information from above output:
     arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
     arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
     arg [-L/usr/lib64/gcc/x86_64-solus-linux/9/../../..] ==> dir [/usr/lib64/gcc/x86_64-solus-linux/9/../../..]
-    arg [CMakeFiles/cmTC_da598.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_8d211.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--push-state] ==> ignore
     arg [--as-needed] ==> ignore
@@ -633,13 +643,13 @@ Parsed C implicit link information from above output:
 Determining if the CXX compiler works passed with the following output:
 Change Dir: /home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake cmTC_a18e6/fast && /usr/bin/gmake -f CMakeFiles/cmTC_a18e6.dir/build.make CMakeFiles/cmTC_a18e6.dir/build
+Run Build Command(s):/usr/bin/gmake cmTC_60486/fast && /usr/bin/gmake -f CMakeFiles/cmTC_60486.dir/build.make CMakeFiles/cmTC_60486.dir/build
 gmake[1]: Entering directory '/home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_a18e6.dir/testCXXCompiler.cxx.o
-/usr/bin/c++     -o CMakeFiles/cmTC_a18e6.dir/testCXXCompiler.cxx.o -c /home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_a18e6
-/home/rustyboy/.local/share/JetBrains/Toolbox/apps/CLion/ch-1/193.5233.144/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a18e6.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_a18e6.dir/testCXXCompiler.cxx.o  -o cmTC_a18e6 
+Building CXX object CMakeFiles/cmTC_60486.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTC_60486.dir/testCXXCompiler.cxx.o -c /home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_60486
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_60486.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_60486.dir/testCXXCompiler.cxx.o  -o cmTC_60486 
 gmake[1]: Leaving directory '/home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp'
 
 
@@ -647,18 +657,18 @@ gmake[1]: Leaving directory '/home/rustyboy/CLionProjects/convertor/CMakeFiles/C
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake cmTC_daa6c/fast && /usr/bin/gmake -f CMakeFiles/cmTC_daa6c.dir/build.make CMakeFiles/cmTC_daa6c.dir/build
+Run Build Command(s):/usr/bin/gmake cmTC_508de/fast && /usr/bin/gmake -f CMakeFiles/cmTC_508de.dir/build.make CMakeFiles/cmTC_508de.dir/build
 gmake[1]: Entering directory '/home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_daa6c.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++    -v -o CMakeFiles/cmTC_daa6c.dir/CMakeCXXCompilerABI.cpp.o -c /home/rustyboy/.local/share/JetBrains/Toolbox/apps/CLion/ch-1/193.5233.144/bin/cmake/linux/share/cmake-3.15/Modules/CMakeCXXCompilerABI.cpp
+Building CXX object CMakeFiles/cmTC_508de.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++    -v -o CMakeFiles/cmTC_508de.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 Target: x86_64-solus-linux
 Configured with: ../configure --prefix=/usr --with-pkgversion=Solus --libdir=/usr/lib64 --libexecdir=/usr/lib64 --with-system-zlib --enable-shared --enable-threads=posix --enable-gnu-indirect-function --enable-__cxa_atexit --enable-plugin --enable-gold --enable-ld=default --enable-clocale=gnu --enable-multilib --with-multilib-list=m32,m64 --enable-lto --with-gcc-major-version-only --with-bugurl=https://dev.getsol.us/ --with-arch_32=i686 --enable-linker-build-id --with-linker-hash-style=gnu --with-gnu-ld --build=x86_64-solus-linux --target=x86_64-solus-linux --enable-languages=c,c++,fortran
 Thread model: posix
 gcc version 9.2.0 (Solus) 
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_daa6c.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib64/gcc/x86_64-solus-linux/9/cc1plus -quiet -v -D_GNU_SOURCE /home/rustyboy/.local/share/JetBrains/Toolbox/apps/CLion/ch-1/193.5233.144/bin/cmake/linux/share/cmake-3.15/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_daa6c.dir/CMakeCXXCompilerABI.cpp.o -version -o /tmp/ccjKggn7.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_508de.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib64/gcc/x86_64-solus-linux/9/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_508de.dir/CMakeCXXCompilerABI.cpp.o -version -o /tmp/ccW7jInE.s
 GNU C++14 (Solus) version 9.2.0 (x86_64-solus-linux)
 	compiled by GNU C version 9.2.0, GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.21-GMP
 
@@ -679,15 +689,15 @@ GNU C++14 (Solus) version 9.2.0 (x86_64-solus-linux)
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: 5fc5a0c63917e0b4a009dae6726c0688
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_daa6c.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- as -v --64 -o CMakeFiles/cmTC_daa6c.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccjKggn7.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_508de.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ as -v --64 -o CMakeFiles/cmTC_508de.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccW7jInE.s
 GNU assembler version 2.32 (x86_64-solus-linux) using BFD version (GNU Binutils) 2.32
 COMPILER_PATH=/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/:/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/
 LIBRARY_PATH=/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-solus-linux/9/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_daa6c.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
-Linking CXX executable cmTC_daa6c
-/home/rustyboy/.local/share/JetBrains/Toolbox/apps/CLion/ch-1/193.5233.144/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_daa6c.dir/link.txt --verbose=1
-/usr/bin/c++      -v CMakeFiles/cmTC_daa6c.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_daa6c 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_508de.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+Linking CXX executable cmTC_508de
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_508de.dir/link.txt --verbose=1
+/usr/bin/c++      -v CMakeFiles/cmTC_508de.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_508de 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib64/gcc/x86_64-solus-linux/9/lto-wrapper
@@ -697,9 +707,9 @@ Thread model: posix
 gcc version 9.2.0 (Solus) 
 COMPILER_PATH=/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/:/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/
 LIBRARY_PATH=/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-solus-linux/9/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_daa6c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib64/gcc/x86_64-solus-linux/9/collect2 -plugin /usr/lib64/gcc/x86_64-solus-linux/9/liblto_plugin.so -plugin-opt=/usr/lib64/gcc/x86_64-solus-linux/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccSPUwN9.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /usr/lib64/ld-linux-x86-64.so.2 -o cmTC_daa6c /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crt1.o /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crti.o /usr/lib64/gcc/x86_64-solus-linux/9/crtbegin.o -L/usr/lib64/gcc/x86_64-solus-linux/9 -L/usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/gcc/x86_64-solus-linux/9/../../.. CMakeFiles/cmTC_daa6c.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib64/gcc/x86_64-solus-linux/9/crtend.o /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_daa6c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_508de' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib64/gcc/x86_64-solus-linux/9/collect2 -plugin /usr/lib64/gcc/x86_64-solus-linux/9/liblto_plugin.so -plugin-opt=/usr/lib64/gcc/x86_64-solus-linux/9/lto-wrapper -plugin-opt=-fresolution=/tmp/cchklHuH.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /usr/lib64/ld-linux-x86-64.so.2 -o cmTC_508de /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crt1.o /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crti.o /usr/lib64/gcc/x86_64-solus-linux/9/crtbegin.o -L/usr/lib64/gcc/x86_64-solus-linux/9 -L/usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/gcc/x86_64-solus-linux/9/../../.. CMakeFiles/cmTC_508de.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib64/gcc/x86_64-solus-linux/9/crtend.o /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_508de' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
 gmake[1]: Leaving directory '/home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp'
 
 
@@ -729,20 +739,20 @@ Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/gmake cmTC_daa6c/fast && /usr/bin/gmake -f CMakeFiles/cmTC_daa6c.dir/build.make CMakeFiles/cmTC_daa6c.dir/build]
+  ignore line: [Run Build Command(s):/usr/bin/gmake cmTC_508de/fast && /usr/bin/gmake -f CMakeFiles/cmTC_508de.dir/build.make CMakeFiles/cmTC_508de.dir/build]
   ignore line: [gmake[1]: Entering directory '/home/rustyboy/CLionProjects/convertor/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_daa6c.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++    -v -o CMakeFiles/cmTC_daa6c.dir/CMakeCXXCompilerABI.cpp.o -c /home/rustyboy/.local/share/JetBrains/Toolbox/apps/CLion/ch-1/193.5233.144/bin/cmake/linux/share/cmake-3.15/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Building CXX object CMakeFiles/cmTC_508de.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++    -v -o CMakeFiles/cmTC_508de.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [Target: x86_64-solus-linux]
   ignore line: [Configured with: ../configure --prefix=/usr --with-pkgversion=Solus --libdir=/usr/lib64 --libexecdir=/usr/lib64 --with-system-zlib --enable-shared --enable-threads=posix --enable-gnu-indirect-function --enable-__cxa_atexit --enable-plugin --enable-gold --enable-ld=default --enable-clocale=gnu --enable-multilib --with-multilib-list=m32,m64 --enable-lto --with-gcc-major-version-only --with-bugurl=https://dev.getsol.us/ --with-arch_32=i686 --enable-linker-build-id --with-linker-hash-style=gnu --with-gnu-ld --build=x86_64-solus-linux --target=x86_64-solus-linux --enable-languages=c,c++,fortran]
   ignore line: [Thread model: posix]
   ignore line: [gcc version 9.2.0 (Solus) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_daa6c.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  ignore line: [ /usr/lib64/gcc/x86_64-solus-linux/9/cc1plus -quiet -v -D_GNU_SOURCE /home/rustyboy/.local/share/JetBrains/Toolbox/apps/CLion/ch-1/193.5233.144/bin/cmake/linux/share/cmake-3.15/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_daa6c.dir/CMakeCXXCompilerABI.cpp.o -version -o /tmp/ccjKggn7.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_508de.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [ /usr/lib64/gcc/x86_64-solus-linux/9/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_508de.dir/CMakeCXXCompilerABI.cpp.o -version -o /tmp/ccW7jInE.s]
   ignore line: [GNU C++14 (Solus) version 9.2.0 (x86_64-solus-linux)]
-  ignore line: [	compiled by GNU C version 9.2.0, GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.21-GMP]
+  ignore line: [	compiled by GNU C version 9.2.0  GMP version 6.1.2  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.21-GMP]
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [ignoring nonexistent directory "/usr/lib64/gcc/x86_64-solus-linux/9/../../../../x86_64-solus-linux/include"]
@@ -757,19 +767,19 @@ Parsed CXX implicit link information from above output:
   ignore line: [ /usr/include]
   ignore line: [End of search list.]
   ignore line: [GNU C++14 (Solus) version 9.2.0 (x86_64-solus-linux)]
-  ignore line: [	compiled by GNU C version 9.2.0, GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.21-GMP]
+  ignore line: [	compiled by GNU C version 9.2.0  GMP version 6.1.2  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.21-GMP]
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: 5fc5a0c63917e0b4a009dae6726c0688]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_daa6c.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  ignore line: [ as -v --64 -o CMakeFiles/cmTC_daa6c.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccjKggn7.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_508de.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_508de.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccW7jInE.s]
   ignore line: [GNU assembler version 2.32 (x86_64-solus-linux) using BFD version (GNU Binutils) 2.32]
   ignore line: [COMPILER_PATH=/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/:/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/]
   ignore line: [LIBRARY_PATH=/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-solus-linux/9/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_daa6c.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  ignore line: [Linking CXX executable cmTC_daa6c]
-  ignore line: [/home/rustyboy/.local/share/JetBrains/Toolbox/apps/CLion/ch-1/193.5233.144/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_daa6c.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++      -v CMakeFiles/cmTC_daa6c.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_daa6c ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_508de.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [Linking CXX executable cmTC_508de]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_508de.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++      -v CMakeFiles/cmTC_508de.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_508de ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib64/gcc/x86_64-solus-linux/9/lto-wrapper]
@@ -779,13 +789,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 9.2.0 (Solus) ]
   ignore line: [COMPILER_PATH=/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/:/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/]
   ignore line: [LIBRARY_PATH=/usr/lib64/gcc/x86_64-solus-linux/9/:/usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-solus-linux/9/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_daa6c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib64/gcc/x86_64-solus-linux/9/collect2 -plugin /usr/lib64/gcc/x86_64-solus-linux/9/liblto_plugin.so -plugin-opt=/usr/lib64/gcc/x86_64-solus-linux/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccSPUwN9.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /usr/lib64/ld-linux-x86-64.so.2 -o cmTC_daa6c /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crt1.o /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crti.o /usr/lib64/gcc/x86_64-solus-linux/9/crtbegin.o -L/usr/lib64/gcc/x86_64-solus-linux/9 -L/usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/gcc/x86_64-solus-linux/9/../../.. CMakeFiles/cmTC_daa6c.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib64/gcc/x86_64-solus-linux/9/crtend.o /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_508de' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib64/gcc/x86_64-solus-linux/9/collect2 -plugin /usr/lib64/gcc/x86_64-solus-linux/9/liblto_plugin.so -plugin-opt=/usr/lib64/gcc/x86_64-solus-linux/9/lto-wrapper -plugin-opt=-fresolution=/tmp/cchklHuH.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /usr/lib64/ld-linux-x86-64.so.2 -o cmTC_508de /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crt1.o /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crti.o /usr/lib64/gcc/x86_64-solus-linux/9/crtbegin.o -L/usr/lib64/gcc/x86_64-solus-linux/9 -L/usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/gcc/x86_64-solus-linux/9/../../.. CMakeFiles/cmTC_508de.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib64/gcc/x86_64-solus-linux/9/crtend.o /usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crtn.o]
     arg [/usr/lib64/gcc/x86_64-solus-linux/9/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib64/gcc/x86_64-solus-linux/9/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib64/gcc/x86_64-solus-linux/9/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccSPUwN9.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cchklHuH.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -799,7 +809,7 @@ Parsed CXX implicit link information from above output:
     arg [-dynamic-linker] ==> ignore
     arg [/usr/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_daa6c] ==> ignore
+    arg [cmTC_508de] ==> ignore
     arg [/usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crt1.o] ==> ignore
     arg [/usr/lib64/gcc/x86_64-solus-linux/9/../../../../lib64/crti.o] ==> ignore
     arg [/usr/lib64/gcc/x86_64-solus-linux/9/crtbegin.o] ==> ignore
@@ -808,7 +818,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
     arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
     arg [-L/usr/lib64/gcc/x86_64-solus-linux/9/../../..] ==> dir [/usr/lib64/gcc/x86_64-solus-linux/9/../../..]
-    arg [CMakeFiles/cmTC_daa6c.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_508de.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]

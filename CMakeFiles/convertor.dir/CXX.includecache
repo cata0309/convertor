@@ -8,16 +8,20 @@
 
 /home/rustyboy/CLionProjects/convertor/Defines.hpp
 
-/home/rustyboy/CLionProjects/convertor/main.cpp
+/home/rustyboy/CLionProjects/convertor/UserInterface.cpp
+UserInterface.hpp
+/home/rustyboy/CLionProjects/convertor/UserInterface.hpp
+
+/home/rustyboy/CLionProjects/convertor/UserInterface.hpp
 SFML/Graphics.hpp
 /home/rustyboy/CLionProjects/convertor/SFML/Graphics.hpp
 SFML/Audio.hpp
 /home/rustyboy/CLionProjects/convertor/SFML/Audio.hpp
 Defines.hpp
 /home/rustyboy/CLionProjects/convertor/Defines.hpp
-cstring
--
 iostream
+-
+cstring
 -
 fstream
 -

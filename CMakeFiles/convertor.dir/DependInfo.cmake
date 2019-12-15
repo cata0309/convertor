@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/rustyboy/CLionProjects/convertor/UserInterface.cpp" "/home/rustyboy/CLionProjects/convertor/CMakeFiles/convertor.dir/UserInterface.cpp.o"
   "/home/rustyboy/CLionProjects/convertor/main.cpp" "/home/rustyboy/CLionProjects/convertor/CMakeFiles/convertor.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

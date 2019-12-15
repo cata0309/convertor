@@ -1,4 +1,4 @@
 3
-assets/fonts/consolas.ttf Consolas
-assets/fonts/firamono.ttf FiraMono
-assets/fonts/visitor.ttf Visitor
+assets/fonts/consolas.ttf 1.CONSOLAS
+assets/fonts/firamono.ttf 2.FIRAMONO
+assets/fonts/visitor.ttf 3.VISITOR

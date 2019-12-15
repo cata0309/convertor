@@ -85,6 +85,12 @@
 		<Unit filename="/home/rustyboy/CLionProjects/convertor/Defines.hpp">
 			<Option target="convertor"/>
 		</Unit>
+		<Unit filename="/home/rustyboy/CLionProjects/convertor/UserInterface.cpp">
+			<Option target="convertor"/>
+		</Unit>
+		<Unit filename="/home/rustyboy/CLionProjects/convertor/UserInterface.hpp">
+			<Option target="convertor"/>
+		</Unit>
 		<Unit filename="/home/rustyboy/CLionProjects/convertor/main.cpp">
 			<Option target="convertor"/>
 		</Unit>
