@@ -1,0 +1,4 @@
+3
+assets/sounds/song0.wav HappyDay
+assets/sounds/song1.wav Bomber
+assets/sounds/song2.wav Megalovania

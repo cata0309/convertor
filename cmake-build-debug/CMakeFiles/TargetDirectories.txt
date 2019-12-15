@@ -1,0 +1,3 @@
+/home/rustyboy/CLionProjects/convertor/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/rustyboy/CLionProjects/convertor/cmake-build-debug/CMakeFiles/convertor.dir
+/home/rustyboy/CLionProjects/convertor/cmake-build-debug/CMakeFiles/edit_cache.dir

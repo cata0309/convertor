@@ -1,0 +1,399 @@
+{
+  "frames": {
+    "delete_dark.png": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 320,
+        "h": 320
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 320,
+        "h": 320
+      },
+      "sourceSize": {
+        "w": 320,
+        "h": 320
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "delete_light.png": {
+      "frame": {
+        "x": 0,
+        "y": 320,
+        "w": 320,
+        "h": 320
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 320,
+        "h": 320
+      },
+      "sourceSize": {
+        "w": 320,
+        "h": 320
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "equal_dark.png": {
+      "frame": {
+        "x": 0,
+        "y": 640,
+        "w": 320,
+        "h": 320
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 320,
+        "h": 320
+      },
+      "sourceSize": {
+        "w": 320,
+        "h": 320
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "equal_light.png": {
+      "frame": {
+        "x": 0,
+        "y": 960,
+        "w": 320,
+        "h": 320
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 320,
+        "h": 320
+      },
+      "sourceSize": {
+        "w": 320,
+        "h": 320
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "left_dark.png": {
+      "frame": {
+        "x": 0,
+        "y": 1280,
+        "w": 320,
+        "h": 320
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 320,
+        "h": 320
+      },
+      "sourceSize": {
+        "w": 320,
+        "h": 320
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "left_light.png": {
+      "frame": {
+        "x": 0,
+        "y": 1600,
+        "w": 320,
+        "h": 320
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 320,
+        "h": 320
+      },
+      "sourceSize": {
+        "w": 320,
+        "h": 320
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "lightbulb_dark.png": {
+      "frame": {
+        "x": 320,
+        "y": 0,
+        "w": 320,
+        "h": 320
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 320,
+        "h": 320
+      },
+      "sourceSize": {
+        "w": 320,
+        "h": 320
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "lightbulb_light.png": {
+      "frame": {
+        "x": 640,
+        "y": 0,
+        "w": 320,
+        "h": 320
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 320,
+        "h": 320
+      },
+      "sourceSize": {
+        "w": 320,
+        "h": 320
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "nosong_dark.png": {
+      "frame": {
+        "x": 960,
+        "y": 0,
+        "w": 320,
+        "h": 320
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 320,
+        "h": 320
+      },
+      "sourceSize": {
+        "w": 320,
+        "h": 320
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "nosong_light.png": {
+      "frame": {
+        "x": 1280,
+        "y": 0,
+        "w": 320,
+        "h": 320
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 320,
+        "h": 320
+      },
+      "sourceSize": {
+        "w": 320,
+        "h": 320
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "right_dark.png": {
+      "frame": {
+        "x": 1600,
+        "y": 0,
+        "w": 320,
+        "h": 320
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 320,
+        "h": 320
+      },
+      "sourceSize": {
+        "w": 320,
+        "h": 320
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "right_light.png": {
+      "frame": {
+        "x": 320,
+        "y": 320,
+        "w": 320,
+        "h": 320
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 320,
+        "h": 320
+      },
+      "sourceSize": {
+        "w": 320,
+        "h": 320
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "settings_dark.png": {
+      "frame": {
+        "x": 320,
+        "y": 640,
+        "w": 320,
+        "h": 320
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 320,
+        "h": 320
+      },
+      "sourceSize": {
+        "w": 320,
+        "h": 320
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "settings_light.png": {
+      "frame": {
+        "x": 320,
+        "y": 960,
+        "w": 320,
+        "h": 320
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 320,
+        "h": 320
+      },
+      "sourceSize": {
+        "w": 320,
+        "h": 320
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "song_dark.png": {
+      "frame": {
+        "x": 320,
+        "y": 1280,
+        "w": 320,
+        "h": 320
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 320,
+        "h": 320
+      },
+      "sourceSize": {
+        "w": 320,
+        "h": 320
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "song_light.png": {
+      "frame": {
+        "x": 320,
+        "y": 1600,
+        "w": 320,
+        "h": 320
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 320,
+        "h": 320
+      },
+      "sourceSize": {
+        "w": 320,
+        "h": 320
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  },
+  "meta": {
+    "app": "http://free-tex-packer.com",
+    "version": "0.6.1",
+    "image": "symbols.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 1920,
+      "h": 1920
+    },
+    "scale": 1
+  }
+}

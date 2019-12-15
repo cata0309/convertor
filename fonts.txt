@@ -1,0 +1,4 @@
+3
+assets/fonts/consolas.ttf Consolas
+assets/fonts/firamono.ttf FiraMono
+assets/fonts/visitor.ttf Visitor

@@ -1,0 +1,8 @@
+/home/rustyboy/.local/share/JetBrains/Toolbox/apps/CLion/ch-1/193.5233.144/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/rustyboy/CLionProjects/convertor
+-- Found SFML 2.5.1 in /home/rustyboy/CLionProjects/convertor/lib/cmake/SFML
+-- SFML_INCLUDE_DIR:
+-- SFML_LIBRARIES:
+-- SFML_VERSION:
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/rustyboy/CLionProjects/convertor
