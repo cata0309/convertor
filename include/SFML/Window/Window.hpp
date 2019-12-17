@@ -155,7 +155,7 @@ public:
     /// After calling this function, the sf::Window instance remains
     /// valid and you can call create() to recreate the window.
     /// All other functions such as pollEvent() or display() will
-    /// still work (i.e. you don't have to test isOpen() every time),
+    /// still work (i.e. you don't have to before_hover_color_capture isOpen() every time),
     /// and will have no effect on closed windows.
     ///
     ////////////////////////////////////////////////////////////

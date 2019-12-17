@@ -1,7 +1,7 @@
 6
-assets/sounds/songs/Summer.wav 1.SUMMER
-assets/sounds/songs/Pirate.wav 2.PIRATE
-assets/sounds/songs/Bomber.wav 3.BOMBER
-assets/sounds/songs/HappyDay.wav 4.HAPPYDAY
-assets/sounds/songs/Megalovania.wav 5.MEGALOVANIA
-assets/sounds/songs/Trance.wav 6.TRANCE
+assets/sounds/songs/Trance.wav TRANCE
+assets/sounds/songs/Summer.wav SUMMER
+assets/sounds/songs/Pirate.wav PIRATE
+assets/sounds/songs/Bomber.wav BOMBER
+assets/sounds/songs/HappyDay.wav HAPPYDAY
+assets/sounds/songs/Megalovania.wav MEGALOVANIA

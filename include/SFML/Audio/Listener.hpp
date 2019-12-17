@@ -44,13 +44,13 @@ class SFML_AUDIO_API Listener
 public:
 
     ////////////////////////////////////////////////////////////
-    /// \brief Change the global volume of all the sounds and musics
+    /// \brief Change the global volume_music of all the sounds and musics
     ///
-    /// The volume is a number between 0 and 100; it is combined with
-    /// the individual volume of each sound / music.
-    /// The default value for the volume is 100 (maximum).
+    /// The volume_music is a number between 0 and 100; it is combined with
+    /// the individual volume_music of each sound / music.
+    /// The default value for the volume_music is 100 (maximum).
     ///
-    /// \param volume New global volume, in the range [0, 100]
+    /// \param volume New global volume_music, in the range [0, 100]
     ///
     /// \see getGlobalVolume
     ///
@@ -58,9 +58,9 @@ public:
     static void setGlobalVolume(float volume);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Get the current value of the global volume
+    /// \brief Get the current value of the global volume_music
     ///
-    /// \return Current global volume, in the range [0, 100]
+    /// \return Current global volume_music, in the range [0, 100]
     ///
     /// \see setGlobalVolume
     ///
@@ -214,7 +214,7 @@ public:
 ///
 /// sf::Listener is a simple interface, which allows to setup the
 /// listener in the 3D audio environment (position, direction and
-/// up vector), and to adjust the global volume.
+/// up vector), and to adjust the global volume_music.
 ///
 /// Because the listener is unique in the scene, sf::Listener only
 /// contains static functions and doesn't have to be instantiated.
@@ -227,7 +227,7 @@ public:
 /// // Make it face the right axis (1, 0, 0)
 /// sf::Listener::setDirection(1, 0, 0);
 ///
-/// // Reduce the global volume
+/// // Reduce the global volume_music
 /// sf::Listener::setGlobalVolume(50);
 /// \endcode
 ///

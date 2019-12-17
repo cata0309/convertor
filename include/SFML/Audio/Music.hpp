@@ -304,7 +304,7 @@ private:
 /// Apart from that, a sf::Music has almost the same features as
 /// the sf::SoundBuffer / sf::Sound pair: you can play/pause/stop
 /// it, request its parameters (channels, sample rate), change
-/// the way it is played (pitch, volume, 3D position, ...), etc.
+/// the way it is played (pitch, volume_music, 3D position, ...), etc.
 ///
 /// As a sound stream, a music is played in its own thread in order
 /// not to block the rest of the program. This means that you can
@@ -325,7 +325,7 @@ private:
 /// // Change some parameters
 /// music.setPosition(0, 1, 10); // change its 3D position
 /// music.setPitch(2);           // increase the pitch
-/// music.setVolume(50);         // reduce the volume
+/// music.setSongVolume(50);         // reduce the volume_music
 /// music.setLoop(true);         // make it loop
 ///
 /// // Play it

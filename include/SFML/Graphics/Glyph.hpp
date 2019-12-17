@@ -53,7 +53,7 @@ public:
     ////////////////////////////////////////////////////////////
     float     advance;     ///< Offset to move horizontally to the next character
     FloatRect bounds;      ///< Bounding rectangle of the glyph, in coordinates relative to the baseline
-    IntRect   textureRect; ///< Texture coordinates of the glyph inside the font's texture
+    IntRect   textureRect; ///< Texture coordinates of the glyph inside the font_name's texture
 };
 
 } // namespace sf
@@ -70,7 +70,7 @@ public:
 ///
 /// The sf::Glyph structure provides the information needed
 /// to handle the glyph:
-/// \li its coordinates in the font's texture
+/// \li its coordinates in the font_name's texture
 /// \li its bounding rectangle
 /// \li the offset to apply to get the starting position of the next glyph
 ///

@@ -44,7 +44,7 @@ namespace sf
 class InputStream;
 
 ////////////////////////////////////////////////////////////
-/// \brief Class for loading and manipulating character fonts
+/// \brief Class for loading and manipulating character font_list
 ///
 ////////////////////////////////////////////////////////////
 class SFML_GRAPHICS_API Font
@@ -52,12 +52,12 @@ class SFML_GRAPHICS_API Font
 public:
 
     ////////////////////////////////////////////////////////////
-    /// \brief Holds various information about a font
+    /// \brief Holds various information about a font_name
     ///
     ////////////////////////////////////////////////////////////
     struct Info
     {
-        std::string family; ///< The font family
+        std::string family; ///< The font_name family
     };
 
 public:
@@ -65,7 +65,7 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Default constructor
     ///
-    /// This constructor defines an empty font
+    /// This constructor defines an empty font_name
     ///
     ////////////////////////////////////////////////////////////
     Font();
@@ -81,25 +81,25 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Destructor
     ///
-    /// Cleans up all the internal resources used by the font
+    /// Cleans up all the internal resources used by the font_name
     ///
     ////////////////////////////////////////////////////////////
     ~Font();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Load the font from a file
+    /// \brief Load the font_name from a file
     ///
-    /// The supported font formats are: TrueType, Type 1, CFF,
+    /// The supported font_name formats are: TrueType, Type 1, CFF,
     /// OpenType, SFNT, X11 PCF, Windows FNT, BDF, PFR and Type 42.
     /// Note that this function knows nothing about the standard
-    /// fonts installed on the user's system, thus you can't
+    /// font_list installed on the user's system, thus you can't
     /// load them directly.
     ///
-    /// \warning SFML cannot preload all the font data in this
+    /// \warning SFML cannot preload all the font_name data in this
     /// function, so the file has to remain accessible until
-    /// the sf::Font object loads a new font or is destroyed.
+    /// the sf::Font object loads a new font_name or is destroyed.
     ///
-    /// \param filename Path of the font file to load
+    /// \param filename Path of the font_name file to load
     ///
     /// \return True if loading succeeded, false if it failed
     ///
@@ -109,14 +109,14 @@ public:
     bool loadFromFile(const std::string& filename);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Load the font from a file in memory
+    /// \brief Load the font_name from a file in memory
     ///
-    /// The supported font formats are: TrueType, Type 1, CFF,
+    /// The supported font_name formats are: TrueType, Type 1, CFF,
     /// OpenType, SFNT, X11 PCF, Windows FNT, BDF, PFR and Type 42.
     ///
-    /// \warning SFML cannot preload all the font data in this
+    /// \warning SFML cannot preload all the font_name data in this
     /// function, so the buffer pointed by \a data has to remain
-    /// valid until the sf::Font object loads a new font or
+    /// valid until the sf::Font object loads a new font_name or
     /// is destroyed.
     ///
     /// \param data        Pointer to the file data in memory
@@ -130,17 +130,17 @@ public:
     bool loadFromMemory(const void* data, std::size_t sizeInBytes);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Load the font from a custom stream
+    /// \brief Load the font_name from a custom stream
     ///
-    /// The supported font formats are: TrueType, Type 1, CFF,
+    /// The supported font_name formats are: TrueType, Type 1, CFF,
     /// OpenType, SFNT, X11 PCF, Windows FNT, BDF, PFR and Type 42.
-    /// Warning: SFML cannot preload all the font data in this
+    /// Warning: SFML cannot preload all the font_name data in this
     /// function, so the contents of \a stream have to remain
-    /// valid as long as the font is used.
+    /// valid as long as the font_name is used.
     ///
-    /// \warning SFML cannot preload all the font data in this
+    /// \warning SFML cannot preload all the font_name data in this
     /// function, so the stream has to remain accessible until
-    /// the sf::Font object loads a new font or is destroyed.
+    /// the sf::Font object loads a new font_name or is destroyed.
     ///
     /// \param stream Source stream to read from
     ///
@@ -152,17 +152,17 @@ public:
     bool loadFromStream(InputStream& stream);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Get the font information
+    /// \brief Get the font_name information
     ///
-    /// \return A structure that holds the font information
+    /// \return A structure that holds the font_name information
     ///
     ////////////////////////////////////////////////////////////
     const Info& getInfo() const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Retrieve a glyph of the font
+    /// \brief Retrieve a glyph of the font_name
     ///
-    /// If the font is a bitmap font, not all character sizes
+    /// If the font_name is a bitmap font_name, not all character sizes
     /// might be available. If the glyph is not available at the
     /// requested size, an empty glyph is returned.
     ///
@@ -347,11 +347,11 @@ private:
     // Member data
     ////////////////////////////////////////////////////////////
     void*                      m_library;     ///< Pointer to the internal library interface (it is typeless to avoid exposing implementation details)
-    void*                      m_face;        ///< Pointer to the internal font face (it is typeless to avoid exposing implementation details)
+    void*                      m_face;        ///< Pointer to the internal font_name face (it is typeless to avoid exposing implementation details)
     void*                      m_streamRec;   ///< Pointer to the stream rec instance (it is typeless to avoid exposing implementation details)
     void*                      m_stroker;     ///< Pointer to the stroker (it is typeless to avoid exposing implementation details)
     int*                       m_refCount;    ///< Reference counter used by implicit sharing
-    Info                       m_info;        ///< Information about the font
+    Info                       m_info;        ///< Information about the font_name
     mutable PageTable          m_pages;       ///< Table containing the glyphs pages by character size
     mutable std::vector<Uint8> m_pixelBuffer; ///< Pixel buffer holding a glyph's pixels before being written to the texture
     #ifdef SFML_SYSTEM_ANDROID
@@ -370,16 +370,16 @@ private:
 /// \ingroup graphics
 ///
 /// Fonts can be loaded from a file, from memory or from a custom
-/// stream, and supports the most common types of fonts. See
+/// stream, and supports the most common types of font_list. See
 /// the loadFromFile function for the complete list of supported formats.
 ///
 /// Once it is loaded, a sf::Font instance provides three
-/// types of information about the font:
+/// types of information about the font_name:
 /// \li Global metrics, such as the line spacing
 /// \li Per-glyph metrics, such as bounding box or kerning
 /// \li Pixel representation of glyphs
 ///
-/// Fonts alone are not very useful: they hold the font data
+/// Fonts alone are not very useful: they hold the font_name data
 /// but cannot make anything useful of it. To do so you need to
 /// use the sf::Text class, which is able to properly output text
 /// with several options such as character size, style, color,
@@ -394,45 +394,45 @@ private:
 /// to the same sf::Font.
 ///
 /// It is important to note that the sf::Text instance doesn't
-/// copy the font that it uses, it only keeps a reference to it.
+/// copy the font_name that it uses, it only keeps a reference to it.
 /// Thus, a sf::Font must not be destructed while it is
 /// used by a sf::Text (i.e. never write a function that
 /// uses a local sf::Font instance for creating a text).
 ///
 /// Usage example:
 /// \code
-/// // Declare a new font
-/// sf::Font font;
+/// // Declare a new font_name
+/// sf::Font font_name;
 ///
 /// // Load it from a file
-/// if (!font.loadFromFile("arial.ttf"))
+/// if (!font_name.loadFromFile("arial.ttf"))
 /// {
 ///     // error...
 /// }
 ///
-/// // Create a text which uses our font
+/// // Create a text which uses our font_name
 /// sf::Text text1;
-/// text1.setFont(font);
+/// text1.setFont(font_name);
 /// text1.setCharacterSize(30);
 /// text1.setStyle(sf::Text::Regular);
 ///
-/// // Create another text using the same font, but with different parameters
+/// // Create another text using the same font_name, but with different parameters
 /// sf::Text text2;
-/// text2.setFont(font);
+/// text2.setFont(font_name);
 /// text2.setCharacterSize(50);
 /// text2.setStyle(sf::Text::Italic);
 /// \endcode
 ///
-/// Apart from loading font files, and passing them to instances
+/// Apart from loading font_name files, and passing them to instances
 /// of sf::Text, you should normally not have to deal directly
 /// with this class. However, it may be useful to access the
-/// font metrics or rasterized glyphs for advanced usage.
+/// font_name metrics or rasterized glyphs for advanced usage.
 ///
-/// Note that if the font is a bitmap font, it is not scalable,
+/// Note that if the font_name is a bitmap font_name, it is not scalable,
 /// thus not all requested sizes will be available to use. This
 /// needs to be taken into consideration when using sf::Text.
 /// If you need to display text of a certain size, make sure the
-/// corresponding bitmap font that supports that size is used.
+/// corresponding bitmap font_name that supports that size is used.
 ///
 /// \see sf::Text
 ///

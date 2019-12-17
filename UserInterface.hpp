@@ -4,135 +4,173 @@
 #include<iostream>
 #include<cstring>
 #include<fstream>
-struct UIData {
-  //////////////////////////////////////// Declarari variabile resurse ////////////////////////////////////////
-  struct{
-    std::ifstream fonts_in;
-    std::ifstream songs_in;
-  }files;
-  struct {
-    sf::RectangleShape font;
-    sf::RectangleShape font_size;
-    sf::RectangleShape input;
-    sf::RectangleShape output;
-    sf::RectangleShape song;
-    sf::RectangleShape volume;
-  } boxes;
-  struct {
-    sf::Color back;
-    sf::Color text;
-  } colors;
+struct Files {
+  std::ifstream fonts_in;
+  std::ifstream songs_in;
+};
+struct Boxes {
+  sf::RectangleShape font_name;
+  sf::RectangleShape font_size;
+  sf::RectangleShape input;
+  sf::RectangleShape output;
+  sf::RectangleShape song_name;
+  sf::RectangleShape song_volume;
+  sf::RectangleShape sfx_volume;
+};
+struct Colors {
+  sf::Color back;
+  sf::Color text;
+  sf::Color hover;
+  sf::Color muted;
+  sf::Color dark_color;
+  sf::Color light_color;
+  sf::Color settings_clicked;
 
-  //font-uri
-  struct {
-    sf::Font font;
-    bool applied = false;
-    char name[MAX_FONT_NAME];
-  } fonts[MAX_NR_FONTS];
-  //melodiile de fundal
-  struct {
-    sf::Music song;
-    bool playing = false;
-    char name[MAX_SONG_NAME];
-  } songs[MAX_SONGS];
-  //sunete
-  struct {
-    sf::Sound click;
-    sf::Sound error;
-    sf::Sound typing;
-  } sounds;
-  struct {
-    sf::SoundBuffer click;
-    sf::SoundBuffer error;
-    sf::SoundBuffer typing;
-  } sound_buffers;
+  sf::Color before_hover_settings=sf::Color::Transparent;
+  sf::Color before_hover_music=sf::Color::Transparent;
+  sf::Color before_hover_sfx=sf::Color::Transparent;
+  sf::Color before_hover_mode=sf::Color::Transparent;
 
-  struct {
-    sf::Sprite spr_delete;
-    sf::Sprite spr_equal;
-    sf::Sprite spr_left_font;
-    sf::Sprite spr_left_font_size;
-    sf::Sprite spr_left_song;
-    sf::Sprite spr_left_vol;
-    //sprite folosit pentru butonul de muzica
-    sf::Sprite spr_mode;
-    sf::Sprite spr_music;
-    //sprite folosit pentru butonul de setari
-    sf::Sprite spr_right_font;
-    sf::Sprite spr_right_font_size;
-    sf::Sprite spr_right_song;
-    sf::Sprite spr_right_vol;
-    sf::Sprite spr_settings;
-  } sprites;
-  struct {
-    sf::Text label_settings;
-    sf::Text label_font;
-    sf::Text label_font_size;
-    sf::Text label_song_name;
-    sf::Text label_volume;
+  sf::Color before_hover_left_music_volume=sf::Color::Transparent;
+  sf::Color before_hover_right_music_volume=sf::Color::Transparent;
+  sf::Color before_hover_left_sfx_volume=sf::Color::Transparent;
+  sf::Color before_hover_right_sfx_volume=sf::Color::Transparent;
+  sf::Color before_hover_left_song_name=sf::Color::Transparent;
+  sf::Color before_hover_right_song_name=sf::Color::Transparent;
+  sf::Color before_hover_left_font_name=sf::Color::Transparent;
+  sf::Color before_hover_right_font_name=sf::Color::Transparent;
+  sf::Color before_hover_left_font_size=sf::Color::Transparent;
+  sf::Color before_hover_right_font_size=sf::Color::Transparent;
+  sf::Color before_hover_delete=sf::Color::Transparent;
+  sf::Color before_hover_equal=sf::Color::Transparent;
+};
+struct FontList {
+  sf::Font font;
+  bool applied = false;
+  char name[MAX_FONT_NAME];
+};
+struct SongList {
+  sf::Music song;
+  bool playing = false;
+  char name[MAX_SONG_NAME];
+};
+struct Sounds {
+  sf::Sound click[MAX_CLICKS_STROKES];
+  sf::Sound error;
+  sf::Sound typing[MAX_CLICKS_STROKES];
+};
+struct SoundBuffers {
+  sf::SoundBuffer click;
+  sf::SoundBuffer error;
+  sf::SoundBuffer typing;
+};
 
-    sf::Text font_name;
-    sf::Text font_size;
-    sf::Text song_name;
-    sf::Text song_volume;
+struct Sprites {
+  sf::Sprite spr_delete;
+  sf::Sprite spr_equal;
 
-    sf::Text input;
-    sf::Text output;
+  sf::Sprite spr_mode;
+  sf::Sprite spr_music;
+  sf::Sprite spr_sfx;
+  sf::Sprite spr_settings;
 
-  } texts;
+  sf::Sprite spr_left_song_vol;
+  sf::Sprite spr_right_song_vol;
+  sf::Sprite spr_left_sfx_vol;
+  sf::Sprite spr_right_sfx_vol;
+  sf::Sprite spr_left_song_name;
+  sf::Sprite spr_right_song_name;
+  sf::Sprite spr_left_font_name;
+  sf::Sprite spr_right_font_name;
+  sf::Sprite spr_left_font_size;
+  sf::Sprite spr_right_font_size;
+};
 
-  //variabile ce vor avea rolul de intrerupatoare
-  //switch_dark_mode=false daca a fost apasat butonul de schimbare a interfatei la modul dark
-  bool switch_dark_mode = false;
-  //switch_music=false daca a fost apasat butonul de muzica pentru a inchide muzica
-  bool switch_music = true;
-  //switch_settings=true daca a fost apasat butonul de setari si va aparea interfata cu setari
-  bool switch_settings = false;
+struct SettingsTexts {
+  sf::Text label_settings;
+  sf::Text label_font_name;
+  sf::Text label_font_size;
+  sf::Text label_song_name;
+  sf::Text label_song_volume;
+  sf::Text label_sfx_volume;
 
-  char input[MAX_INPUT];
-  //variabila ce va tine valoarea volumului la care va fi setat initial muzica
-  int volume = 100;
+  sf::Text font_name;
+  sf::Text font_size;
+  sf::Text song_name;
+  sf::Text song_volume;
+  sf::Text sfx_volume;
+};
+
+struct Switches {
+  bool is_dark_mode = false;
+  bool is_music = true;
+  bool is_sfx = true;
+  bool is_settings = false;
+  bool requestAnswer = false;
+};
+struct Volumes {
+  int music = 100;
+  int music_settings = 100;
+  int sfx = 100;
+  int sfx_settings = 100;
+
+};
+struct BaseData {
+  Files files;
+  Boxes boxes;
+  Colors colors;
+  FontList font_list[MAX_NR_FONTS];
+  SongList song_list[MAX_NR_SONGS];
+  Sounds sounds;
+  SoundBuffers sound_buffers;
+  Sprites sprites;
+  SettingsTexts settings_texts;
+  Switches switches;
+  sf::Text input;
+  sf::Text output;
+  char input_text[MAX_INPUT];
+  char output_text[MAX_OUTPUT];
+  Volumes volumes;
   int number_of_fonts;
   int number_of_songs;
   int font_index = 0;
-  int font_size = 24;
   int song_index = 0;
-  //textura globala
+  int font_size = 24;
+  bool initial_setup=true;
   sf::Texture texture;
+  bool before_hover_color_capture=true;
+  bool entered=true;
 };
+void navigateSongVolume(BaseData &, bool);
+void setSongVolume(BaseData &);
+void navigateSFXVolume(BaseData &, bool);
+void setSFXVolume(BaseData &);
 
-void updateTextFontSize(UIData &);
-void updateTextFonts(UIData &);
-void updateTextColor(UIData &);
-void setTextPositions(UIData &);
-void setLabelTextPositions(UIData &ui_data);
+void navigateSongName(BaseData &, bool);
+void setSongToPlay(BaseData &);
 
-void loadResources(UIData &, bool &);
+void navigateTextFont(BaseData &, bool);
+void setTextFont(BaseData &);
 
-void setBoxesDetails(UIData &);
-void setBoxesFillColor(UIData &);
-void setBoxesOutlineColor(UIData &);
-void setBoxesOutlineThickness(UIData &);
-void setBoxesPositions(UIData &);
-void setBoxesSizes(UIData &);
+void navigateTextFontSize(BaseData &, bool);
+void setTextFontSize(BaseData &);
 
-void setSpritesDetails(UIData &);
-void setSpritesPositions(UIData &);
-void setSpritesScale(UIData &, float);
-void setSpritesTextures(UIData &);
+void loadAssets(BaseData &, bool &);
 
-void setupUI(UIData &);
-void drawUI(UIData &, sf::RenderWindow &);
-void updateSettingsView(UIData &);
-
-void changeMusicSprite(UIData &);
-void changeModeSprites(UIData &);
-void changeSong(UIData &, bool);
-void changeFont(UIData &, bool);
-void changeSize(UIData &, bool);
-void changeVolume(UIData &, bool);
+bool contains(sf::FloatRect, sf::Vector2i);
 void convertIToC(int, char *);
-bool contains(sf::FloatRect &, sf::Vector2i &);
 
-void setVolume(UIData&);
-void handleEvents(sf::RenderWindow&,sf::Event&,UIData&);
+void playClick(Sounds &);
+void playTyping(Sounds &);
+
+void drawStaticElements(BaseData &, sf::RenderWindow &);
+
+void setBoxesDetails(BaseData &);
+
+void updateBoxesAndTextsOutlineColor(BaseData &);
+void changeMode(BaseData &);
+void initialSetup(BaseData &);
+void setSpritesDetails(BaseData &);
+void setLabelsTextsPositions(BaseData &base_data);
+void updateSettingsView(BaseData &);
+void handleEvents(sf::RenderWindow &, sf::Event &, BaseData &);

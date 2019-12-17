@@ -98,8 +98,8 @@ public:
     /// This check is non-inclusive. If the point lies on the
     /// edge of the rectangle, this function will return false.
     ///
-    /// \param x X coordinate of the point to test
-    /// \param y Y coordinate of the point to test
+    /// \param x X coordinate of the point to before_hover_color_capture
+    /// \param y Y coordinate of the point to before_hover_color_capture
     ///
     /// \return True if the point is inside, false otherwise
     ///
@@ -114,7 +114,7 @@ public:
     /// This check is non-inclusive. If the point lies on the
     /// edge of the rectangle, this function will return false.
     ///
-    /// \param point Point to test
+    /// \param point Point to before_hover_color_capture
     ///
     /// \return True if the point is inside, false otherwise
     ///
@@ -126,7 +126,7 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Check the intersection between two rectangles
     ///
-    /// \param rectangle Rectangle to test
+    /// \param rectangle Rectangle to before_hover_color_capture
     ///
     /// \return True if rectangles overlap, false otherwise
     ///
@@ -141,7 +141,7 @@ public:
     /// This overload returns the overlapped rectangle in the
     /// \a intersection parameter.
     ///
-    /// \param rectangle    Rectangle to test
+    /// \param rectangle    Rectangle to before_hover_color_capture
     /// \param intersection Rectangle to be filled with the intersection
     ///
     /// \return True if rectangles overlap, false otherwise

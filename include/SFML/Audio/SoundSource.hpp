@@ -85,10 +85,10 @@ public:
     void setPitch(float pitch);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Set the volume of the sound
+    /// \brief Set the volume_music of the sound
     ///
-    /// The volume is a value between 0 (mute) and 100 (full volume).
-    /// The default value for the volume is 100.
+    /// The volume_music is a value between 0 (mute) and 100 (full volume_music).
+    /// The default value for the volume_music is 100.
     ///
     /// \param volume Volume of the sound
     ///
@@ -147,7 +147,7 @@ public:
     /// \brief Set the minimum distance of the sound
     ///
     /// The "minimum distance" of a sound is the maximum
-    /// distance at which it is heard at its maximum volume. Further
+    /// distance at which it is heard at its maximum volume_music. Further
     /// than the minimum distance, it will start to fade out according
     /// to its attenuation factor. A value of 0 ("inside the head
     /// of the listener") is an invalid value and is forbidden.
@@ -166,7 +166,7 @@ public:
     /// The attenuation is a multiplicative factor which makes
     /// the sound more or less loud according to its distance
     /// from the listener. An attenuation of 0 will produce a
-    /// non-attenuated sound, i.e. its volume will always be the same
+    /// non-attenuated sound, i.e. its volume_music will always be the same
     /// whether it is heard from near or from far. On the other hand,
     /// an attenuation value such as 100 will make the sound fade out
     /// very quickly as it gets further from the listener.
@@ -190,11 +190,11 @@ public:
     float getPitch() const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Get the volume of the sound
+    /// \brief Get the volume_music of the sound
     ///
     /// \return Volume of the sound, in the range [0, 100]
     ///
-    /// \see setVolume
+    /// \see setSongVolume
     ///
     ////////////////////////////////////////////////////////////
     float getVolume() const;
@@ -324,7 +324,7 @@ protected:
 /// that can live in the audio environment.
 ///
 /// It defines several properties for the sound: pitch,
-/// volume, position, attenuation, etc. All of them can be
+/// volume_music, position, attenuation, etc. All of them can be
 /// changed at any time with no impact on performances.
 ///
 /// \see sf::Sound, sf::SoundStream

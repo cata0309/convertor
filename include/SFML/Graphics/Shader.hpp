@@ -843,7 +843,7 @@ private:
 /// have to be subdivided in order to apply wave effects.
 /// Another bad example is a fragment shader with sf::Text: the texture
 /// of the text is not the actual text that you see on screen, it is
-/// a big texture containing all the characters of the font in an
+/// a big texture containing all the characters of the font_name in an
 /// arbitrary order; thus, texture lookups on pixels other than the
 /// current one may not give you the expected result.
 ///

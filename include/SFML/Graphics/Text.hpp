@@ -71,14 +71,14 @@ public:
     Text();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Construct the text from a string, font and size
+    /// \brief Construct the text from a string, font_name and size
     ///
-    /// Note that if the used font is a bitmap font, it is not
+    /// Note that if the used font_name is a bitmap font_name, it is not
     /// scalable, thus not all requested sizes will be available
     /// to use. This needs to be taken into consideration when
     /// setting the character size. If you need to display text
     /// of a certain size, make sure the corresponding bitmap
-    /// font that supports that size is used.
+    /// font_name that supports that size is used.
     ///
     /// \param string         Text assigned to the string
     /// \param font           Font used to draw the string
@@ -109,16 +109,16 @@ public:
     void setString(const String& string);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Set the text's font
+    /// \brief Set the text's font_name
     ///
-    /// The \a font argument refers to a font that must
+    /// The \a font_name argument refers to a font_name that must
     /// exist as long as the text uses it. Indeed, the text
-    /// doesn't store its own copy of the font, but rather keeps
+    /// doesn't store its own copy of the font_name, but rather keeps
     /// a pointer to the one that you passed to this function.
-    /// If the font is destroyed and the text tries to
+    /// If the font_name is destroyed and the text tries to
     /// use it, the behavior is undefined.
     ///
-    /// \param font New font
+    /// \param font New font_name
     ///
     /// \see getFont
     ///
@@ -130,12 +130,12 @@ public:
     ///
     /// The default size is 30.
     ///
-    /// Note that if the used font is a bitmap font, it is not
+    /// Note that if the used font_name is a bitmap font_name, it is not
     /// scalable, thus not all requested sizes will be available
     /// to use. This needs to be taken into consideration when
     /// setting the character size. If you need to display text
     /// of a certain size, make sure the corresponding bitmap
-    /// font that supports that size is used.
+    /// font_name that supports that size is used.
     ///
     /// \param size New character size, in pixels
     ///
@@ -147,7 +147,7 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Set the line spacing factor
     ///
-    /// The default spacing between lines is defined by the font.
+    /// The default spacing between lines is defined by the font_name.
     /// This method enables you to set a factor for the spacing
     /// between lines. By default the line spacing factor is 1.
     ///
@@ -161,10 +161,10 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Set the letter spacing factor
     ///
-    /// The default spacing between letters is defined by the font.
+    /// The default spacing between letters is defined by the font_name.
     /// This factor doesn't directly apply to the existing
     /// spacing between each character, it rather adds a fixed
-    /// space between them which is calculated from the font
+    /// space between them which is calculated from the font_name
     /// metrics and the character size.
     /// Note that factors below 1 (including negative numbers) bring
     /// characters closer to each other.
@@ -270,13 +270,13 @@ public:
     const String& getString() const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Get the text's font
+    /// \brief Get the text's font_name
     ///
-    /// If the text has no font attached, a NULL pointer is returned.
+    /// If the text has no font_name attached, a NULL pointer is returned.
     /// The returned pointer is const, which means that you
-    /// cannot modify the font when you get it from this function.
+    /// cannot modify the font_name when you get it from this function.
     ///
-    /// \return Pointer to the text's font
+    /// \return Pointer to the text's font_name
     ///
     /// \see setFont
     ///
@@ -448,7 +448,7 @@ private:
     mutable VertexArray m_outlineVertices;     ///< Vertex array containing the outline geometry
     mutable FloatRect   m_bounds;              ///< Bounding rectangle of the text (in local coordinates)
     mutable bool        m_geometryNeedUpdate;  ///< Does the geometry need to be recomputed?
-    mutable Uint64      m_fontTextureId;       ///< The font texture id
+    mutable Uint64      m_fontTextureId;       ///< The font_name texture id
 };
 
 } // namespace sf
@@ -466,8 +466,8 @@ private:
 ///
 /// It inherits all the functions from sf::Transformable:
 /// position, rotation, scale, origin. It also adds text-specific
-/// properties such as the font to use, the character size,
-/// the font style (bold, italic, underlined and strike through), the
+/// properties such as the font_name to use, the character size,
+/// the font_name style (bold, italic, underlined and strike through), the
 /// text color, the outline thickness, the outline color, the character
 /// spacing, the line spacing and the text to display of course.
 /// It also provides convenience functions to calculate the
@@ -475,7 +475,7 @@ private:
 /// of a given character.
 ///
 /// sf::Text works in combination with the sf::Font class, which
-/// loads and provides the glyphs (visual characters) of a given font.
+/// loads and provides the glyphs (visual characters) of a given font_name.
 ///
 /// The separation of sf::Font and sf::Text allows more flexibility
 /// and better performances: indeed a sf::Font is a heavy resource,
@@ -485,7 +485,7 @@ private:
 /// to display any text on a render target.
 ///
 /// It is important to note that the sf::Text instance doesn't
-/// copy the font that it uses, it only keeps a reference to it.
+/// copy the font_name that it uses, it only keeps a reference to it.
 /// Thus, a sf::Font must not be destructed while it is
 /// used by a sf::Text (i.e. never write a function that
 /// uses a local sf::Font instance for creating a text).
@@ -494,12 +494,12 @@ private:
 ///
 /// Usage example:
 /// \code
-/// // Declare and load a font
-/// sf::Font font;
-/// font.loadFromFile("arial.ttf");
+/// // Declare and load a font_name
+/// sf::Font font_name;
+/// font_name.loadFromFile("arial.ttf");
 ///
 /// // Create a text
-/// sf::Text text("hello", font);
+/// sf::Text text("hello", font_name);
 /// text.setCharacterSize(30);
 /// text.setStyle(sf::Text::Bold);
 /// text.setFillColor(sf::Color::Red);
