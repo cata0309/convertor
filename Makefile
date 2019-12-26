@@ -136,6 +136,33 @@ convertor/fast:
 	$(MAKE) -f CMakeFiles/convertor.dir/build.make CMakeFiles/convertor.dir/build
 .PHONY : convertor/fast
 
+Logics.o: Logics.cpp.o
+
+.PHONY : Logics.o
+
+# target to build an object file
+Logics.cpp.o:
+	$(MAKE) -f CMakeFiles/convertor.dir/build.make CMakeFiles/convertor.dir/Logics.cpp.o
+.PHONY : Logics.cpp.o
+
+Logics.i: Logics.cpp.i
+
+.PHONY : Logics.i
+
+# target to preprocess a source file
+Logics.cpp.i:
+	$(MAKE) -f CMakeFiles/convertor.dir/build.make CMakeFiles/convertor.dir/Logics.cpp.i
+.PHONY : Logics.cpp.i
+
+Logics.s: Logics.cpp.s
+
+.PHONY : Logics.s
+
+# target to generate assembly for a file
+Logics.cpp.s:
+	$(MAKE) -f CMakeFiles/convertor.dir/build.make CMakeFiles/convertor.dir/Logics.cpp.s
+.PHONY : Logics.cpp.s
+
 UserInterface.o: UserInterface.cpp.o
 
 .PHONY : UserInterface.o
@@ -200,6 +227,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... play"
 	@echo "... convertor"
+	@echo "... Logics.o"
+	@echo "... Logics.i"
+	@echo "... Logics.s"
 	@echo "... UserInterface.o"
 	@echo "... UserInterface.i"
 	@echo "... UserInterface.s"

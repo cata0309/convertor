@@ -18,6 +18,6 @@ endif()
 add_custom_target(
 play
 COMMAND make && ./convertor)
-add_executable(convertor main.cpp Defines.hpp UserInterface.cpp UserInterface.hpp)
+add_executable(convertor main.cpp Defines.hpp UserInterface.cpp UserInterface.hpp Logics.cpp Logics.hpp)
 target_link_libraries (convertor sfml-graphics sfml-window sfml-system sfml-audio)
 
