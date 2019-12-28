@@ -10,14 +10,14 @@ include_directories(SFML_INCLUDE_DIR)
 
 find_package(SFML 2.5.1 COMPONENTS system window graphics network audio)
 
-if(SFML_FOUND)
-    message(STATUS SFML_INCLUDE_DIR: )
-    message(STATUS SFML_LIBRARIES: )
-    message(STATUS SFML_VERSION: )
-endif()
+if (SFML_FOUND)
+    message(STATUS SFML_INCLUDE_DIR: ${SFML_INCLUDE_DIR})
+    message(STATUS SFML_LIBRARIES: ${SFML_LIBRARY_DIR})
+    message(STATUS SFML_VERSION: ${SFML_VERSION})
+endif ()
 add_custom_target(
-play
-COMMAND make && ./convertor)
-add_executable(convertor main.cpp Defines.hpp UserInterface.cpp UserInterface.hpp Logics.cpp Logics.hpp)
-target_link_libraries (convertor sfml-graphics sfml-window sfml-system sfml-audio)
+        play
+        COMMAND make && convertor)
+add_executable(convertor src/main.cpp src/Defines.hpp src/UserInterface.cpp src/UserInterface.hpp src/Logics.cpp src/Logics.hpp src/InputForm.cpp src/InputForm.hpp)
+target_link_libraries(convertor sfml-graphics sfml-window sfml-system sfml-audio)
 

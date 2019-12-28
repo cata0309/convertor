@@ -213,6 +213,12 @@ CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 SFML_DOC_DIR:PATH=SFML_DOC_DIR-NOTFOUND
 
 //Value Computed by CMake
+__Others__/convertor_BINARY_DIR:STATIC=/home/rustyboy/CLionProjects/convertor
+
+//Value Computed by CMake
+__Others__/convertor_SOURCE_DIR:STATIC=/home/rustyboy/CLionProjects/convertor
+
+//Value Computed by CMake
 convertor_BINARY_DIR:STATIC=/home/rustyboy/CLionProjects/convertor
 
 //Value Computed by CMake

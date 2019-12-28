@@ -1,8 +1,0 @@
-PENTRU INPUT NR: 0: Notatia postfixata in reverse este corect scrisa si rezultatul final este11
-PENTRU INPUT NR: 1: Notatia postfixata in reverse este corect scrisa si rezultatul final este34
-PENTRU INPUT NR: 2: Notatia postfixata in reverse este corect scrisa si rezultatul final este20
-PENTRU INPUT NR: 3: Notatia postfixata in reverse este corect scrisa si rezultatul final este20
-PENTRU INPUT NR: 4: Intrarea este incorecta ! Greseala
-PENTRU INPUT NR: 5: Intrarea este incorecta ! Greseala
-PENTRU INPUT NR: 6: Intrarea este incorecta ! Greseala
-PENTRU INPUT NR: 7: Intrarea este incorecta ! Greseala

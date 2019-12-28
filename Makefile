@@ -136,86 +136,113 @@ convertor/fast:
 	$(MAKE) -f CMakeFiles/convertor.dir/build.make CMakeFiles/convertor.dir/build
 .PHONY : convertor/fast
 
-Logics.o: Logics.cpp.o
+src/InputForm.o: src/InputForm.cpp.o
 
-.PHONY : Logics.o
-
-# target to build an object file
-Logics.cpp.o:
-	$(MAKE) -f CMakeFiles/convertor.dir/build.make CMakeFiles/convertor.dir/Logics.cpp.o
-.PHONY : Logics.cpp.o
-
-Logics.i: Logics.cpp.i
-
-.PHONY : Logics.i
-
-# target to preprocess a source file
-Logics.cpp.i:
-	$(MAKE) -f CMakeFiles/convertor.dir/build.make CMakeFiles/convertor.dir/Logics.cpp.i
-.PHONY : Logics.cpp.i
-
-Logics.s: Logics.cpp.s
-
-.PHONY : Logics.s
-
-# target to generate assembly for a file
-Logics.cpp.s:
-	$(MAKE) -f CMakeFiles/convertor.dir/build.make CMakeFiles/convertor.dir/Logics.cpp.s
-.PHONY : Logics.cpp.s
-
-UserInterface.o: UserInterface.cpp.o
-
-.PHONY : UserInterface.o
+.PHONY : src/InputForm.o
 
 # target to build an object file
-UserInterface.cpp.o:
-	$(MAKE) -f CMakeFiles/convertor.dir/build.make CMakeFiles/convertor.dir/UserInterface.cpp.o
-.PHONY : UserInterface.cpp.o
+src/InputForm.cpp.o:
+	$(MAKE) -f CMakeFiles/convertor.dir/build.make CMakeFiles/convertor.dir/src/InputForm.cpp.o
+.PHONY : src/InputForm.cpp.o
 
-UserInterface.i: UserInterface.cpp.i
+src/InputForm.i: src/InputForm.cpp.i
 
-.PHONY : UserInterface.i
+.PHONY : src/InputForm.i
 
 # target to preprocess a source file
-UserInterface.cpp.i:
-	$(MAKE) -f CMakeFiles/convertor.dir/build.make CMakeFiles/convertor.dir/UserInterface.cpp.i
-.PHONY : UserInterface.cpp.i
+src/InputForm.cpp.i:
+	$(MAKE) -f CMakeFiles/convertor.dir/build.make CMakeFiles/convertor.dir/src/InputForm.cpp.i
+.PHONY : src/InputForm.cpp.i
 
-UserInterface.s: UserInterface.cpp.s
+src/InputForm.s: src/InputForm.cpp.s
 
-.PHONY : UserInterface.s
+.PHONY : src/InputForm.s
 
 # target to generate assembly for a file
-UserInterface.cpp.s:
-	$(MAKE) -f CMakeFiles/convertor.dir/build.make CMakeFiles/convertor.dir/UserInterface.cpp.s
-.PHONY : UserInterface.cpp.s
+src/InputForm.cpp.s:
+	$(MAKE) -f CMakeFiles/convertor.dir/build.make CMakeFiles/convertor.dir/src/InputForm.cpp.s
+.PHONY : src/InputForm.cpp.s
 
-main.o: main.cpp.o
+src/Logics.o: src/Logics.cpp.o
 
-.PHONY : main.o
+.PHONY : src/Logics.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/convertor.dir/build.make CMakeFiles/convertor.dir/main.cpp.o
-.PHONY : main.cpp.o
+src/Logics.cpp.o:
+	$(MAKE) -f CMakeFiles/convertor.dir/build.make CMakeFiles/convertor.dir/src/Logics.cpp.o
+.PHONY : src/Logics.cpp.o
 
-main.i: main.cpp.i
+src/Logics.i: src/Logics.cpp.i
 
-.PHONY : main.i
+.PHONY : src/Logics.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/convertor.dir/build.make CMakeFiles/convertor.dir/main.cpp.i
-.PHONY : main.cpp.i
+src/Logics.cpp.i:
+	$(MAKE) -f CMakeFiles/convertor.dir/build.make CMakeFiles/convertor.dir/src/Logics.cpp.i
+.PHONY : src/Logics.cpp.i
 
-main.s: main.cpp.s
+src/Logics.s: src/Logics.cpp.s
 
-.PHONY : main.s
+.PHONY : src/Logics.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/convertor.dir/build.make CMakeFiles/convertor.dir/main.cpp.s
-.PHONY : main.cpp.s
+src/Logics.cpp.s:
+	$(MAKE) -f CMakeFiles/convertor.dir/build.make CMakeFiles/convertor.dir/src/Logics.cpp.s
+.PHONY : src/Logics.cpp.s
+
+src/UserInterface.o: src/UserInterface.cpp.o
+
+.PHONY : src/UserInterface.o
+
+# target to build an object file
+src/UserInterface.cpp.o:
+	$(MAKE) -f CMakeFiles/convertor.dir/build.make CMakeFiles/convertor.dir/src/UserInterface.cpp.o
+.PHONY : src/UserInterface.cpp.o
+
+src/UserInterface.i: src/UserInterface.cpp.i
+
+.PHONY : src/UserInterface.i
+
+# target to preprocess a source file
+src/UserInterface.cpp.i:
+	$(MAKE) -f CMakeFiles/convertor.dir/build.make CMakeFiles/convertor.dir/src/UserInterface.cpp.i
+.PHONY : src/UserInterface.cpp.i
+
+src/UserInterface.s: src/UserInterface.cpp.s
+
+.PHONY : src/UserInterface.s
+
+# target to generate assembly for a file
+src/UserInterface.cpp.s:
+	$(MAKE) -f CMakeFiles/convertor.dir/build.make CMakeFiles/convertor.dir/src/UserInterface.cpp.s
+.PHONY : src/UserInterface.cpp.s
+
+src/main.o: src/main.cpp.o
+
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) -f CMakeFiles/convertor.dir/build.make CMakeFiles/convertor.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) -f CMakeFiles/convertor.dir/build.make CMakeFiles/convertor.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) -f CMakeFiles/convertor.dir/build.make CMakeFiles/convertor.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -227,15 +254,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... play"
 	@echo "... convertor"
-	@echo "... Logics.o"
-	@echo "... Logics.i"
-	@echo "... Logics.s"
-	@echo "... UserInterface.o"
-	@echo "... UserInterface.i"
-	@echo "... UserInterface.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... src/InputForm.o"
+	@echo "... src/InputForm.i"
+	@echo "... src/InputForm.s"
+	@echo "... src/Logics.o"
+	@echo "... src/Logics.i"
+	@echo "... src/Logics.s"
+	@echo "... src/UserInterface.o"
+	@echo "... src/UserInterface.i"
+	@echo "... src/UserInterface.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 

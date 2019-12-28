@@ -82,22 +82,28 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/rustyboy/CLionProjects/convertor/Defines.hpp">
+		<Unit filename="/home/rustyboy/CLionProjects/convertor/src/Defines.hpp">
 			<Option target="convertor"/>
 		</Unit>
-		<Unit filename="/home/rustyboy/CLionProjects/convertor/Logics.cpp">
+		<Unit filename="/home/rustyboy/CLionProjects/convertor/src/InputForm.cpp">
 			<Option target="convertor"/>
 		</Unit>
-		<Unit filename="/home/rustyboy/CLionProjects/convertor/Logics.hpp">
+		<Unit filename="/home/rustyboy/CLionProjects/convertor/src/InputForm.hpp">
 			<Option target="convertor"/>
 		</Unit>
-		<Unit filename="/home/rustyboy/CLionProjects/convertor/UserInterface.cpp">
+		<Unit filename="/home/rustyboy/CLionProjects/convertor/src/Logics.cpp">
 			<Option target="convertor"/>
 		</Unit>
-		<Unit filename="/home/rustyboy/CLionProjects/convertor/UserInterface.hpp">
+		<Unit filename="/home/rustyboy/CLionProjects/convertor/src/Logics.hpp">
 			<Option target="convertor"/>
 		</Unit>
-		<Unit filename="/home/rustyboy/CLionProjects/convertor/main.cpp">
+		<Unit filename="/home/rustyboy/CLionProjects/convertor/src/UserInterface.cpp">
+			<Option target="convertor"/>
+		</Unit>
+		<Unit filename="/home/rustyboy/CLionProjects/convertor/src/UserInterface.hpp">
+			<Option target="convertor"/>
+		</Unit>
+		<Unit filename="/home/rustyboy/CLionProjects/convertor/src/main.cpp">
 			<Option target="convertor"/>
 		</Unit>
 		<Unit filename="/home/rustyboy/CLionProjects/convertor/CMakeLists.txt">
