@@ -1,13 +1,14 @@
-#define WIDTH 960
-#define HEIGHT 720
+#ifndef CONVERTOR_SRC_DEFINES_HPP_
+#define CONVERTOR_SRC_DEFINES_HPP_
 
-//#define WIDTH 1024
-//#define HEIGHT 768
+//#define WIDTH 960
+//#define HEIGHT 720
+
+#define WIDTH 1024
+#define HEIGHT 768
 
 //#define WIDTH 1280
 //#define HEIGHT 960
-
-
 #define TITLE "Calculator interactiv"
 
 #define MAX_NR_FONTS 10
@@ -15,14 +16,12 @@
 #define MAX_SONG_NAME 20
 #define MAX_FONT_NAME 30
 #define MAX_PATH 70
-#define MAX_CLICKS_STROKES 8
-
+#define MAX_CLICKS_STROKES 10
+#define MAX_NR_THEMES 10
 #define IMG_REAL 96
 #define IMG_SCALED 48
 #define X_TIMES 0.5
 
-#define MAX_INPUT 1000
-#define MAX_OUTPUT 100
 
 #define ERROR "assets/sounds/error.wav"
 #define TYPE "assets/sounds/stroke.wav"
@@ -35,3 +34,4 @@
 
 #define MIN_DIM_FONT 20
 #define MAX_DIM_FONT 27
+#endif //CONVERTOR_SRC_DEFINES_HPP_
