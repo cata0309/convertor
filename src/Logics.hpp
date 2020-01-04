@@ -8,7 +8,7 @@
 //############################################### Defines for logics ###################################################
 
 //MAX_ENTRIES = the maximum of definitions from the dictionary file
-#define MAX_ENTRIES 50
+#define MAX_ENTRIES 55
 
 //MAX_KEY_DIM = the maximum length of the word that represents an entry in the dictionary
 #define MAX_KEY_DIM 15
@@ -26,7 +26,7 @@
 //represent the same number
 //example `letters[]="fifty"` and `digits=50'
 struct Aliases {
-  char letters[MAX_KEY_DIM];
+  std::string letters;
   int digits;
 };
 
@@ -128,10 +128,10 @@ int priorities(char symbol);
 
 //`calculateFinalResult()` function calculates the final result from a post fixated notation array and changes the
 //status of the bool variable from `true` to `false` if it didn't succeeded
-void calculateFinalResult(bool &, double &, int *, int);
+void calculateFinalResult(bool &, double &, double *, int, bool expression);
 
 //`executeOperation()` function takes three arguments, left operand, the operation and the right operand
-double executeOperation(double left, double op, double right);
+double executeOperation(double left, double op, double right, bool expression);
 
 //`isNumberStackEmpty()` function helps at checking if the stack is empty or not
 bool isNumberStackEmpty(LLin *stack_queue);

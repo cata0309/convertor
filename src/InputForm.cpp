@@ -26,7 +26,7 @@ void setupTextBox(InputForm &input_form,
   input_form.text.setCharacterSize(font_size);
   input_form.text.setFillColor(foreground);
   input_form.text.setString(input_form.input);
-  input_form.text.setPosition(position.x,position.y+3);
+  input_form.text.setPosition(position.x + 20, position.y + 3);
 
 }
 
@@ -37,35 +37,26 @@ void deleteKey(InputForm &input_form) {
       input_form.input.erase(input_form.input.getSize() - 1, 1);
       if (input_form.start_index > 0) {
         input_form.start_index--;
-      }
-      if (input_form.start_index==0 && input_form.ruler > 0) {
+      } else if (input_form.start_index==0 && input_form.ruler > 0) {
         input_form.ruler--;
       }
     } else if (input_form.insert_position!=-input_form.input.getSize()) {
       if (input_form.start_index > 0)
         input_form.start_index--;
-      if (input_form.start_index==0 && input_form.ruler > 0) {
+      else if (input_form.start_index==0 && input_form.ruler > 0) {
         input_form.ruler--;
       }
       input_form.input.erase(input_form.input.getSize() + input_form.insert_position - 1, 1);
 
     }
+
   }
 }
 void handleKeyEvent(InputForm &input_form, char c) {
-  switch (int(c)) {
-    case 32:std::cout << "spacebar\n";
-      break;
-    case 13:std::cout << "enter\n";
-      break;
-    case 8:std::cout << "backspace\n";
-      deleteKey(input_form);
-      break;
-    default:std::cout << c << "\n";
-      break;
-  }
 
-  if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') ||
+  if (int(c)==8) {
+    deleteKey(input_form);
+  } else if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') ||
       (c >= '0' && c <= '9') || strchr("?.,()+-*/[]{}", c) || int(c)==32) {
     char aux[2];
     aux[0] = c;
@@ -74,6 +65,7 @@ void handleKeyEvent(InputForm &input_form, char c) {
     input_form.ruler++;
     if (input_form.ruler==input_form.max_chars_view)
       input_form.start_index++, input_form.ruler--;
+
   }
 
 }

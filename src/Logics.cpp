@@ -12,9 +12,7 @@ void convertToLowerCase(char *input) {
 
 int getValue(Aliases *aliases, int dimension, char *key) {
   for (int i = 0; i < dimension; ++i) {
-    std::cout << "xxxi:" << i << "aliases: " << aliases[i].letters << " digits:" << aliases[i].digits << "\n";
-    if (strcmp(aliases[i].letters, key)==0) {
-      std::cout << "***i:" << i << "aliases: " << aliases[i].letters << " key:" << key << "\n";
+    if (strcmp(aliases[i].letters.c_str(), key)==0) {
       return aliases[i].digits;
     }
   }
@@ -93,7 +91,7 @@ inline bool isQueueEmpty(ElQueue *head) {
 
 //################################ Priority, checking in fixated, translator, conversions ##############################
 
-void infixatedInPlaceTranslator(char *value, int *array, int &dimension) {
+void infixatedInPlaceTranslator(char *value, double *array, int &dimension) {
   //the separation of the expression into numbers and symbols, all of them are C type strings with a size of at least 1
   // unit, they are stores in an array of C type strings.
   char infix[MAX_WORDS][MAX_KEY_DIM];
@@ -212,7 +210,11 @@ int priorities(char symbol) {
 
 //###################################### Stack(integers), operations, calculating final result #########################
 
-void calculateFinalResult(bool &valid_entry, double &final_result, int *final_translation, int final_dimension) {
+void calculateFinalResult(bool &valid_entry,
+                          double &final_result,
+                          double *final_translation,
+                          int final_dimension,
+                          bool expression) {
   if (final_dimension==0) {
     valid_entry = false;
     return;
@@ -240,17 +242,15 @@ void calculateFinalResult(bool &valid_entry, double &final_result, int *final_tr
       double stg = topNumberStack(operations_stack);
       popNumberStack(operations_stack);
 
-      if (x==-7 && drp==0) {
-        valid_entry = false;
-        return;
+      if (x==-6) {
+        if ((expression && drp==0) || (!expression && stg==0)) {
+          valid_entry = false;
+          return;
+        }
       }
-
-      if (drp==0 && x==-6) {
-        valid_entry = false;
-        return;
-      }
-      double val = executeOperation(stg, x, drp);
+      double val = executeOperation(stg, x, drp, expression);
       pushNumberStack(operations_stack, val);
+
     }
 
   }
@@ -264,12 +264,18 @@ void calculateFinalResult(bool &valid_entry, double &final_result, int *final_tr
   final_result = final_value;
 }
 
-double executeOperation(double left, double op, double right) {
+double executeOperation(double left, double op, double right, bool expression) {
   switch (int(op)) {
     case -3:return (left + right);
-    case -4:return (left - right);
+    case -4:
+      if (expression)
+        return (left - right);
+      return (right - left);
     case -5:return (left*right);
-    default:return (left/right);
+    default:
+      if (expression)
+        return (left/right);
+      return (right/left);
   }
 }
 
@@ -316,14 +322,9 @@ void processingInput(char *input, bool &success, double &result, Aliases *aliase
       success = false;
       return;
     }
-    std::cout << "22222222222222222222222222222222222222\n";
-    for (int i = 0; i < dimension; ++i) {
-      std::cout << "xxxi:" << i << "aliases: " << aliases[i].letters << " digits:" << aliases[i].digits << "\n";
-
-    }
     p = strtok(nullptr, " ?");
   }
-  int postfix_array[MAX_WORDS];
+  double postfix_array[MAX_WORDS];
 
   int post_numbers = 0;
 
@@ -333,12 +334,26 @@ void processingInput(char *input, bool &success, double &result, Aliases *aliase
   int number = 0;
   bool forming_number = false;
   int predecessor = -10;
+  bool only_expression = true;
+  bool one_expression = false;
   for (int i = nr_words - 1; i >= 0; --i) {
     if (onlyDigits(words[i])) {
+      only_expression = false;
       postfix_array[post_numbers++] = atoi(words[i]);
     } else if (isInfixatedNotation(words[i])) {
-      infixatedInPlaceTranslator(words[i], postfix_array, post_numbers);
+      one_expression = true;
+      double auxiliar[MAX_WORDS];
+      int dim_aux = 0;
+      infixatedInPlaceTranslator(words[i], auxiliar, dim_aux);
+      double res = 0;
+      calculateFinalResult(success, res, auxiliar, dim_aux, true);
+
+      if (success) {
+        postfix_array[post_numbers++] = res;
+      }
+
     } else {
+      only_expression = false;
       int digit_binding = getValue(aliases, dimension, words[i]);
 
       if (digit_binding >= 0) {
@@ -370,10 +385,13 @@ void processingInput(char *input, bool &success, double &result, Aliases *aliase
       }
     }
   }
-  for (int index = 0; index < post_numbers; ++index) {
-    std::cout << postfix_array[index] << ' ';
+  if (!only_expression)
+    calculateFinalResult(success, result, postfix_array, post_numbers, false);
+  else {
+    if (one_expression) {
+      result = postfix_array[0];
+    }
   }
-  calculateFinalResult(success, result, postfix_array, post_numbers);
 }
 
 void pushNumberStack(LLin *&stack, double element) {

@@ -1,11 +1,6 @@
 #include "UserInterface.hpp"
-
+#include<sstream>
 void requestOutput(BaseData &base_data) {
-  std::cout<<"333333333333333333333333333333333333333\n";
-  for (int i = 0; i < base_data.dimension; ++i) {
-    std::cout<<"xxxi:"<<i<<"aliases: "<<base_data.aliases[i].letters<<" digits:"<<base_data.aliases[i].digits<<"\n";
-
-  }
   bool success = true;
   double result = 0;
   std::string intermediate = base_data.input_form.input.toAnsiString();
@@ -19,16 +14,19 @@ void requestOutput(BaseData &base_data) {
   }
 
   if (success) {
-    base_data.output_string = std::to_string(result);
+    std::ostringstream strs;
+    strs << result;
+    base_data.output_string = strs.str();
+
+
+//base_data.output_string = std::to_string(result);
   } else {
     base_data.output_string = "WRONG INPUT !";
   }
   base_data.output.setString(base_data.output_string);
-  std::cout<<"4444444444444444444444444444444444444444444\n";
-  for (int i = 0; i < base_data.dimension; ++i) {
-    std::cout<<"xxxi:"<<i<<"aliases: "<<base_data.aliases[i].letters<<" digits:"<<base_data.aliases[i].digits<<"\n";
+  base_data.output.setPosition((WIDTH - 4*IMG_SCALED - 5*THICKNESS - base_data.output.getLocalBounds().width)/2,
+                               4.25*IMG_SCALED - base_data.font_size - THICKNESS);
 
-  }
 }
 
 void setSpritesDetails(BaseData &base_data) {
@@ -51,7 +49,7 @@ void setSpritesDetails(BaseData &base_data) {
   base_data.sprites.spr_settings.setTexture(base_data.texture);
   base_data.sprites.spr_clear.setTexture(base_data.texture);
   base_data.sprites.spr_history.setTexture(base_data.texture);
-
+  base_data.sprites.spr_themes.setTexture(base_data.texture);
 
   //positions
   base_data.sprites.spr_settings.setPosition(WIDTH - (PADDING + IMG_SCALED), PADDING);
@@ -59,7 +57,7 @@ void setSpritesDetails(BaseData &base_data) {
   base_data.sprites.spr_sfx.setPosition(WIDTH - 3*(PADDING + IMG_SCALED), PADDING);
   base_data.sprites.spr_mode.setPosition(WIDTH - 4*(PADDING + IMG_SCALED), PADDING);
   base_data.sprites.spr_history.setPosition(WIDTH - 5*(PADDING + IMG_SCALED), PADDING);
-
+  base_data.sprites.spr_themes.setPosition(WIDTH - 6*(PADDING + IMG_SCALED), PADDING);
   base_data.sprites.spr_equal.setPosition(WIDTH - (PADDING + IMG_SCALED), 2*IMG_SCALED + THICKNESS + 2);
   base_data.sprites.spr_delete.setPosition(WIDTH - 2*(PADDING + IMG_SCALED), 2*IMG_SCALED + THICKNESS + 2);
   base_data.sprites.spr_clear.setPosition(WIDTH - 3*(PADDING + IMG_SCALED), 2*IMG_SCALED + THICKNESS + 2);
@@ -119,6 +117,7 @@ void setSpritesDetails(BaseData &base_data) {
   base_data.sprites.spr_settings.setTextureRect(sf::IntRect(0, 480, IMG_REAL, IMG_REAL));
   base_data.sprites.spr_clear.setTextureRect(sf::IntRect(0, 768, IMG_REAL, IMG_REAL));
   base_data.sprites.spr_history.setTextureRect(sf::IntRect(0, 864, IMG_REAL, IMG_REAL));
+  base_data.sprites.spr_themes.setTextureRect(sf::IntRect(0, 960, IMG_REAL, IMG_REAL));
 //scaling
 
   base_data.sprites.spr_delete.scale(sf::Vector2f(X_TIMES, X_TIMES));
@@ -139,6 +138,7 @@ void setSpritesDetails(BaseData &base_data) {
   base_data.sprites.spr_settings.scale(sf::Vector2f(X_TIMES, X_TIMES));
   base_data.sprites.spr_clear.scale(sf::Vector2f(X_TIMES, X_TIMES));
   base_data.sprites.spr_history.scale(sf::Vector2f(X_TIMES, X_TIMES));
+  base_data.sprites.spr_themes.scale(sf::Vector2f(X_TIMES, X_TIMES));
 }
 void setLabelsTextsPositions(BaseData &base_data) {
   float vertical_pos = (HEIGHT - 10*IMG_SCALED - 5*VERTICAL_PADDING)/2.f + 4;
@@ -198,12 +198,13 @@ void updateSettingsView(BaseData &base_data) {
 }
 
 void initialSetup(BaseData &base_data) {
-  setLinesDetails(base_data);
   setBoxesDetails(base_data);
   setSpritesDetails(base_data);
   setTextFont(base_data);
   setSFXVolume(base_data);
+  setSFXVolumeSlideDim(base_data);
   setSongVolume(base_data);
+  setSongVolumeSlideDim(base_data);
   setTextFontSize(base_data);
   setSongToPlay(base_data);
   base_data.initial_setup = false;
@@ -213,13 +214,15 @@ void initialSetup(BaseData &base_data) {
   base_data.settings_texts.label_sfx_volume.setString("SFX VOLUME:");
   base_data.settings_texts.label_settings.setString("SETTINGS");
   base_data.settings_texts.label_font_size.setString("FONT SIZE:");
-  base_data.colors.hover = sf::Color(123, 123, 123);
-  base_data.colors.muted = sf::Color::Red;
-  base_data.colors.dark_color = sf::Color::Black;
-  base_data.colors.light_color = sf::Color::White;
-  base_data.colors.settings_clicked = sf::Color::Green;
-  base_data.colors.text = base_data.colors.dark_color;
-  base_data.colors.back = base_data.colors.light_color;
+
+  base_data.settings_texts.font_size.setOutlineThickness(THICKNESS - 1);
+  base_data.settings_texts.sfx_volume.setOutlineThickness(THICKNESS - 1);
+  base_data.settings_texts.song_volume.setOutlineThickness(THICKNESS - 1);
+  setTheme(base_data);
+  base_data.output_line.setSize(sf::Vector2f((WIDTH - 5*IMG_SCALED - 5*THICKNESS), 2));
+  base_data.output_line.setOutlineThickness(0);
+  base_data.output_line.setPosition(IMG_SCALED, 4.25*IMG_SCALED + THICKNESS);
+
   updateSettingsView(base_data);
   changeMode(base_data);
 
@@ -228,16 +231,16 @@ void initialSetup(BaseData &base_data) {
   setupTextBox(base_data.input_form, box_size, position, base_data.font_list[base_data.font_index].font,
                sf::Color::Transparent, base_data.colors.text, THICKNESS_FORM, MAX_CHARS_VIEW, base_data.font_size);
 
-//  base_data.output.setFillColor(sf::Color::Black);
-  base_data.output.setPosition(30, 40);
 }
 
 void changeMode(BaseData &base_data) {
 
   base_data.colors.back =
-      (base_data.switches.is_dark_mode) ? base_data.colors.dark_color : base_data.colors.light_color;
+      (base_data.switches.is_dark_mode) ? base_data.colors.default_text_color
+                                        : base_data.colors.default_background_color;
   base_data.colors.text =
-      (base_data.switches.is_dark_mode) ? base_data.colors.light_color : base_data.colors.dark_color;
+      (base_data.switches.is_dark_mode) ? base_data.colors.default_background_color
+                                        : base_data.colors.default_text_color;
   base_data.sprites.spr_delete.setColor(base_data.colors.text);
   base_data.sprites.spr_equal.setColor(base_data.colors.text);
   base_data.sprites.spr_left_song_vol.setColor(base_data.colors.text);
@@ -251,14 +254,18 @@ void changeMode(BaseData &base_data) {
   base_data.sprites.spr_left_font_size.setColor(base_data.colors.text);
   base_data.sprites.spr_right_font_size.setColor(base_data.colors.text);
   base_data.sprites.spr_history.setColor(base_data.colors.text);
+  base_data.sprites.spr_themes.setColor(base_data.colors.text);
   base_data.sprites.spr_clear.setColor(base_data.colors.text);
+
+  base_data.boxes.song_volume_visual.setFillColor(base_data.colors.text);
+  base_data.boxes.sfx_volume_visual.setFillColor(base_data.colors.text);
+  base_data.boxes.font_size_visual.setFillColor(base_data.colors.text);
 
   base_data.input_form.text.setFillColor(base_data.colors.text);
   base_data.input_form.back_box.setOutlineColor(base_data.colors.text);
-  // base_data.input_form.back_box.setFillColor(base_data.colors.back);
+  base_data.output.setFillColor(base_data.colors.text);
 
-  base_data.lines.input.setFillColor(base_data.colors.text);
-  base_data.lines.output.setFillColor(base_data.colors.text);
+  base_data.output_line.setFillColor(base_data.colors.text);
 
   if (base_data.switches.is_music)
     base_data.sprites.spr_music.setColor(base_data.colors.text);
@@ -296,6 +303,7 @@ void handleEvents(sf::RenderWindow &window, sf::Event &event, BaseData &base_dat
 
             if (base_data.input_form.ruler==base_data.input_form.max_chars_view)
               base_data.input_form.start_index++, base_data.input_form.ruler--;
+
           }
         } else if (event.key.code==sf::Keyboard::Left) {
           playTyping(base_data.sounds);
@@ -305,6 +313,7 @@ void handleEvents(sf::RenderWindow &window, sf::Event &event, BaseData &base_dat
 
             if (base_data.input_form.ruler==-1 && base_data.input_form.start_index > 0)
               base_data.input_form.start_index--, base_data.input_form.ruler++;
+
           }
 
         }
@@ -315,10 +324,14 @@ void handleEvents(sf::RenderWindow &window, sf::Event &event, BaseData &base_dat
       char c = static_cast<char>(event.text.unicode);
       playTyping(base_data.sounds);
       //clears output area
-      base_data.switches.requestAnswer = false;
-      base_data.output_string.clear();
-      ///
-      handleKeyEvent(base_data.input_form, c);
+      if (int(c==13)) {
+        base_data.switches.requestAnswer = true;
+        requestOutput(base_data);
+      } else {
+        base_data.switches.requestAnswer = false;
+        resetOutput(base_data);
+        handleKeyEvent(base_data.input_form, c);
+      }
     }
     sf::Vector2i mouse = sf::Mouse::getPosition(window);
 
@@ -344,6 +357,7 @@ void handleEvents(sf::RenderWindow &window, sf::Event &event, BaseData &base_dat
           }
           base_data.volumes.music = volume_test;
           setSongVolume(base_data);
+
         }
       }
       //////////////////////////////////////// SFX volume box interaction ////////////////////////////////////////
@@ -370,6 +384,7 @@ void handleEvents(sf::RenderWindow &window, sf::Event &event, BaseData &base_dat
         int font_size_test = int((mouse.x - base_data.boxes.font_size.getPosition().x)/step) + 20;
         if (font_size_test >= MIN_DIM_FONT && font_size_test <= MAX_DIM_FONT) {
           base_data.font_size = font_size_test;
+
           setTextFontSize(base_data);
         }
       }
@@ -408,6 +423,7 @@ void handleEvents(sf::RenderWindow &window, sf::Event &event, BaseData &base_dat
       if (event.type==sf::Event::MouseButtonPressed) {
         playClick(base_data.sounds);
         resetInputForm(base_data.input_form, MAX_CHARS_VIEW);
+        resetOutput(base_data);
       }
     } else {
       base_data.sprites.spr_clear.setColor(base_data.colors.before_hover_clear);
@@ -424,6 +440,7 @@ void handleEvents(sf::RenderWindow &window, sf::Event &event, BaseData &base_dat
       if (event.type==sf::Event::MouseButtonPressed) {
         playClick(base_data.sounds);
         deleteKey(base_data.input_form);
+        resetOutput(base_data);
         base_data.input_form.focus = true;
       }
     } else {
@@ -494,6 +511,29 @@ void handleEvents(sf::RenderWindow &window, sf::Event &event, BaseData &base_dat
     } else {
       base_data.sprites.spr_mode.setColor(base_data.colors.before_hover_mode);
       base_data.colors.before_hover_mode = sf::Color::Transparent;
+    }
+
+    //////////////////////////////////////// Theme button interaction ////////////////////////////////////////
+
+    if (base_data.colors.before_hover_themes==sf::Color::Transparent) {
+      base_data.colors.before_hover_themes = base_data.sprites.spr_themes.getColor();
+    }
+
+    sf::FloatRect area_themes_button = base_data.sprites.spr_themes.getGlobalBounds();
+    if (contains(area_themes_button, mouse)) {
+      base_data.sprites.spr_themes.setColor(base_data.colors.hover);
+      if (event.type==sf::Event::MouseButtonPressed) {
+        base_data.theme_index++;
+        if (base_data.theme_index==base_data.number_of_themes)
+          base_data.theme_index = 0;
+        setTheme(base_data);
+        playClick(base_data.sounds);
+        changeMode(base_data);
+        base_data.colors.before_hover_themes = base_data.colors.text;
+      }
+    } else {
+      base_data.sprites.spr_themes.setColor(base_data.colors.before_hover_themes);
+      base_data.colors.before_hover_themes = sf::Color::Transparent;
     }
 
     if (base_data.switches.is_settings) {
@@ -731,6 +771,7 @@ void navigateSongVolume(BaseData &base_data,
   }
   base_data.switches.is_music = base_data.volumes.music!=0;
   setSongVolume(base_data);
+
 }
 void setSongVolume(BaseData &base_data) {
   float volume_temp;
@@ -748,9 +789,11 @@ void setSongVolume(BaseData &base_data) {
   else
     base_data.sprites.spr_music.setColor(base_data.colors.muted);
   base_data.song_list[base_data.song_index].song.setVolume(volume_temp);
+
   if (!base_data.initial_setup) {
     updateSettingsView(base_data);
   }
+  setSongVolumeSlideDim(base_data);
 }
 
 void navigateSFXVolume(BaseData &base_data, bool decrement) {
@@ -766,6 +809,7 @@ void navigateSFXVolume(BaseData &base_data, bool decrement) {
   }
   base_data.switches.is_sfx = base_data.volumes.sfx!=0;
   setSFXVolume(base_data);
+
 }
 void setSFXVolume(BaseData &base_data) {
   float vol_inter;
@@ -790,6 +834,7 @@ void setSFXVolume(BaseData &base_data) {
   if (!base_data.initial_setup) {
     updateSettingsView(base_data);
   }
+  setSFXVolumeSlideDim(base_data);
 }
 void navigateSongName(BaseData &base_data,
                       bool decrement) {
@@ -835,6 +880,8 @@ void setTextFont(BaseData &base_data) {
   base_data.output.setFont(base_data.font_list[base_data.font_index].font);
   if (!base_data.initial_setup) {
     updateSettingsView(base_data);
+    base_data.output.setPosition((WIDTH - 4*IMG_SCALED - 5*THICKNESS - base_data.output.getLocalBounds().width)/2,
+                                 4.25*IMG_SCALED - base_data.font_size - THICKNESS);
   }
 }
 void navigateTextFontSize(BaseData &base_data,
@@ -869,7 +916,11 @@ void setTextFontSize(BaseData &base_data) {
   base_data.output.setCharacterSize(base_data.font_size);
   if (!base_data.initial_setup) {
     updateSettingsView(base_data);
+    base_data.output.setPosition((WIDTH - 4*IMG_SCALED - 5*THICKNESS - base_data.output.getLocalBounds().width)/2,
+                                 4.25*IMG_SCALED - base_data.font_size - THICKNESS);
+
   }
+  setFontSlideDim(base_data);
 }
 
 void loadAssets(BaseData &base_data, bool &success) {
@@ -932,6 +983,41 @@ void loadAssets(BaseData &base_data, bool &success) {
     base_data.sounds.typing[index].setBuffer(base_data.sound_buffers.typing);
     base_data.sounds.click[index].setBuffer(base_data.sound_buffers.click);
   }
+  base_data.files.themes_file.open("themes.txt");
+  if (!base_data.files.themes_file.is_open()) {
+    std::cerr << "The file responsable with the themes cannot be opened !";
+    std::exit(1);
+  }
+  base_data.files.themes_file >> base_data.number_of_themes;
+
+  for (unsigned index = 0; index < base_data.number_of_themes; ++index) {
+    int red, green, blue;
+
+    base_data.files.themes_file >> red;
+    base_data.files.themes_file >> green;
+    base_data.files.themes_file >> blue;
+    base_data.themes[index].back = sf::Color(red, green, blue);
+
+    base_data.files.themes_file >> red;
+    base_data.files.themes_file >> green;
+    base_data.files.themes_file >> blue;
+    base_data.themes[index].hover = sf::Color(red, green, blue);
+
+    base_data.files.themes_file >> red;
+    base_data.files.themes_file >> green;
+    base_data.files.themes_file >> blue;
+    base_data.themes[index].muted = sf::Color(red, green, blue);
+
+    base_data.files.themes_file >> red;
+    base_data.files.themes_file >> green;
+    base_data.files.themes_file >> blue;
+    base_data.themes[index].text = sf::Color(red, green, blue);
+
+    base_data.files.themes_file >> red;
+    base_data.files.themes_file >> green;
+    base_data.files.themes_file >> blue;
+    base_data.themes[index].settings_clicked = sf::Color(red, green, blue);
+  }
 }
 
 void drawStaticElements(BaseData &base_data,
@@ -941,15 +1027,19 @@ void drawStaticElements(BaseData &base_data,
   window.draw(base_data.sprites.spr_sfx);
   window.draw(base_data.sprites.spr_settings);
   window.draw(base_data.sprites.spr_history);
+  window.draw(base_data.sprites.spr_themes);
+
   if (base_data.switches.is_settings) {
     window.draw(base_data.settings_texts.label_song_volume);
     window.draw(base_data.sprites.spr_left_song_vol);
+    window.draw(base_data.boxes.song_volume_visual);
     window.draw(base_data.boxes.song_volume);
     window.draw(base_data.settings_texts.song_volume);
     window.draw(base_data.sprites.spr_right_song_vol);
 
     window.draw(base_data.settings_texts.label_sfx_volume);
     window.draw(base_data.sprites.spr_left_sfx_vol);
+    window.draw(base_data.boxes.sfx_volume_visual);
     window.draw(base_data.boxes.sfx_volume);
     window.draw(base_data.settings_texts.sfx_volume);
     window.draw(base_data.sprites.spr_right_sfx_vol);
@@ -968,13 +1058,14 @@ void drawStaticElements(BaseData &base_data,
 
     window.draw(base_data.settings_texts.label_font_size);
     window.draw(base_data.sprites.spr_left_font_size);
+    window.draw(base_data.boxes.font_size_visual);
     window.draw(base_data.boxes.font_size);
     window.draw(base_data.settings_texts.font_size);
     window.draw(base_data.sprites.spr_right_font_size);
   } else {
     window.draw(base_data.input_form.back_box);
     window.draw(base_data.input_form.text);
-    window.draw(base_data.lines.output);
+    window.draw(base_data.output_line);
 
     if (base_data.switches.requestAnswer) {
       window.draw(base_data.output);
@@ -999,6 +1090,10 @@ void updateBoxesAndTextsOutlineColor(BaseData &base_data) {
   base_data.settings_texts.song_name.setFillColor(base_data.colors.text);
   base_data.settings_texts.font_name.setFillColor(base_data.colors.text);
   base_data.settings_texts.font_size.setFillColor(base_data.colors.text);
+
+  base_data.settings_texts.font_size.setOutlineColor(base_data.colors.back);
+  base_data.settings_texts.song_volume.setOutlineColor(base_data.colors.back);
+  base_data.settings_texts.sfx_volume.setOutlineColor(base_data.colors.back);
 
   base_data.settings_texts.label_song_volume.setFillColor(base_data.colors.text);
   base_data.settings_texts.label_sfx_volume.setFillColor(base_data.colors.text);
@@ -1040,47 +1135,92 @@ void playTyping(Sounds &sounds) {
     }
   }
 }
-void setLinesDetails(BaseData &base_data) {
 
-  base_data.lines.input.setSize(sf::Vector2f((WIDTH - 3*IMG_REAL), 2));
-  base_data.lines.output.setSize(sf::Vector2f((WIDTH - 3*IMG_REAL), 2));
-
-  base_data.lines.input.setOutlineThickness(0);
-  base_data.lines.output.setOutlineThickness(0);
-
-  base_data.lines.input.setPosition(IMG_REAL, 3*IMG_SCALED + THICKNESS);
-  base_data.lines.output.setPosition(IMG_REAL, 4.25*IMG_SCALED + THICKNESS);
-
-}
 void setBoxesDetails(BaseData &base_data) {
   base_data.boxes.song_volume.setFillColor(sf::Color::Transparent);
+  base_data.boxes.song_volume_visual.setFillColor(base_data.colors.text);
   base_data.boxes.sfx_volume.setFillColor(sf::Color::Transparent);
+  base_data.boxes.sfx_volume_visual.setFillColor(base_data.colors.text);
   base_data.boxes.song_name.setFillColor(sf::Color::Transparent);
   base_data.boxes.font_name.setFillColor(sf::Color::Transparent);
   base_data.boxes.font_size.setFillColor(sf::Color::Transparent);
+  base_data.boxes.font_size_visual.setFillColor(base_data.colors.text);
 
   base_data.boxes.song_volume.setOutlineThickness(THICKNESS);
+  base_data.boxes.song_volume_visual.setOutlineThickness(0);
   base_data.boxes.sfx_volume.setOutlineThickness(THICKNESS);
+  base_data.boxes.sfx_volume_visual.setOutlineThickness(0);
   base_data.boxes.song_name.setOutlineThickness(THICKNESS);
   base_data.boxes.font_name.setOutlineThickness(THICKNESS);
   base_data.boxes.font_size.setOutlineThickness(THICKNESS);
+  base_data.boxes.font_size_visual.setOutlineThickness(0);
 
   sf::Vector2f general_size = sf::Vector2f(5*IMG_SCALED, IMG_SCALED - 2*THICKNESS);
   base_data.boxes.song_volume.setSize(general_size);
+  base_data.boxes.song_volume_visual.setSize(general_size);
   base_data.boxes.sfx_volume.setSize(general_size);
+  base_data.boxes.sfx_volume_visual.setSize(general_size);
   base_data.boxes.song_name.setSize(general_size);
   base_data.boxes.font_name.setSize(general_size);
   base_data.boxes.font_size.setSize(general_size);
-
+  setFontSlideDim(base_data);
   float vertical_pos = (HEIGHT - 10*IMG_SCALED - 5*VERTICAL_PADDING)/2.f;
   vertical_pos += (IMG_SCALED + VERTICAL_PADDING);
   base_data.boxes.song_volume.setPosition((WIDTH - general_size.x)/2, vertical_pos);
+  base_data.boxes.song_volume_visual.setPosition((WIDTH - general_size.x)/2, vertical_pos);
   vertical_pos += 2*(IMG_SCALED + VERTICAL_PADDING);
   base_data.boxes.sfx_volume.setPosition((WIDTH - general_size.x)/2, vertical_pos);
+  base_data.boxes.sfx_volume_visual.setPosition((WIDTH - general_size.x)/2, vertical_pos);
   vertical_pos += 2*(IMG_SCALED + VERTICAL_PADDING);
   base_data.boxes.song_name.setPosition((WIDTH - general_size.x)/2, vertical_pos);
   vertical_pos += 2*(IMG_SCALED + VERTICAL_PADDING);
   base_data.boxes.font_name.setPosition((WIDTH - general_size.x)/2, vertical_pos);
   vertical_pos += 2*(IMG_SCALED + VERTICAL_PADDING);
   base_data.boxes.font_size.setPosition((WIDTH - general_size.x)/2, vertical_pos);
+  base_data.boxes.font_size_visual.setPosition((WIDTH - general_size.x)/2, vertical_pos);
+}
+void resetOutput(BaseData &base_data) {
+  base_data.output_string.clear();
+  base_data.output.setString(base_data.output_string);
+  ///
+
+}
+void setTheme(BaseData &base_data) {
+  base_data.colors.hover = base_data.themes[base_data.theme_index].hover;
+  base_data.colors.muted = base_data.themes[base_data.theme_index].muted;
+  base_data.colors.default_text_color = base_data.themes[base_data.theme_index].text;
+  base_data.colors.default_background_color = base_data.themes[base_data.theme_index].back;
+  base_data.colors.settings_clicked = base_data.themes[base_data.theme_index].settings_clicked;
+  base_data.colors.text = base_data.themes[base_data.theme_index].text;
+  base_data.colors.back = base_data.themes[base_data.theme_index].back;
+
+}
+void setupAliases(BaseData &base_data, std::ifstream &fin) {
+  fin >> base_data.dimension;
+  char word[MAX_KEY_DIM];
+  int value;
+  for (int i = 0; i < base_data.dimension; ++i) {
+    fin >> word;
+    fin >> value;
+    std::string s(word);
+    base_data.aliases[i].letters = s;
+    base_data.aliases[i].digits = value;
+  }
+  fin.close();
+}
+
+void setFontSlideDim(BaseData &base_data) {
+  double step_slide = 5*IMG_SCALED/7.f;
+  base_data.boxes.font_size_visual.setSize(sf::Vector2f(step_slide*(base_data.font_size - MIN_DIM_FONT),
+                                                        IMG_SCALED - 2*THICKNESS));
+}
+void setSongVolumeSlideDim(BaseData &base_data) {
+  double step_slide = 5*IMG_SCALED/100.f;
+  base_data.boxes.song_volume_visual.setSize(sf::Vector2f(step_slide*(base_data.volumes.music_settings),
+                                                          IMG_SCALED - 2*THICKNESS));
+}
+void setSFXVolumeSlideDim(BaseData &base_data) {
+  double step_slide = 5*IMG_SCALED/100.f;
+  base_data.boxes.sfx_volume_visual.setSize(sf::Vector2f(step_slide*(base_data.volumes.sfx_settings),
+                                                         IMG_SCALED - 2*THICKNESS));
 }

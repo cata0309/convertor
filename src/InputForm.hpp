@@ -2,7 +2,7 @@
 #ifndef CONVERTOR_SRC_INPUTFORM_HPP_
 #define CONVERTOR_SRC_INPUTFORM_HPP_
 
-#define MAX_CHARS_VIEW 50
+#define MAX_CHARS_VIEW 45
 #define THICKNESS_FORM 2
 struct InputForm {
   sf::String input;
