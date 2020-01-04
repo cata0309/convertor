@@ -215,6 +215,54 @@
         "x": 0.5,
         "y": 0.5
       }
+    },
+    "szhistory.png": {
+      "frame": {
+        "x": 0,
+        "y": 864,
+        "w": 96,
+        "h": 96
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 96,
+        "h": 96
+      },
+      "sourceSize": {
+        "w": 96,
+        "h": 96
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "szthemes.png": {
+      "frame": {
+        "x": 0,
+        "y": 960,
+        "w": 96,
+        "h": 96
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 96,
+        "h": 96
+      },
+      "sourceSize": {
+        "w": 96,
+        "h": 96
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
     }
   },
   "meta": {
@@ -224,7 +272,7 @@
     "format": "RGBA8888",
     "size": {
       "w": 96,
-      "h": 864
+      "h": 1056
     },
     "scale": 1
   }
