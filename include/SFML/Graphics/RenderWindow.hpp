@@ -207,7 +207,7 @@ protected:
 /// // Declare and create a new render-window
 /// sf::RenderWindow window(sf::VideoMode(800, 600), "SFML window");
 ///
-/// // Limit the framerate to 60 frames per second (this step is optional)
+/// // Limit the framerate to 60 frames per second (this line_height is optional)
 /// window.setFramerateLimit(60);
 ///
 /// // The main loop - ends as soon as the window is closed

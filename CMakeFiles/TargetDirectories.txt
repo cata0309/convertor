@@ -1,0 +1,4 @@
+/home/rustyboy/CLionProjects/convertor/CMakeFiles/rebuild_cache.dir
+/home/rustyboy/CLionProjects/convertor/CMakeFiles/edit_cache.dir
+/home/rustyboy/CLionProjects/convertor/CMakeFiles/play.dir
+/home/rustyboy/CLionProjects/convertor/CMakeFiles/convertor.dir

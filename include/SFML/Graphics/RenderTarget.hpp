@@ -375,7 +375,7 @@ protected:
     RenderTarget();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Performs the common initialization step after creation
+    /// \brief Performs the common initialization line_height after creation
     ///
     /// The derived classes must call this function after the
     /// target is created and ready for drawing.
