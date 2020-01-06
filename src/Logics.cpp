@@ -19,14 +19,6 @@ int getValue(Aliases *aliases, int dimension, char *key) {
   return -1;
 }
 
-//void setupAliases(Aliases *aliases, std::ifstream &fin, int &dimension) {
-//  char word[MAX_KEY_DIM];
-//  int value;
-//  while (fin >> word && fin >> value) {
-//    strcpy(aliases[dimension].letters, word);
-//    aliases[dimension++].digits = value;
-//  }
-//}
 
 //######################################################################################################################
 
@@ -215,6 +207,11 @@ void calculateFinalResult(bool &valid_entry,
                           double *final_translation,
                           int final_dimension,
                           bool expression) {
+
+  std::cout<<"***\n";
+  for(int i=0;i<final_dimension;++i)
+    std::cout<<final_translation[i]<<" ";
+  std::cout<<"##\n";
   if (final_dimension==0) {
     valid_entry = false;
     return;
@@ -224,7 +221,7 @@ void calculateFinalResult(bool &valid_entry,
     pushNumberStack(postfix, final_translation[i]);
   LLin *operations_stack = nullptr;
   while (!isNumberStackEmpty(postfix) && valid_entry) {
-    int x = topNumberStack(postfix);
+    double x = topNumberStack(postfix);
     popNumberStack(postfix);
     if (operand(x)) {
       pushNumberStack(operations_stack, x);
@@ -270,18 +267,20 @@ double executeOperation(double left, double op, double right, bool expression) {
     case -4:
       if (expression)
         return (left - right);
+      else
       return (right - left);
     case -5:return (left*right);
     default:
       if (expression)
         return (left/right);
+      else
       return (right/left);
   }
 }
 
 bool isNumberStackEmpty(LLin *stack_queue) { return (stack_queue==nullptr); }
 
-bool operand(int op) { return (op >= 0); }
+bool operand(double op) { return (op >= 0); }
 
 void popNumberStack(LLin *&stack) {
   LLin *toBeDeleted = stack;

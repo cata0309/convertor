@@ -26,7 +26,7 @@ void setupTextBox(InputForm &input_form,
   input_form.text.setCharacterSize(font_size);
   input_form.text.setFillColor(foreground);
   input_form.text.setString(input_form.input);
-  input_form.text.setPosition(position.x + 20, position.y + 3);
+  input_form.text.setPosition(int(position.x) + 20, int(position.y) + 3);
 
 }
 

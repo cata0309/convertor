@@ -137,7 +137,7 @@ double executeOperation(double left, double op, double right, bool expression);
 bool isNumberStackEmpty(LLin *stack_queue);
 
 //`operand()` function helps at checking if a number is operand or not
-bool operand(int);
+bool operand(double);
 
 //`popNumberStack()` function helps at removing numbers from the stack if any
 void popNumberStack(LLin *&stack);

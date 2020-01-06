@@ -14,10 +14,10 @@ struct Files {
   std::ifstream fonts_in;
   std::ifstream songs_in;
   std::ifstream themes_file;
-  std::fstream history_file;
 };
 
 struct Boxes {
+  sf::RectangleShape mask_box;
   sf::RectangleShape font_name;
   sf::RectangleShape font_size;
   sf::RectangleShape font_size_visual;
@@ -26,45 +26,24 @@ struct Boxes {
   sf::RectangleShape song_volume_visual;
   sf::RectangleShape sfx_volume;
   sf::RectangleShape sfx_volume_visual;
+
+  sf::RectangleShape scroll_rect;
 };
 struct Theme {
   sf::Color back;
   sf::Color hover;
   sf::Color muted;
   sf::Color text;
-  sf::Color settings_clicked;
-
+  sf::Color button_clicked;
 };
 struct Colors {
   sf::Color back;
   sf::Color hover;
   sf::Color muted;
   sf::Color text;
-  sf::Color settings_clicked;
-
+  sf::Color button_clicked;
   sf::Color default_text_color;
   sf::Color default_background_color;
-
-  sf::Color before_hover_settings = sf::Color::Transparent;
-  sf::Color before_hover_music = sf::Color::Transparent;
-  sf::Color before_hover_sfx = sf::Color::Transparent;
-  sf::Color before_hover_mode = sf::Color::Transparent;
-  sf::Color before_hover_themes = sf::Color::Transparent;
-
-  sf::Color before_hover_left_music_volume = sf::Color::Transparent;
-  sf::Color before_hover_right_music_volume = sf::Color::Transparent;
-  sf::Color before_hover_left_sfx_volume = sf::Color::Transparent;
-  sf::Color before_hover_right_sfx_volume = sf::Color::Transparent;
-  sf::Color before_hover_left_song_name = sf::Color::Transparent;
-  sf::Color before_hover_right_song_name = sf::Color::Transparent;
-  sf::Color before_hover_left_font_name = sf::Color::Transparent;
-  sf::Color before_hover_right_font_name = sf::Color::Transparent;
-  sf::Color before_hover_left_font_size = sf::Color::Transparent;
-  sf::Color before_hover_right_font_size = sf::Color::Transparent;
-  sf::Color before_hover_delete = sf::Color::Transparent;
-  sf::Color before_hover_equal = sf::Color::Transparent;
-  sf::Color before_hover_clear = sf::Color::Transparent;
-  sf::Color before_hover_history = sf::Color::Transparent;
 };
 struct FontList {
   sf::Font font;
@@ -98,6 +77,7 @@ struct Sprites {
   sf::Sprite spr_themes;
   sf::Sprite spr_sfx;
   sf::Sprite spr_settings;
+  sf::Sprite spr_clear_history;
 
   sf::Sprite spr_left_song_vol;
   sf::Sprite spr_right_song_vol;
@@ -127,12 +107,21 @@ struct SettingsTexts {
 };
 
 struct Switches {
+  bool is_input = true;
   bool is_dark_mode = false;
   bool is_music = true;
   bool is_sfx = true;
   bool is_settings = false;
   bool requestAnswer = false;
   bool is_history = false;
+  bool made_change = false;
+  bool in_the_slide_song_vol = false;
+  bool in_the_slide_sfx_vol = false;
+  bool in_the_slide_font = false;
+  bool in_the_scroll_button=false;
+  bool is_scroll_button=false;
+  bool theme_pressed=false;
+  bool is_scroll_hovered=false;
 };
 struct Volumes {
   int music = 100;
@@ -176,6 +165,14 @@ struct BaseData {
   sf::Texture texture;
   //the `dimension`(the number of entries that happens to be in the dictionary file)
   int dimension = 0;
+  int nr_lines = 0;
+  int line_height = 0;
+int scroll_line_height=0;
+  int distance_from_mouse=-1;
+
+  int limit_top=0;
+  int limit_bottom=0;
+
 };
 void navigateSongVolume(BaseData &, bool);
 void setSongVolume(BaseData &);
@@ -216,4 +213,6 @@ void setupAliases(BaseData &base_data, std::ifstream &fin);
 void setFontSlideDim(BaseData &base_data);
 void setSongVolumeSlideDim(BaseData &base_data);
 void setSFXVolumeSlideDim(BaseData &base_data);
+void clearHistory(BaseData &base_data);
+void requestHistory(BaseData &base_data);
 #endif
