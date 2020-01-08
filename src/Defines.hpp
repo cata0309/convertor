@@ -27,7 +27,7 @@
 #define TYPE "assets/sounds/stroke.wav"
 #define CLICK "assets/sounds/click.wav"
 #define GLOB_TEXTURE "assets/images/texture.png"
-
+#define CROSS_TEXTURE "assets/images/crosst.png"
 #define PADDING 8
 #define THICKNESS 3
 #define VERTICAL_PADDING 10
@@ -35,9 +35,10 @@
 #define MIN_DIM_FONT 20
 #define MAX_DIM_FONT 27
 
-
 #define POS_HIST_BOX_X 48
 #define POS_HIST_BOX_Y 48
 
 #define SCROLL_LINES 1
+
+#define CROSS_SIZE 80
 #endif //CONVERTOR_SRC_DEFINES_HPP_

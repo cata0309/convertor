@@ -1,5 +1,7 @@
 #include"UserInterface.hpp"
 int main() {
+  std::cout.precision(6);
+  std::cout.setf(std::ios::fixed);
   sf::ContextSettings csettings;
   csettings.antialiasingLevel = 16;
   sf::RenderWindow window(sf::VideoMode(WIDTH, HEIGHT), TITLE, sf::Style::Close | sf::Style::Titlebar, csettings);
@@ -11,8 +13,8 @@ int main() {
     std::cerr << "The resource cannot be loaded!";
     return -1;
   }
-  base_data.switches.is_music = false;
-  base_data.switches.is_sfx = false;
+//  base_data.switches.is_music = false;
+//  base_data.switches.is_sfx = false;
   int duration = 450;
   sf::Clock clock_carret;
   initialSetup(base_data);
@@ -28,6 +30,7 @@ int main() {
     sf::Event event = {};
     handleEvents(window, event, base_data);
     window.clear(base_data.colors.back);
+//    window.draw(base_data.cross_background);
     updateViewedString(base_data.input_form);
     sf::Time time_carret = clock_carret.getElapsedTime();
     if (time_carret.asMilliseconds() > duration) {

@@ -281,7 +281,7 @@ typedef Vector2<float>        Vector2f;
 ///
 /// The sf::Vector2 class has a small and simple interface, its x and y members
 /// can be accessed directly (there are no accessors like setX(), getX()) and it
-/// contains no mathematical function like dot product, cross product, length, etc.
+/// contains no mathematical function like dot product, cross_texture product, length, etc.
 ///
 /// Usage example:
 /// \code

@@ -1,12 +1,24 @@
 #include "LogicsFunctions.hpp"
 #include<fstream>
 std::ifstream fin_en("defines_en.txt");
+void setupAliases(Aliases *aliases, std::ifstream &fin, int &dimension) {
+  fin >> dimension;
+  char word[MAX_KEY_DIM];
+  int value;
+  for (int i = 0; i < dimension; ++i) {
+    fin >> word;
+    fin >> value;
+    std::string s(word);
+    aliases[i].letters = s;
+    aliases[i].digits = value;
+  }
+  fin.close();
+}
 int main() {
 ////////////////////////////////////////   ////////////////////////////////////////
 
 //
 //`input` is a temporary C type string where we store our raw input: First phase of input manipulation: Getting it
-  char input[MAX_INPUT];
 
   Aliases aliases[MAX_ENTRIES];
 
@@ -16,17 +28,19 @@ int main() {
 //it is initially configured and after this function call it stores all the content of the `fin_en` file
   setupAliases(aliases, fin_en, dimension);
   //the reading process is done via the console(it will be changed by SFML `interpretation of GUI` mimics
-  std::cin.get(input, MAX_INPUT);
-
+  std::string intermediate;
+  std::getline(std::cin, intermediate);
   bool success = true;
   double result = 0;
-  if (strlen(input)==0) {
+  if (intermediate.length()==0) {
     success = false;
   } else {
+    char *input = new char[intermediate.length() + 1];
+    strcpy(input, intermediate.c_str());
     processingInput(input, success, result, aliases, dimension);
   }
   if (success) {
-    std::cout << "Notatia postfixata este corecta iar rezultatul este: " << result;
+    std::cout << "Final result: " << result;
   } else {
     std::cout << "Wrong input!";
   }

@@ -46,6 +46,10 @@ InputForm.hpp
 Logics.hpp
 /home/rustyboy/CLionProjects/convertor/src/Logics.hpp
 
+/home/rustyboy/CLionProjects/convertor/src/main.cpp
+UserInterface.hpp
+/home/rustyboy/CLionProjects/convertor/src/UserInterface.hpp
+
 include/SFML/Audio.hpp
 SFML/System.hpp
 -

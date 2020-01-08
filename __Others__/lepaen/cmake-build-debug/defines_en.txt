@@ -1,3 +1,4 @@
+61
 zero 0
 one 1
 two 2
@@ -32,9 +33,8 @@ thousand 1000
 thousands 1000
 million 1000000
 millions 1000000
-
 and -2
-
+by -2
 addition -3
 sum -3
 subtraction -4
@@ -42,7 +42,6 @@ difference -4
 multiplication -5
 product -5
 division -6
-
 what -10
 is -10
 the -10
@@ -51,4 +50,13 @@ of -10
 how -10
 much -10
 between -10
-by -10
+plus -33
+minus -44
+multiplied -55
+divided -66
++ -33
+- -44
+* -55
+/ -66
+( -77
+) -88

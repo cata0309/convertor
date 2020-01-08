@@ -1,50 +1,18 @@
-sdfsdf
+one million divided by three millions
+0.333333
+one million divided by three millions
+0.333333
+fifty millions divided by one hundred millions
+0.500000
+fifty millions divided by one hundred
+500000.000000
+fifty
+50.000000
+fify
 WRONG INPUT !
-sdfsdf
+fit 
 WRONG INPUT !
-sdfsdf
-WRONG INPUT !
-sdfsdf
-WRONG INPUT !
-sdfsdf
-WRONG INPUT !
-sdfsdf
-WRONG INPUT !
-sdfsdf
-WRONG INPUT !
-sdfsdf
-WRONG INPUT !
-sdfsdf
-WRONG INPUT !
-sdfsdf
-WRONG INPUT !
-sdfsdf
-WRONG INPUT !
-sdfsdf
-WRONG INPUT !
-sdfsdf
-WRONG INPUT !
-sdfsdf
-WRONG INPUT !
-sdfsdf
-WRONG INPUT !
-sdfsdf
-WRONG INPUT !
-sdfsdf
-WRONG INPUT !
-sdfsdf
-WRONG INPUT !
-sdfsdf
-WRONG INPUT !
-sdfsdf
-WRONG INPUT !
-sdfsdf
-WRONG INPUT !
-sdfsdf
-WRONG INPUT !
-sdfsdf
-WRONG INPUT !
-sdfsdf
-WRONG INPUT !
-sdfsdf
-WRONG INPUT !
+1+1
+2.000000
+ what is the sum of the division of three by seven and the product of three divided by seven and four plus three
+5.142857

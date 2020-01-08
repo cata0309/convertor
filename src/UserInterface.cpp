@@ -50,6 +50,22 @@ void requestOutput(BaseData &base_data) {
 
 void setSpritesDetails(BaseData &base_data) {
   //texturi
+
+  sf::Sprite dd;
+  dd.setTexture(base_data.cross_texture);
+  dd.setScale(0.5, 0.5);
+//  const sf::Texture *tt = dd.getTexture();
+
+  base_data.cross_background.setPosition(0, 0);
+  base_data.cross_texture.setRepeated(true);
+//  base_data.cross_background.setTexture(base_data.cross_texture);
+//  base_data.cross_background.setScale(sf::Vector2f(WIDTH/base_data.cross_texture.getSize().x,HEIGHT/base_data.cross_texture.getSize().y));
+  base_data.cross_background.setSize(sf::Vector2f(WIDTH, HEIGHT));
+  const sf::Texture *tex = &base_data.cross_texture;
+  base_data.cross_background.setTexture(tex);
+  base_data.cross_background.setTextureRect(sf::IntRect(0, 0, WIDTH, HEIGHT));
+  base_data.cross_background.setFillColor(sf::Color(200, 200, 200));
+
   base_data.sprites.spr_delete.setTexture(base_data.texture);
   base_data.sprites.spr_equal.setTexture(base_data.texture);
   base_data.sprites.spr_left_font_name.setTexture(base_data.texture);
@@ -72,6 +88,8 @@ void setSpritesDetails(BaseData &base_data) {
   base_data.sprites.spr_themes.setTexture(base_data.texture);
 
   //positions
+
+//  base_data.cross_background.setFillColor(sf::Color::Red);
   base_data.sprites.spr_settings.setPosition(WIDTH - (PADDING + IMG_SCALED), PADDING);
   base_data.sprites.spr_music.setPosition(WIDTH - 2*(PADDING + IMG_SCALED), PADDING);
   base_data.sprites.spr_sfx.setPosition(WIDTH - 3*(PADDING + IMG_SCALED), PADDING);
@@ -224,6 +242,7 @@ void updateSettingsView(BaseData &base_data) {
 }
 
 void initialSetup(BaseData &base_data) {
+  base_data.cross_texture.setRepeated(true);
   setBoxesDetails(base_data);
   setSpritesDetails(base_data);
   setTextFont(base_data);
@@ -333,6 +352,25 @@ void handleEvents(sf::RenderWindow &window, sf::Event &event, BaseData &base_dat
     if (event.type==sf::Event::Closed) {
       window.close();
     }
+    if (event.type==sf::Event::KeyPressed) {
+      // Using Ctrl + V to paste a string into SFML
+      if (event.key.control && event.key.code==sf::Keyboard::V) {
+        sf::String strclip = sf::Clipboard::getString();
+        //TODO REMOVE NEW LINE CHARACTER
+//        for(int i=0;i<strclip.getSize();++i)
+//          if(int(strclip[i])==13)
+//          {strclip.erase(i-1,1);
+//            i--;
+//          }
+
+        base_data.input_form.input.insert(base_data.input_form.input.getSize(), strclip);
+        for (int i = 0; i < base_data.input_form.input.getSize(); i++) {
+          base_data.input_form.ruler++;
+          if (base_data.input_form.ruler==base_data.input_form.max_chars_view)
+            base_data.input_form.start_index++, base_data.input_form.ruler--;
+        }
+      }
+    }
 
     if (base_data.switches.is_input) {
       if (event.type==sf::Event::KeyPressed && base_data.input_form.focus) {
@@ -393,11 +431,6 @@ void handleEvents(sf::RenderWindow &window, sf::Event &event, BaseData &base_dat
 
     }
 
-
-
-
-
-
     if (base_data.switches.is_history) {
       if (contains(base_data.boxes.scroll_rect.getGlobalBounds(), mouse)) {
         base_data.boxes.scroll_rect.setFillColor(base_data.colors.hover);
@@ -453,15 +486,6 @@ void handleEvents(sf::RenderWindow &window, sf::Event &event, BaseData &base_dat
         if (!base_data.switches.is_scroll_hovered)
           base_data.boxes.scroll_rect.setFillColor(base_data.colors.text);
       }
-
-
-
-
-
-
-
-
-
 
       if (event.type==sf::Event::KeyPressed) {
         if (base_data.history.getLocalBounds().height > HEIGHT) {
@@ -1138,6 +1162,10 @@ void loadAssets(BaseData &base_data, bool &success) {
   }
   if (!base_data.texture.loadFromFile(GLOB_TEXTURE)) {
     std::cerr << "The global texture cannot be opened!\n";
+    success = false;
+  }
+  if (!base_data.cross_texture.loadFromFile(CROSS_TEXTURE)) {
+    std::cerr << "The cross texture cannot be opened!\n";
     success = false;
   }
   base_data.texture.setSmooth(true);

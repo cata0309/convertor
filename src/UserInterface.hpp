@@ -118,10 +118,10 @@ struct Switches {
   bool in_the_slide_song_vol = false;
   bool in_the_slide_sfx_vol = false;
   bool in_the_slide_font = false;
-  bool in_the_scroll_button=false;
-  bool is_scroll_button=false;
-  bool theme_pressed=false;
-  bool is_scroll_hovered=false;
+  bool in_the_scroll_button = false;
+  bool is_scroll_button = false;
+  bool theme_pressed = false;
+  bool is_scroll_hovered = false;
 };
 struct Volumes {
   int music = 100;
@@ -167,12 +167,14 @@ struct BaseData {
   int dimension = 0;
   int nr_lines = 0;
   int line_height = 0;
-int scroll_line_height=0;
-  int distance_from_mouse=-1;
+  int scroll_line_height = 0;
+  int distance_from_mouse = -1;
 
-  int limit_top=0;
-  int limit_bottom=0;
+  int limit_top = 0;
+  int limit_bottom = 0;
 
+  sf::Texture cross_texture;
+  sf::RectangleShape cross_background;
 };
 void navigateSongVolume(BaseData &, bool);
 void setSongVolume(BaseData &);

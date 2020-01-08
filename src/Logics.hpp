@@ -8,7 +8,7 @@
 //############################################### Defines for logics ###################################################
 
 //MAX_ENTRIES = the maximum of definitions from the dictionary file
-#define MAX_ENTRIES 55
+#define MAX_ENTRIES 65
 
 //MAX_KEY_DIM = the maximum length of the word that represents an entry in the dictionary
 #define MAX_KEY_DIM 15
@@ -33,17 +33,25 @@ struct Aliases {
 //The queue is used for keeping the post fixated notation that is produced after the in fixated notation was analysed
 //`value` has the role of storing the number/operator as a C type string
 //`*next` is a pointer to the next element from the list/queue in this case
-struct ElQueue {
+struct ElQueueChar {
   char value[MAX_KEY_DIM];
-  ElQueue *next;
+  ElQueueChar *next;
+};
+struct ElQueueDouble {
+  double value;
+  ElQueueDouble *next;
 };
 
 //The stack is used just for keeping the operators in order and build the post fixated notation of an expression
 //`value` has the role of storing the operator interpreted as a character '+' || '-' || '*' || '/' || '(' || ')'
 //`*next` is a pointer to the next element from the list/stack in this case
-struct ElStack {
+struct ElStackChar {
   char value;
-  ElStack *next;
+  ElStackChar *next;
+};
+struct ElStackDouble {
+  double value;
+  ElStackDouble *next;
 };
 
 struct LLin {
@@ -76,25 +84,41 @@ int getValue(Aliases *aliases, int dimension, char *key);
 
 //`isStackEmpty()` function checks if the stack is empty, if its empty the returned value is
 // `true` otherwise it's `false`
-inline bool isStackEmpty(ElStack *head);
+inline bool isStackCharEmpty(ElStackChar *head);
 
 //`popNumberStack()` function helps at removing elements if any from the stack
-void pop(ElStack *&head);
+void popStackChar(ElStackChar *&head);
 
 //`pushNumberStack()` function helps at inserting new elements on the stack
-void push(ElStack *&head, char value);
+void pushStackChar(ElStackChar *&head, char value);
+
+inline bool isStackDoubleEmpty(ElStackDouble *head);
+
+//`popNumberStack()` function helps at removing elements if any from the stack
+void popStackDouble(ElStackDouble *&head);
+
+//`pushNumberStack()` function helps at inserting new elements on the stack
+void pushStackDouble(ElStackDouble *&head, double value);
+
+
 
 //######################################################################################################################
 
 
 //################################### QUEUE IMPLEMENTATION FOR NOTATIONS ###############################################
 
-//`insert()`function helps at inserting new elements in the queue
-void insert(ElQueue *&head, char *value);
+//`insertChar()`function helps at inserting new elements in the queue
+void insertQueueChar(ElQueueChar *&head, char *value);
 
 //`isQueueEmpty()` function checks if the queue is empty, if its empty the returned value is
 // `true` otherwise is `false`
-inline bool isQueueEmpty(ElQueue *head);
+inline bool isQueueCharEmpty(ElQueueChar *head);
+
+void insertQueueDouble(ElQueueDouble *&head, double value);
+
+//`isQueueEmpty()` function checks if the queue is empty, if its empty the returned value is
+// `true` otherwise is `false`
+inline bool isQueueDoubleEmpty(ElQueueDouble *head);
 
 //######################################################################################################################
 
@@ -104,8 +128,7 @@ inline bool isQueueEmpty(ElQueue *head);
 //`infixatedInPlaceTranslator()` function takes as parameters an in fixated notation expression as a word,
 //a boolean array that stores the `quality` of being an operator '+','-' etc., an array of elements, the post fixated
 //terminal array and its dimension, besides these it also takes the word that can be converted
-void infixatedInPlaceTranslator(char *value, int *array, int &dimension);
-
+void infixatedInPlaceTranslator(char *value, double *array, int &dimension);
 //`isInfixatedNotation()` function checks if a word contains only some `allowed` characters that could make the
 //conversion possible
 bool isInfixatedNotation(char *str);
@@ -119,7 +142,8 @@ bool onlyDigits(char *str);
 //`priorities()` function returns what priorities operators have, this is important when we are converting
 // from in fixated notation to post fixated notation as it could be some operators on the stack that must wait before
 // they are inserted in the queue
-int priorities(char symbol);
+int prioritiesChar(char symbol);
+int prioritiesDouble(double symbol);
 
 //######################################################################################################################
 
