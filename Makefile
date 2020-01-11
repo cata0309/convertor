@@ -163,32 +163,32 @@ src/InputForm.cpp.s:
 	$(MAKE) -f CMakeFiles/convertor.dir/build.make CMakeFiles/convertor.dir/src/InputForm.cpp.s
 .PHONY : src/InputForm.cpp.s
 
-src/Logics.o: src/Logics.cpp.o
+src/LogicsEnglish.o: src/LogicsEnglish.cpp.o
 
-.PHONY : src/Logics.o
+.PHONY : src/LogicsEnglish.o
 
 # target to build an object file
-src/Logics.cpp.o:
-	$(MAKE) -f CMakeFiles/convertor.dir/build.make CMakeFiles/convertor.dir/src/Logics.cpp.o
-.PHONY : src/Logics.cpp.o
+src/LogicsEnglish.cpp.o:
+	$(MAKE) -f CMakeFiles/convertor.dir/build.make CMakeFiles/convertor.dir/src/LogicsEnglish.cpp.o
+.PHONY : src/LogicsEnglish.cpp.o
 
-src/Logics.i: src/Logics.cpp.i
+src/LogicsEnglish.i: src/LogicsEnglish.cpp.i
 
-.PHONY : src/Logics.i
+.PHONY : src/LogicsEnglish.i
 
 # target to preprocess a source file
-src/Logics.cpp.i:
-	$(MAKE) -f CMakeFiles/convertor.dir/build.make CMakeFiles/convertor.dir/src/Logics.cpp.i
-.PHONY : src/Logics.cpp.i
+src/LogicsEnglish.cpp.i:
+	$(MAKE) -f CMakeFiles/convertor.dir/build.make CMakeFiles/convertor.dir/src/LogicsEnglish.cpp.i
+.PHONY : src/LogicsEnglish.cpp.i
 
-src/Logics.s: src/Logics.cpp.s
+src/LogicsEnglish.s: src/LogicsEnglish.cpp.s
 
-.PHONY : src/Logics.s
+.PHONY : src/LogicsEnglish.s
 
 # target to generate assembly for a file
-src/Logics.cpp.s:
-	$(MAKE) -f CMakeFiles/convertor.dir/build.make CMakeFiles/convertor.dir/src/Logics.cpp.s
-.PHONY : src/Logics.cpp.s
+src/LogicsEnglish.cpp.s:
+	$(MAKE) -f CMakeFiles/convertor.dir/build.make CMakeFiles/convertor.dir/src/LogicsEnglish.cpp.s
+.PHONY : src/LogicsEnglish.cpp.s
 
 src/UserInterface.o: src/UserInterface.cpp.o
 
@@ -257,9 +257,9 @@ help:
 	@echo "... src/InputForm.o"
 	@echo "... src/InputForm.i"
 	@echo "... src/InputForm.s"
-	@echo "... src/Logics.o"
-	@echo "... src/Logics.i"
-	@echo "... src/Logics.s"
+	@echo "... src/LogicsEnglish.o"
+	@echo "... src/LogicsEnglish.i"
+	@echo "... src/LogicsEnglish.s"
 	@echo "... src/UserInterface.o"
 	@echo "... src/UserInterface.i"
 	@echo "... src/UserInterface.s"

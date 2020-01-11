@@ -31,31 +31,31 @@ struct Aliases {
 };
 
 //The queue is used for keeping the post fixated notation that is produced after the in fixated notation was analysed
-//`value` has the role of storing the number/operator as a C type string
-//`*next` is a pointer to the next element from the list/queue in this case
+//`info` has the role of storing the number/operator as a C type string
+//`*urm` is a pointer to the urm element from the list/queue in this case
 struct ElQueueChar {
   char value[MAX_KEY_DIM];
+  bool is_operat;
   ElQueueChar *next;
 };
 struct ElQueueDouble {
   double value;
+  bool is_operat;
   ElQueueDouble *next;
 };
 
 //The stack is used just for keeping the operators in order and build the post fixated notation of an expression
-//`value` has the role of storing the operator interpreted as a character '+' || '-' || '*' || '/' || '(' || ')'
-//`*next` is a pointer to the next element from the list/stack in this case
+//`info` has the role of storing the operator interpreted as a character '+' || '-' || '*' || '/' || '(' || ')'
+//`*urm` is a pointer to the urm element from the list/stack in this case
 struct ElStackChar {
   char value;
+  bool is_operat;
   ElStackChar *next;
-};
-struct ElStackDouble {
-  double value;
-  ElStackDouble *next;
 };
 
 struct LLin {
   double info;
+  bool is_operat;
   LLin *urm;
 };
 
@@ -70,7 +70,7 @@ struct LLin {
 void convertToLowerCase(char *input);
 
 //`getValue()` function has the role of searching a word through the array of entries and returning
-//-1 if the value was not found otherwise the correspondent integer value of the C type string if it was found
+//-1 if the info was not found otherwise the correspondent integer info of the C type string if it was found
 int getValue(Aliases *aliases, int dimension, char *key);
 
 //`setupAliases()` function has the role of reading the contents of the fin file and make an Aliases array with all
@@ -82,7 +82,7 @@ int getValue(Aliases *aliases, int dimension, char *key);
 
 //######################################## STACK IMPLEMENTATION FOR OPERATORS ##########################################
 
-//`isStackEmpty()` function checks if the stack is empty, if its empty the returned value is
+//`isStackEmpty()` function checks if the stack is empty, if its empty the returned info is
 // `true` otherwise it's `false`
 inline bool isStackCharEmpty(ElStackChar *head);
 
@@ -90,16 +90,7 @@ inline bool isStackCharEmpty(ElStackChar *head);
 void popStackChar(ElStackChar *&head);
 
 //`pushNumberStack()` function helps at inserting new elements on the stack
-void pushStackChar(ElStackChar *&head, char value);
-
-inline bool isStackDoubleEmpty(ElStackDouble *head);
-
-//`popNumberStack()` function helps at removing elements if any from the stack
-void popStackDouble(ElStackDouble *&head);
-
-//`pushNumberStack()` function helps at inserting new elements on the stack
-void pushStackDouble(ElStackDouble *&head, double value);
-
+void pushStackChar(ElStackChar *&head, char value, bool is_operat);
 
 
 //######################################################################################################################
@@ -108,15 +99,15 @@ void pushStackDouble(ElStackDouble *&head, double value);
 //################################### QUEUE IMPLEMENTATION FOR NOTATIONS ###############################################
 
 //`insertChar()`function helps at inserting new elements in the queue
-void insertQueueChar(ElQueueChar *&head, char *value);
+void insertQueueChar(ElQueueChar *&head, char *value, bool is_operat);
 
-//`isQueueEmpty()` function checks if the queue is empty, if its empty the returned value is
+//`isQueueEmpty()` function checks if the queue is empty, if its empty the returned info is
 // `true` otherwise is `false`
 inline bool isQueueCharEmpty(ElQueueChar *head);
 
-void insertQueueDouble(ElQueueDouble *&head, double value);
+void insertQueueDouble(ElQueueDouble *&head, double value, bool is_operat);
 
-//`isQueueEmpty()` function checks if the queue is empty, if its empty the returned value is
+//`isQueueEmpty()` function checks if the queue is empty, if its empty the returned info is
 // `true` otherwise is `false`
 inline bool isQueueDoubleEmpty(ElQueueDouble *head);
 
@@ -128,7 +119,10 @@ inline bool isQueueDoubleEmpty(ElQueueDouble *head);
 //`infixatedInPlaceTranslator()` function takes as parameters an in fixated notation expression as a word,
 //a boolean array that stores the `quality` of being an operator '+','-' etc., an array of elements, the post fixated
 //terminal array and its dimension, besides these it also takes the word that can be converted
-void infixatedInPlaceTranslator(char *value, double *array, int &dimension);
+void infixatedInPlaceTranslator(char *value,
+                                double *array,
+                                bool *is_operator,
+                                int &dimension);
 //`isInfixatedNotation()` function checks if a word contains only some `allowed` characters that could make the
 //conversion possible
 bool isInfixatedNotation(char *str);
@@ -152,19 +146,23 @@ int prioritiesDouble(double symbol);
 
 //`calculateFinalResult()` function calculates the final result from a post fixated notation array and changes the
 //status of the bool variable from `true` to `false` if it didn't succeeded
-void calculateFinalResult(bool &, double &, double *, int, bool expression);
-
+void calculateFinalResult(bool &success,
+                          double &final_result,
+                          double *final_translation,
+                          bool *is_operator,
+                          int final_dimension,
+                          bool expression);
 //`executeOperation()` function takes three arguments, left operand, the operation and the right operand
 double executeOperation(double left, double op, double right, bool expression);
 
 //`isNumberStackEmpty()` function helps at checking if the stack is empty or not
-bool isNumberStackEmpty(LLin *stack_queue);
+bool isEmpty(LLin *stack);
 
 //`operand()` function helps at checking if a number is operand or not
 bool operand(double);
 
 //`popNumberStack()` function helps at removing numbers from the stack if any
-void popNumberStack(LLin *&stack);
+void pop(LLin *&stack);
 
 //`processingInput()` function takes the input as a C type string
 //converts it to lower case
@@ -172,13 +170,16 @@ void popNumberStack(LLin *&stack);
 //converts them to numbers
 //makes a post fixated notation and also translates in fixated notation to post fixated notation
 //solves the post fixated notation expression
-void processingInput(char *input, bool &success, double &result, Aliases *aliases, int dimension);
-
+void processingInput(char *input,
+                     bool &success,
+                     double &result,
+                     Aliases *aliases,
+                     int dimension);
 //`pushNumberStack()` function helps at inserting numbers to the stack
-void pushNumberStack(LLin *&stack, double element);
+void push(LLin *&stack, double element, bool is_operat);
 
-//`topNumberStack()` function returns the value stored in the `info` field of the top element of the stack if any
-double topNumberStack(LLin *stack);
+//`topNumberStack()` function returns the info stored in the `info` field of the top element of the stack if any
+LLin *top(LLin *stack);
 
 //######################################################################################################################
 #endif

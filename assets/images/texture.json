@@ -263,6 +263,54 @@
         "x": 0.5,
         "y": 0.5
       }
+    },
+    "szzro.png": {
+      "frame": {
+        "x": 0,
+        "y": 1056,
+        "w": 96,
+        "h": 96
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 96,
+        "h": 96
+      },
+      "sourceSize": {
+        "w": 96,
+        "h": 96
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "szzrz.png": {
+      "frame": {
+        "x": 0,
+        "y": 1152,
+        "w": 96,
+        "h": 96
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 96,
+        "h": 96
+      },
+      "sourceSize": {
+        "w": 96,
+        "h": 96
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
     }
   },
   "meta": {
@@ -272,7 +320,7 @@
     "format": "RGBA8888",
     "size": {
       "w": 96,
-      "h": 1056
+      "h": 1248
     },
     "scale": 1
   }

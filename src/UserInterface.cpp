@@ -1,7 +1,6 @@
 #include "UserInterface.hpp"
 #include<sstream>
 #include<cstring>
-
 /*
  * TODO TIMP
  * INCOGNITO MODE + BUTTON
@@ -51,21 +50,6 @@ void requestOutput(BaseData &base_data) {
 void setSpritesDetails(BaseData &base_data) {
   //texturi
 
-  sf::Sprite dd;
-  dd.setTexture(base_data.cross_texture);
-  dd.setScale(0.5, 0.5);
-//  const sf::Texture *tt = dd.getTexture();
-
-  base_data.cross_background.setPosition(0, 0);
-  base_data.cross_texture.setRepeated(true);
-//  base_data.cross_background.setTexture(base_data.cross_texture);
-//  base_data.cross_background.setScale(sf::Vector2f(WIDTH/base_data.cross_texture.getSize().x,HEIGHT/base_data.cross_texture.getSize().y));
-  base_data.cross_background.setSize(sf::Vector2f(WIDTH, HEIGHT));
-  const sf::Texture *tex = &base_data.cross_texture;
-  base_data.cross_background.setTexture(tex);
-  base_data.cross_background.setTextureRect(sf::IntRect(0, 0, WIDTH, HEIGHT));
-  base_data.cross_background.setFillColor(sf::Color(200, 200, 200));
-
   base_data.sprites.spr_delete.setTexture(base_data.texture);
   base_data.sprites.spr_equal.setTexture(base_data.texture);
   base_data.sprites.spr_left_font_name.setTexture(base_data.texture);
@@ -84,6 +68,7 @@ void setSpritesDetails(BaseData &base_data) {
   base_data.sprites.spr_settings.setTexture(base_data.texture);
   base_data.sprites.spr_clear.setTexture(base_data.texture);
   base_data.sprites.spr_clear_history.setTexture(base_data.texture);
+  base_data.sprites.spr_language.setTexture(base_data.texture);
   base_data.sprites.spr_history.setTexture(base_data.texture);
   base_data.sprites.spr_themes.setTexture(base_data.texture);
 
@@ -96,12 +81,13 @@ void setSpritesDetails(BaseData &base_data) {
   base_data.sprites.spr_mode.setPosition(WIDTH - 4*(PADDING + IMG_SCALED), PADDING);
   base_data.sprites.spr_history.setPosition(WIDTH - 5*(PADDING + IMG_SCALED), PADDING);
   base_data.sprites.spr_themes.setPosition(WIDTH - 6*(PADDING + IMG_SCALED), PADDING);
-  base_data.sprites.spr_clear_history.setPosition(WIDTH - 7*(PADDING + IMG_SCALED), PADDING);
 
   base_data.sprites.spr_equal.setPosition(WIDTH - (PADDING + IMG_SCALED), 2*IMG_SCALED + THICKNESS + 2);
   base_data.sprites.spr_delete.setPosition(WIDTH - 2*(PADDING + IMG_SCALED), 2*IMG_SCALED + THICKNESS + 2);
   base_data.sprites.spr_clear.setPosition(WIDTH - 3*(PADDING + IMG_SCALED), 2*IMG_SCALED + THICKNESS + 2);
 
+  base_data.sprites.spr_language.setPosition(WIDTH - 7*(PADDING + IMG_SCALED), PADDING);
+  base_data.sprites.spr_clear_history.setPosition(WIDTH - 8*(PADDING + IMG_SCALED), PADDING);
   base_data.sprites.spr_left_song_vol.setPosition(
       base_data.boxes.song_volume.getPosition().x - PADDING - IMG_SCALED - THICKNESS,
       base_data.boxes.song_volume.getPosition().y - THICKNESS);
@@ -159,8 +145,9 @@ void setSpritesDetails(BaseData &base_data) {
   base_data.sprites.spr_clear_history.setTextureRect(sf::IntRect(0, 768, IMG_REAL, IMG_REAL));
   base_data.sprites.spr_history.setTextureRect(sf::IntRect(0, 864, IMG_REAL, IMG_REAL));
   base_data.sprites.spr_themes.setTextureRect(sf::IntRect(0, 960, IMG_REAL, IMG_REAL));
+  switchLanguageSprite(base_data);
 //scaling
-
+  base_data.sprites.spr_language.scale(sf::Vector2f(X_TIMES, X_TIMES));
   base_data.sprites.spr_delete.scale(sf::Vector2f(X_TIMES, X_TIMES));
   base_data.sprites.spr_equal.scale(sf::Vector2f(X_TIMES, X_TIMES));
   base_data.sprites.spr_left_font_name.scale(sf::Vector2f(X_TIMES, X_TIMES));
@@ -242,7 +229,6 @@ void updateSettingsView(BaseData &base_data) {
 }
 
 void initialSetup(BaseData &base_data) {
-  base_data.cross_texture.setRepeated(true);
   setBoxesDetails(base_data);
   setSpritesDetails(base_data);
   setTextFont(base_data);
@@ -309,7 +295,7 @@ void changeMode(BaseData &base_data) {
   base_data.sprites.spr_themes.setColor(base_data.colors.text);
   base_data.sprites.spr_clear.setColor(base_data.colors.text);
   base_data.sprites.spr_clear_history.setColor(base_data.colors.text);
-
+  base_data.sprites.spr_language.setColor(base_data.colors.text);
   base_data.boxes.song_volume_visual.setFillColor(base_data.colors.text);
   base_data.boxes.sfx_volume_visual.setFillColor(base_data.colors.text);
   base_data.boxes.font_size_visual.setFillColor(base_data.colors.text);
@@ -571,6 +557,24 @@ void handleEvents(sf::RenderWindow &window, sf::Event &event, BaseData &base_dat
       else
         base_data.sprites.spr_settings.setColor(base_data.colors.button_clicked);
 
+    }
+
+    if (contains(base_data.sprites.spr_language.getGlobalBounds(), mouse)) {
+      base_data.sprites.spr_language.setColor(base_data.colors.hover);
+      if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left) && event.type==sf::Event::MouseButtonPressed) {
+        playClick(base_data.sounds);
+        base_data.switches.english_language = !base_data.switches.english_language;
+        if (base_data.switches.english_language) {
+          std::cout << "SWITCHED TO ENGLISH\n";
+        } else {
+          std::cout << "SWITCHED TO ROMANIAN\n";
+        }
+        switchLanguageSprite(base_data);
+        resetInputForm(base_data.input_form, MAX_CHARS_VIEW);
+        resetOutput(base_data);
+      }
+    } else {
+      base_data.sprites.spr_language.setColor(base_data.colors.text);
     }
     //////////////////////////////////////// Settings button interaction ////////////////////////////////////////
 
@@ -1164,10 +1168,6 @@ void loadAssets(BaseData &base_data, bool &success) {
     std::cerr << "The global texture cannot be opened!\n";
     success = false;
   }
-  if (!base_data.cross_texture.loadFromFile(CROSS_TEXTURE)) {
-    std::cerr << "The cross texture cannot be opened!\n";
-    success = false;
-  }
   base_data.texture.setSmooth(true);
   base_data.texture.setRepeated(false);
   base_data.sounds.error.setBuffer(base_data.sound_buffers.error);
@@ -1276,7 +1276,7 @@ void drawStaticElements(BaseData &base_data,
   window.draw(base_data.sprites.spr_settings);
   window.draw(base_data.sprites.spr_history);
   window.draw(base_data.sprites.spr_themes);
-
+  window.draw(base_data.sprites.spr_language);
   window.display();
 }
 
@@ -1464,4 +1464,11 @@ void requestHistory(BaseData &base_data) {
   }
   base_data.history.setString(base_data.history_string);
   history.close();
+}
+void switchLanguageSprite(BaseData &base_data) {
+  if (base_data.switches.english_language) {
+    base_data.sprites.spr_language.setTextureRect(sf::IntRect(0, 1152, IMG_REAL, IMG_REAL));
+  } else {
+    base_data.sprites.spr_language.setTextureRect(sf::IntRect(0, 1056, IMG_REAL, IMG_REAL));
+  }
 }

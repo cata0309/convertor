@@ -83,18 +83,18 @@ CMakeFiles/convertor.dir/src/UserInterface.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/convertor.dir/src/UserInterface.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rustyboy/CLionProjects/convertor/src/UserInterface.cpp -o CMakeFiles/convertor.dir/src/UserInterface.cpp.s
 
-CMakeFiles/convertor.dir/src/Logics.cpp.o: CMakeFiles/convertor.dir/flags.make
-CMakeFiles/convertor.dir/src/Logics.cpp.o: src/Logics.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rustyboy/CLionProjects/convertor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/convertor.dir/src/Logics.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/convertor.dir/src/Logics.cpp.o -c /home/rustyboy/CLionProjects/convertor/src/Logics.cpp
+CMakeFiles/convertor.dir/src/LogicsEnglish.cpp.o: CMakeFiles/convertor.dir/flags.make
+CMakeFiles/convertor.dir/src/LogicsEnglish.cpp.o: src/LogicsEnglish.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rustyboy/CLionProjects/convertor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/convertor.dir/src/LogicsEnglish.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/convertor.dir/src/LogicsEnglish.cpp.o -c /home/rustyboy/CLionProjects/convertor/src/LogicsEnglish.cpp
 
-CMakeFiles/convertor.dir/src/Logics.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/convertor.dir/src/Logics.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rustyboy/CLionProjects/convertor/src/Logics.cpp > CMakeFiles/convertor.dir/src/Logics.cpp.i
+CMakeFiles/convertor.dir/src/LogicsEnglish.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/convertor.dir/src/LogicsEnglish.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rustyboy/CLionProjects/convertor/src/LogicsEnglish.cpp > CMakeFiles/convertor.dir/src/LogicsEnglish.cpp.i
 
-CMakeFiles/convertor.dir/src/Logics.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/convertor.dir/src/Logics.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rustyboy/CLionProjects/convertor/src/Logics.cpp -o CMakeFiles/convertor.dir/src/Logics.cpp.s
+CMakeFiles/convertor.dir/src/LogicsEnglish.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/convertor.dir/src/LogicsEnglish.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rustyboy/CLionProjects/convertor/src/LogicsEnglish.cpp -o CMakeFiles/convertor.dir/src/LogicsEnglish.cpp.s
 
 CMakeFiles/convertor.dir/src/InputForm.cpp.o: CMakeFiles/convertor.dir/flags.make
 CMakeFiles/convertor.dir/src/InputForm.cpp.o: src/InputForm.cpp
@@ -113,7 +113,7 @@ CMakeFiles/convertor.dir/src/InputForm.cpp.s: cmake_force
 convertor_OBJECTS = \
 "CMakeFiles/convertor.dir/src/main.cpp.o" \
 "CMakeFiles/convertor.dir/src/UserInterface.cpp.o" \
-"CMakeFiles/convertor.dir/src/Logics.cpp.o" \
+"CMakeFiles/convertor.dir/src/LogicsEnglish.cpp.o" \
 "CMakeFiles/convertor.dir/src/InputForm.cpp.o"
 
 # External object files for target convertor
@@ -121,7 +121,7 @@ convertor_EXTERNAL_OBJECTS =
 
 convertor: CMakeFiles/convertor.dir/src/main.cpp.o
 convertor: CMakeFiles/convertor.dir/src/UserInterface.cpp.o
-convertor: CMakeFiles/convertor.dir/src/Logics.cpp.o
+convertor: CMakeFiles/convertor.dir/src/LogicsEnglish.cpp.o
 convertor: CMakeFiles/convertor.dir/src/InputForm.cpp.o
 convertor: CMakeFiles/convertor.dir/build.make
 convertor: lib/libsfml-graphics.so.2.5.1

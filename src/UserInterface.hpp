@@ -5,7 +5,7 @@
 #include<cstring>
 #include<fstream>
 #include"InputForm.hpp"
-#include"Logics.hpp"
+#include"LogicsEnglish.hpp"
 
 #ifndef CONVERTOR_SRC_USERINTERFACE_HPP_
 #define CONVERTOR_SRC_USERINTERFACE_HPP_
@@ -78,7 +78,7 @@ struct Sprites {
   sf::Sprite spr_sfx;
   sf::Sprite spr_settings;
   sf::Sprite spr_clear_history;
-
+  sf::Sprite spr_language;
   sf::Sprite spr_left_song_vol;
   sf::Sprite spr_right_song_vol;
   sf::Sprite spr_left_sfx_vol;
@@ -122,6 +122,7 @@ struct Switches {
   bool is_scroll_button = false;
   bool theme_pressed = false;
   bool is_scroll_hovered = false;
+  bool english_language = true;
 };
 struct Volumes {
   int music = 100;
@@ -173,8 +174,6 @@ struct BaseData {
   int limit_top = 0;
   int limit_bottom = 0;
 
-  sf::Texture cross_texture;
-  sf::RectangleShape cross_background;
 };
 void navigateSongVolume(BaseData &, bool);
 void setSongVolume(BaseData &);
@@ -217,4 +216,5 @@ void setSongVolumeSlideDim(BaseData &base_data);
 void setSFXVolumeSlideDim(BaseData &base_data);
 void clearHistory(BaseData &base_data);
 void requestHistory(BaseData &base_data);
+void switchLanguageSprite(BaseData &base_data);
 #endif

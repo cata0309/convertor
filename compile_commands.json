@@ -11,8 +11,8 @@
 },
 {
   "directory": "/home/rustyboy/CLionProjects/convertor",
-  "command": "/usr/bin/c++   -I/home/rustyboy/CLionProjects/convertor/SFML_INCLUDE_DIR -isystem /home/rustyboy/CLionProjects/convertor/include  -g   -std=gnu++14 -o CMakeFiles/convertor.dir/src/Logics.cpp.o -c /home/rustyboy/CLionProjects/convertor/src/Logics.cpp",
-  "file": "/home/rustyboy/CLionProjects/convertor/src/Logics.cpp"
+  "command": "/usr/bin/c++   -I/home/rustyboy/CLionProjects/convertor/SFML_INCLUDE_DIR -isystem /home/rustyboy/CLionProjects/convertor/include  -g   -std=gnu++14 -o CMakeFiles/convertor.dir/src/LogicsEnglish.cpp.o -c /home/rustyboy/CLionProjects/convertor/src/LogicsEnglish.cpp",
+  "file": "/home/rustyboy/CLionProjects/convertor/src/LogicsEnglish.cpp"
 },
 {
   "directory": "/home/rustyboy/CLionProjects/convertor",

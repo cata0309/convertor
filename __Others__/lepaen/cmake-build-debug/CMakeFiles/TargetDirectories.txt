@@ -1,3 +1,0 @@
-/home/rustyboy/CLionProjects/convertor/__Others__/lepaen/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/rustyboy/CLionProjects/convertor/__Others__/lepaen/cmake-build-debug/CMakeFiles/lepaen.dir
-/home/rustyboy/CLionProjects/convertor/__Others__/lepaen/cmake-build-debug/CMakeFiles/edit_cache.dir
