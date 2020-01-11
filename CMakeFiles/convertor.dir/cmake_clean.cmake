@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/convertor.dir/src/InputForm.cpp.o"
   "CMakeFiles/convertor.dir/src/LogicsEnglish.cpp.o"
+  "CMakeFiles/convertor.dir/src/LogicsRomanian.cpp.o"
   "CMakeFiles/convertor.dir/src/UserInterface.cpp.o"
   "CMakeFiles/convertor.dir/src/main.cpp.o"
   "convertor"

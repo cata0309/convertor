@@ -122,7 +122,7 @@ struct Switches {
   bool is_scroll_button = false;
   bool theme_pressed = false;
   bool is_scroll_hovered = false;
-  bool english_language = true;
+  bool english_language = false;
 };
 struct Volumes {
   int music = 100;
@@ -131,10 +131,13 @@ struct Volumes {
   int sfx_settings = 100;
 
 };
+
 struct BaseData {
   //the Aliases array that is used to store the content of the `dictionary` file
   Aliases aliases[MAX_ENTRIES];
+  int dimension = 0;
 
+  int start_index_dictionary_second = 0;
   sf::RectangleShape output_line;
   Theme themes[MAX_NR_THEMES];
   Files files;
@@ -165,7 +168,6 @@ struct BaseData {
   bool initial_setup = true;
   sf::Texture texture;
   //the `dimension`(the number of entries that happens to be in the dictionary file)
-  int dimension = 0;
   int nr_lines = 0;
   int line_height = 0;
   int scroll_line_height = 0;
@@ -217,4 +219,5 @@ void setSFXVolumeSlideDim(BaseData &base_data);
 void clearHistory(BaseData &base_data);
 void requestHistory(BaseData &base_data);
 void switchLanguageSprite(BaseData &base_data);
+void changeDefinitions(BaseData &base_data);
 #endif

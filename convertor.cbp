@@ -97,6 +97,12 @@
 		<Unit filename="/home/rustyboy/CLionProjects/convertor/src/LogicsEnglish.hpp">
 			<Option target="convertor"/>
 		</Unit>
+		<Unit filename="/home/rustyboy/CLionProjects/convertor/src/LogicsRomanian.cpp">
+			<Option target="convertor"/>
+		</Unit>
+		<Unit filename="/home/rustyboy/CLionProjects/convertor/src/LogicsRomanian.hpp">
+			<Option target="convertor"/>
+		</Unit>
 		<Unit filename="/home/rustyboy/CLionProjects/convertor/src/UserInterface.cpp">
 			<Option target="convertor"/>
 		</Unit>

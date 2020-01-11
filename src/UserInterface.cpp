@@ -19,13 +19,22 @@ void requestOutput(BaseData &base_data) {
   history_in.close();
   std::ofstream history_out("history.txt", std::ios::out | std::ios::trunc);
   history_out << base_data.input_form.input.toAnsiString() << "\n";
-
+  int next_dic = base_data.dimension - base_data.start_index_dictionary_second;
   if (intermediate.length()==0) {
     success = false;
   } else {
     char *input = new char[intermediate.length() + 1];
     strcpy(input, intermediate.c_str());
-    processingInput(input, success, result, base_data.aliases, base_data.dimension);
+    if (base_data.switches.english_language) {
+      for (int i = 0; i < next_dic; ++i) {
+        std::cout << base_data.aliases[i].letters << ":" << base_data.aliases[i].digits << "\n";
+      }
+      processingInput(input, success, result, base_data.aliases, next_dic);
+    } else {
+      for (int i = next_dic; i < base_data.dimension; ++i) {
+        std::cout << base_data.aliases[i].letters << ":" << base_data.aliases[i].digits << "\n";
+      }
+    }
     delete[]input;
   }
 
@@ -267,7 +276,6 @@ void initialSetup(BaseData &base_data) {
   sf::Vector2f box_size = sf::Vector2f(WIDTH - 5*IMG_SCALED - 5*THICKNESS, IMG_SCALED - 2*THICKNESS);
   setupTextBox(base_data.input_form, box_size, position, base_data.font_list[base_data.font_index].font,
                sf::Color::Transparent, base_data.colors.text, THICKNESS_FORM, MAX_CHARS_VIEW, base_data.font_size);
-
 }
 
 void changeMode(BaseData &base_data) {
@@ -569,6 +577,7 @@ void handleEvents(sf::RenderWindow &window, sf::Event &event, BaseData &base_dat
         } else {
           std::cout << "SWITCHED TO ROMANIAN\n";
         }
+
         switchLanguageSprite(base_data);
         resetInputForm(base_data.input_form, MAX_CHARS_VIEW);
         resetOutput(base_data);
@@ -1212,6 +1221,7 @@ void loadAssets(BaseData &base_data, bool &success) {
 
   }
   base_data.files.themes_file.close();
+
 }
 
 void drawStaticElements(BaseData &base_data,
@@ -1409,6 +1419,7 @@ void setTheme(BaseData &base_data) {
 
 }
 void setupAliases(BaseData &base_data, std::ifstream &fin) {
+  fin >> base_data.start_index_dictionary_second;
   fin >> base_data.dimension;
   char word[MAX_KEY_DIM];
   int value;
@@ -1421,7 +1432,6 @@ void setupAliases(BaseData &base_data, std::ifstream &fin) {
   }
   fin.close();
 }
-
 void setFontSlideDim(BaseData &base_data) {
   double step_slide = 5*IMG_SCALED/7.f;
   base_data.boxes.font_size_visual.setSize(sf::Vector2f(step_slide*(base_data.font_size - MIN_DIM_FONT),

@@ -1,2 +1,94 @@
+one
+1.000000
+one
+0.000000
+one
+0.000000
+one
+1.000000
+(2)
+2.000000
+()
+WRONG INPUT !
+one
+1.000000
+one
+0.000000
+pne
+0.000000
+1+2
+0.000000
+oneeeee
+0.000000
+oneeee
+0.000000
+oneee
+0.000000
+onee
+0.000000
+one
+0.000000
+one
+0.000000
+unu + unu
+WRONG INPUT !
+unu
+WRONG INPUT !
+one
+1.000000
+unu
+WRONG INPUT !
+one
+1.000000
+one + one
+WRONG INPUT !
+one
+WRONG INPUT !
+3332+3/3 + one
+WRONG INPUT !
+3332+3/3
+3333.000000
+3332+3
+3335.000000
+3332
+3332.000000
+33
+33.000000
+one
+1.000000
+onepsas
+WRONG INPUT !
+onep
+WRONG INPUT !
+onep
+WRONG INPUT !
+one
+1.000000
+one
+1.000000
+one
+1.000000
+three
+3.000000
+1
+1.000000
+one
+1.000000
+1
+1.000000
+one
+1.000000
+onr
+WRONG INPUT !
+one
+1.000000
+one - -.33
+1.330000
+one + one
+2.000000
+one divided by -4.5
+-0.222222
+one divided by -3.44
+-0.290698
 ssssssss
 WRONG INPUT !

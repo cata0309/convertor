@@ -12,7 +12,7 @@
 SFML/Graphics.hpp
 /home/rustyboy/CLionProjects/convertor/src/SFML/Graphics.hpp
 
-/home/rustyboy/CLionProjects/convertor/src/Logics.hpp
+/home/rustyboy/CLionProjects/convertor/src/LogicsEnglish.hpp
 iostream
 -
 fstream
@@ -43,8 +43,12 @@ fstream
 -
 InputForm.hpp
 /home/rustyboy/CLionProjects/convertor/src/InputForm.hpp
-Logics.hpp
-/home/rustyboy/CLionProjects/convertor/src/Logics.hpp
+LogicsEnglish.hpp
+/home/rustyboy/CLionProjects/convertor/src/LogicsEnglish.hpp
+
+/home/rustyboy/CLionProjects/convertor/src/main.cpp
+UserInterface.hpp
+/home/rustyboy/CLionProjects/convertor/src/UserInterface.hpp
 
 include/SFML/Audio.hpp
 SFML/System.hpp

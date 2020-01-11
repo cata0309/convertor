@@ -756,6 +756,7 @@ void pop(LLin *&stack) {
  one + one = 2.000000
  ( one + 32/-3 ) / -6=1.611111
  one divided by 0.00032=3125.000000
+ one divided by -4.5=-0.222222
  sum of one plus one and three =5.000000
  sum of ( one plus one ) and three=5.000000
  division of ( three ) by ten=0.300000

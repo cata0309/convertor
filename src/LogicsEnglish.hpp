@@ -8,7 +8,7 @@
 //############################################### Defines for logics ###################################################
 
 //MAX_ENTRIES = the maximum of definitions from the dictionary file
-#define MAX_ENTRIES 65
+#define MAX_ENTRIES 200
 
 //MAX_KEY_DIM = the maximum length of the word that represents an entry in the dictionary
 #define MAX_KEY_DIM 15

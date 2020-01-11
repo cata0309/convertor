@@ -190,6 +190,33 @@ src/LogicsEnglish.cpp.s:
 	$(MAKE) -f CMakeFiles/convertor.dir/build.make CMakeFiles/convertor.dir/src/LogicsEnglish.cpp.s
 .PHONY : src/LogicsEnglish.cpp.s
 
+src/LogicsRomanian.o: src/LogicsRomanian.cpp.o
+
+.PHONY : src/LogicsRomanian.o
+
+# target to build an object file
+src/LogicsRomanian.cpp.o:
+	$(MAKE) -f CMakeFiles/convertor.dir/build.make CMakeFiles/convertor.dir/src/LogicsRomanian.cpp.o
+.PHONY : src/LogicsRomanian.cpp.o
+
+src/LogicsRomanian.i: src/LogicsRomanian.cpp.i
+
+.PHONY : src/LogicsRomanian.i
+
+# target to preprocess a source file
+src/LogicsRomanian.cpp.i:
+	$(MAKE) -f CMakeFiles/convertor.dir/build.make CMakeFiles/convertor.dir/src/LogicsRomanian.cpp.i
+.PHONY : src/LogicsRomanian.cpp.i
+
+src/LogicsRomanian.s: src/LogicsRomanian.cpp.s
+
+.PHONY : src/LogicsRomanian.s
+
+# target to generate assembly for a file
+src/LogicsRomanian.cpp.s:
+	$(MAKE) -f CMakeFiles/convertor.dir/build.make CMakeFiles/convertor.dir/src/LogicsRomanian.cpp.s
+.PHONY : src/LogicsRomanian.cpp.s
+
 src/UserInterface.o: src/UserInterface.cpp.o
 
 .PHONY : src/UserInterface.o
@@ -260,6 +287,9 @@ help:
 	@echo "... src/LogicsEnglish.o"
 	@echo "... src/LogicsEnglish.i"
 	@echo "... src/LogicsEnglish.s"
+	@echo "... src/LogicsRomanian.o"
+	@echo "... src/LogicsRomanian.i"
+	@echo "... src/LogicsRomanian.s"
 	@echo "... src/UserInterface.o"
 	@echo "... src/UserInterface.i"
 	@echo "... src/UserInterface.s"

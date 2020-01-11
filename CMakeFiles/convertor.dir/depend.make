@@ -78,12 +78,15 @@ CMakeFiles/convertor.dir/src/InputForm.cpp.o: include/SFML/Window/Window.hpp
 CMakeFiles/convertor.dir/src/InputForm.cpp.o: include/SFML/Window/WindowHandle.hpp
 CMakeFiles/convertor.dir/src/InputForm.cpp.o: include/SFML/Window/WindowStyle.hpp
 
-CMakeFiles/convertor.dir/src/Logics.cpp.o: src/Logics.cpp
-CMakeFiles/convertor.dir/src/Logics.cpp.o: src/Logics.hpp
+CMakeFiles/convertor.dir/src/LogicsEnglish.cpp.o: src/LogicsEnglish.cpp
+CMakeFiles/convertor.dir/src/LogicsEnglish.cpp.o: src/LogicsEnglish.hpp
+
+CMakeFiles/convertor.dir/src/LogicsRomanian.cpp.o: src/LogicsRomanian.cpp
+CMakeFiles/convertor.dir/src/LogicsRomanian.cpp.o: src/LogicsRomanian.hpp
 
 CMakeFiles/convertor.dir/src/UserInterface.cpp.o: src/Defines.hpp
 CMakeFiles/convertor.dir/src/UserInterface.cpp.o: src/InputForm.hpp
-CMakeFiles/convertor.dir/src/UserInterface.cpp.o: src/Logics.hpp
+CMakeFiles/convertor.dir/src/UserInterface.cpp.o: src/LogicsEnglish.hpp
 CMakeFiles/convertor.dir/src/UserInterface.cpp.o: src/UserInterface.cpp
 CMakeFiles/convertor.dir/src/UserInterface.cpp.o: src/UserInterface.hpp
 CMakeFiles/convertor.dir/src/UserInterface.cpp.o: include/SFML/Audio.hpp
@@ -180,7 +183,7 @@ CMakeFiles/convertor.dir/src/UserInterface.cpp.o: include/SFML/Window/WindowStyl
 
 CMakeFiles/convertor.dir/src/main.cpp.o: src/Defines.hpp
 CMakeFiles/convertor.dir/src/main.cpp.o: src/InputForm.hpp
-CMakeFiles/convertor.dir/src/main.cpp.o: src/Logics.hpp
+CMakeFiles/convertor.dir/src/main.cpp.o: src/LogicsEnglish.hpp
 CMakeFiles/convertor.dir/src/main.cpp.o: src/UserInterface.hpp
 CMakeFiles/convertor.dir/src/main.cpp.o: src/main.cpp
 CMakeFiles/convertor.dir/src/main.cpp.o: include/SFML/Audio.hpp

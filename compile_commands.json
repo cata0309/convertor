@@ -9,14 +9,19 @@
   "command": "/usr/bin/c++   -I/home/rustyboy/CLionProjects/convertor/SFML_INCLUDE_DIR -isystem /home/rustyboy/CLionProjects/convertor/include  -g   -std=gnu++14 -o CMakeFiles/convertor.dir/src/UserInterface.cpp.o -c /home/rustyboy/CLionProjects/convertor/src/UserInterface.cpp",
   "file": "/home/rustyboy/CLionProjects/convertor/src/UserInterface.cpp"
 },
-{
-  "directory": "/home/rustyboy/CLionProjects/convertor",
-  "command": "/usr/bin/c++   -I/home/rustyboy/CLionProjects/convertor/SFML_INCLUDE_DIR -isystem /home/rustyboy/CLionProjects/convertor/include  -g   -std=gnu++14 -o CMakeFiles/convertor.dir/src/LogicsEnglish.cpp.o -c /home/rustyboy/CLionProjects/convertor/src/LogicsEnglish.cpp",
-  "file": "/home/rustyboy/CLionProjects/convertor/src/LogicsEnglish.cpp"
-},
-{
-  "directory": "/home/rustyboy/CLionProjects/convertor",
-  "command": "/usr/bin/c++   -I/home/rustyboy/CLionProjects/convertor/SFML_INCLUDE_DIR -isystem /home/rustyboy/CLionProjects/convertor/include  -g   -std=gnu++14 -o CMakeFiles/convertor.dir/src/InputForm.cpp.o -c /home/rustyboy/CLionProjects/convertor/src/InputForm.cpp",
-  "file": "/home/rustyboy/CLionProjects/convertor/src/InputForm.cpp"
-}
+  {
+    "directory": "/home/rustyboy/CLionProjects/convertor",
+    "command": "/usr/bin/c++   -I/home/rustyboy/CLionProjects/convertor/SFML_INCLUDE_DIR -isystem /home/rustyboy/CLionProjects/convertor/include  -g   -std=gnu++14 -o CMakeFiles/convertor.dir/src/LogicsEnglish.cpp.o -c /home/rustyboy/CLionProjects/convertor/src/LogicsEnglish.cpp",
+    "file": "/home/rustyboy/CLionProjects/convertor/src/LogicsEnglish.cpp"
+  },
+  {
+    "directory": "/home/rustyboy/CLionProjects/convertor",
+    "command": "/usr/bin/c++   -I/home/rustyboy/CLionProjects/convertor/SFML_INCLUDE_DIR -isystem /home/rustyboy/CLionProjects/convertor/include  -g   -std=gnu++14 -o CMakeFiles/convertor.dir/src/InputForm.cpp.o -c /home/rustyboy/CLionProjects/convertor/src/InputForm.cpp",
+    "file": "/home/rustyboy/CLionProjects/convertor/src/InputForm.cpp"
+  },
+  {
+    "directory": "/home/rustyboy/CLionProjects/convertor",
+    "command": "/usr/bin/c++   -I/home/rustyboy/CLionProjects/convertor/SFML_INCLUDE_DIR -isystem /home/rustyboy/CLionProjects/convertor/include  -g   -std=gnu++14 -o CMakeFiles/convertor.dir/src/LogicsRomanian.cpp.o -c /home/rustyboy/CLionProjects/convertor/src/LogicsRomanian.cpp",
+    "file": "/home/rustyboy/CLionProjects/convertor/src/LogicsRomanian.cpp"
+  }
 ]

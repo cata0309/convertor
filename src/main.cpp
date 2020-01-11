@@ -13,19 +13,21 @@ int main() {
     std::cerr << "The resource cannot be loaded!";
     return -1;
   }
+
+  std::ifstream fin("defines.txt");
+  if (!fin.is_open()) {
+    std::cout << "The definition file cannot be opened";
+    return -1;
+  }
+  setupAliases(base_data, fin);
+
 //  base_data.switches.is_music = false;
 //  base_data.switches.is_sfx = false;
   int duration = 450;
   sf::Clock clock_carret;
   initialSetup(base_data);
   //the file that contains the key words associated with their digit representation in base 10
-  std::ifstream fin_en("defines_en.txt");
-  if (!fin_en.is_open()) {
-    std::cout << "NU";
-    return -1;
-  }
 //it is initially configured and after this function call it stores all the content of the `fin_en` file
-  setupAliases(base_data, fin_en);
   while (window.isOpen()) {
     sf::Event event = {};
     handleEvents(window, event, base_data);
