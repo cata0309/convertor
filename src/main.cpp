@@ -13,7 +13,6 @@ int main() {
     std::cerr << "The resource cannot be loaded!";
     return -1;
   }
-
   std::ifstream fin("defines.txt");
   if (!fin.is_open()) {
     std::cout << "The definition file cannot be opened";
@@ -37,7 +36,7 @@ int main() {
     sf::Time time_carret = clock_carret.getElapsedTime();
     if (time_carret.asMilliseconds() > duration) {
       clock_carret.restart().asMilliseconds();
-      base_data.input_form.carret = !base_data.input_form.carret;
+      base_data.input_form.caret = !base_data.input_form.caret;
     }
     drawStaticElements(base_data, window);
   }

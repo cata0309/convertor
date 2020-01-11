@@ -12,13 +12,25 @@
 SFML/Graphics.hpp
 /home/rustyboy/CLionProjects/convertor/src/SFML/Graphics.hpp
 
+/home/rustyboy/CLionProjects/convertor/src/LogicsDataStructures.hpp
+string
+-
+cstring
+-
+
 /home/rustyboy/CLionProjects/convertor/src/LogicsEnglish.hpp
+LogicsDataStructures.hpp
+/home/rustyboy/CLionProjects/convertor/src/LogicsDataStructures.hpp
 iostream
 -
 fstream
 -
 cstring
 -
+
+/home/rustyboy/CLionProjects/convertor/src/LogicsRomanian.hpp
+LogicsDataStructures.hpp
+/home/rustyboy/CLionProjects/convertor/src/LogicsDataStructures.hpp
 
 /home/rustyboy/CLionProjects/convertor/src/UserInterface.cpp
 UserInterface.hpp
@@ -45,6 +57,8 @@ InputForm.hpp
 /home/rustyboy/CLionProjects/convertor/src/InputForm.hpp
 LogicsEnglish.hpp
 /home/rustyboy/CLionProjects/convertor/src/LogicsEnglish.hpp
+LogicsRomanian.hpp
+/home/rustyboy/CLionProjects/convertor/src/LogicsRomanian.hpp
 
 /home/rustyboy/CLionProjects/convertor/src/main.cpp
 UserInterface.hpp

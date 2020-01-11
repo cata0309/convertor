@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/rustyboy/CLionProjects/convertor/src/InputForm.cpp" "/home/rustyboy/CLionProjects/convertor/CMakeFiles/convertor.dir/src/InputForm.cpp.o"
+  "/home/rustyboy/CLionProjects/convertor/src/LogicsDataStructures.cpp" "/home/rustyboy/CLionProjects/convertor/CMakeFiles/convertor.dir/src/LogicsDataStructures.cpp.o"
   "/home/rustyboy/CLionProjects/convertor/src/LogicsEnglish.cpp" "/home/rustyboy/CLionProjects/convertor/CMakeFiles/convertor.dir/src/LogicsEnglish.cpp.o"
   "/home/rustyboy/CLionProjects/convertor/src/LogicsRomanian.cpp" "/home/rustyboy/CLionProjects/convertor/CMakeFiles/convertor.dir/src/LogicsRomanian.cpp.o"
   "/home/rustyboy/CLionProjects/convertor/src/UserInterface.cpp" "/home/rustyboy/CLionProjects/convertor/CMakeFiles/convertor.dir/src/UserInterface.cpp.o"

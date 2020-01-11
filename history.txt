@@ -1,3 +1,95 @@
+unu 34
+35.000000
+unu 34
+35.000000
+unu /  8
+9.000000
+unu /  6
+7.000000
+unu /  4
+5.000000
+unu / 2
+3.000000
+unu - 1
+2.000000
+cat fac 3 - 4
+7.000000
+cat fac 3 + 4
+7.000000
+3 + 4
+7.000000
+3 + 3
+6.000000
+5+5
+WRONG INPUT !
+1+1
+2.000000
+1+1
+WRONG INPUT !
+cat fac 1 + 3
+WRONG INPUT !
+cat fac 1+2
+WRONG INPUT !
+cat fac 1 - 3
+4.000000
+cat fac 1-2
+WRONG INPUT !
+cat fac cinci ori cinci
+25.000000
+unu impartit la sase
+0.166667
+3/4
+WRONG INPUT !
+1/2
+WRONG INPUT !
+unu + unu
+2.000000
+unu
+WRONG INPUT !
+5+6
+0.000000
+5+
+0.000000
+4+4
+0.000000
+2+2
+0.000000
+one / -2
+-0.500000
+one/2
+WRONG INPUT !
+one
+1.000000
+unu
+0.000000
+one
+1.000000
+one + one / 32
+1.031250
+one + one /32
+WRONG INPUT !
+one + one
+2.000000
+one+one
+WRONG INPUT !
+one
+1.000000
+one
+0.000000
+ss
+WRONG INPUT !
+ce mai faci?
+0.000000
+33+-32
+1.000000
+3+3
+6.000000
+12
+12.000000
+44
+44.000000
+33
+0.000000
 one
 1.000000
 one

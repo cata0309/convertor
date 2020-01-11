@@ -163,6 +163,33 @@ src/InputForm.cpp.s:
 	$(MAKE) -f CMakeFiles/convertor.dir/build.make CMakeFiles/convertor.dir/src/InputForm.cpp.s
 .PHONY : src/InputForm.cpp.s
 
+src/LogicsDataStructures.o: src/LogicsDataStructures.cpp.o
+
+.PHONY : src/LogicsDataStructures.o
+
+# target to build an object file
+src/LogicsDataStructures.cpp.o:
+	$(MAKE) -f CMakeFiles/convertor.dir/build.make CMakeFiles/convertor.dir/src/LogicsDataStructures.cpp.o
+.PHONY : src/LogicsDataStructures.cpp.o
+
+src/LogicsDataStructures.i: src/LogicsDataStructures.cpp.i
+
+.PHONY : src/LogicsDataStructures.i
+
+# target to preprocess a source file
+src/LogicsDataStructures.cpp.i:
+	$(MAKE) -f CMakeFiles/convertor.dir/build.make CMakeFiles/convertor.dir/src/LogicsDataStructures.cpp.i
+.PHONY : src/LogicsDataStructures.cpp.i
+
+src/LogicsDataStructures.s: src/LogicsDataStructures.cpp.s
+
+.PHONY : src/LogicsDataStructures.s
+
+# target to generate assembly for a file
+src/LogicsDataStructures.cpp.s:
+	$(MAKE) -f CMakeFiles/convertor.dir/build.make CMakeFiles/convertor.dir/src/LogicsDataStructures.cpp.s
+.PHONY : src/LogicsDataStructures.cpp.s
+
 src/LogicsEnglish.o: src/LogicsEnglish.cpp.o
 
 .PHONY : src/LogicsEnglish.o
@@ -284,6 +311,9 @@ help:
 	@echo "... src/InputForm.o"
 	@echo "... src/InputForm.i"
 	@echo "... src/InputForm.s"
+	@echo "... src/LogicsDataStructures.o"
+	@echo "... src/LogicsDataStructures.i"
+	@echo "... src/LogicsDataStructures.s"
 	@echo "... src/LogicsEnglish.o"
 	@echo "... src/LogicsEnglish.i"
 	@echo "... src/LogicsEnglish.s"

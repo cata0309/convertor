@@ -78,16 +78,23 @@ CMakeFiles/convertor.dir/src/InputForm.cpp.o
  include/SFML/Window/Window.hpp
  include/SFML/Window/WindowHandle.hpp
  include/SFML/Window/WindowStyle.hpp
+CMakeFiles/convertor.dir/src/LogicsDataStructures.cpp.o
+ /home/rustyboy/CLionProjects/convertor/src/LogicsDataStructures.cpp
+ /home/rustyboy/CLionProjects/convertor/src/LogicsDataStructures.hpp
 CMakeFiles/convertor.dir/src/LogicsEnglish.cpp.o
+ /home/rustyboy/CLionProjects/convertor/src/LogicsDataStructures.hpp
  /home/rustyboy/CLionProjects/convertor/src/LogicsEnglish.cpp
  /home/rustyboy/CLionProjects/convertor/src/LogicsEnglish.hpp
 CMakeFiles/convertor.dir/src/LogicsRomanian.cpp.o
+ /home/rustyboy/CLionProjects/convertor/src/LogicsDataStructures.hpp
  /home/rustyboy/CLionProjects/convertor/src/LogicsRomanian.cpp
  /home/rustyboy/CLionProjects/convertor/src/LogicsRomanian.hpp
 CMakeFiles/convertor.dir/src/UserInterface.cpp.o
  /home/rustyboy/CLionProjects/convertor/src/Defines.hpp
  /home/rustyboy/CLionProjects/convertor/src/InputForm.hpp
+ /home/rustyboy/CLionProjects/convertor/src/LogicsDataStructures.hpp
  /home/rustyboy/CLionProjects/convertor/src/LogicsEnglish.hpp
+ /home/rustyboy/CLionProjects/convertor/src/LogicsRomanian.hpp
  /home/rustyboy/CLionProjects/convertor/src/UserInterface.cpp
  /home/rustyboy/CLionProjects/convertor/src/UserInterface.hpp
  include/SFML/Audio.hpp
@@ -184,7 +191,9 @@ CMakeFiles/convertor.dir/src/UserInterface.cpp.o
 CMakeFiles/convertor.dir/src/main.cpp.o
  /home/rustyboy/CLionProjects/convertor/src/Defines.hpp
  /home/rustyboy/CLionProjects/convertor/src/InputForm.hpp
+ /home/rustyboy/CLionProjects/convertor/src/LogicsDataStructures.hpp
  /home/rustyboy/CLionProjects/convertor/src/LogicsEnglish.hpp
+ /home/rustyboy/CLionProjects/convertor/src/LogicsRomanian.hpp
  /home/rustyboy/CLionProjects/convertor/src/UserInterface.hpp
  /home/rustyboy/CLionProjects/convertor/src/main.cpp
  include/SFML/Audio.hpp

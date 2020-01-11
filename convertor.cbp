@@ -91,6 +91,12 @@
 		<Unit filename="/home/rustyboy/CLionProjects/convertor/src/InputForm.hpp">
 			<Option target="convertor"/>
 		</Unit>
+		<Unit filename="/home/rustyboy/CLionProjects/convertor/src/LogicsDataStructures.cpp">
+			<Option target="convertor"/>
+		</Unit>
+		<Unit filename="/home/rustyboy/CLionProjects/convertor/src/LogicsDataStructures.hpp">
+			<Option target="convertor"/>
+		</Unit>
 		<Unit filename="/home/rustyboy/CLionProjects/convertor/src/LogicsEnglish.cpp">
 			<Option target="convertor"/>
 		</Unit>

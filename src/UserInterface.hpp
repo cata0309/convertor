@@ -6,7 +6,7 @@
 #include<fstream>
 #include"InputForm.hpp"
 #include"LogicsEnglish.hpp"
-
+#include"LogicsRomanian.hpp"
 #ifndef CONVERTOR_SRC_USERINTERFACE_HPP_
 #define CONVERTOR_SRC_USERINTERFACE_HPP_
 
@@ -137,7 +137,7 @@ struct BaseData {
   Aliases aliases[MAX_ENTRIES];
   int dimension = 0;
 
-  int start_index_dictionary_second = 0;
+  int dimension_second_dic = 0;
   sf::RectangleShape output_line;
   Theme themes[MAX_NR_THEMES];
   Files files;
@@ -212,6 +212,8 @@ void updateSettingsView(BaseData &);
 void handleEvents(sf::RenderWindow &, sf::Event &, BaseData &);
 void resetOutput(BaseData &base_data);
 void setTheme(BaseData &base_data);
+//`setupAliases()` function has the role of reading the contents of the fin file and make an Aliases array with all
+//the entry pairs from the file, it also actualizes the `dimension` of the array
 void setupAliases(BaseData &base_data, std::ifstream &fin);
 void setFontSlideDim(BaseData &base_data);
 void setSongVolumeSlideDim(BaseData &base_data);

@@ -1,11 +1,6 @@
 #include "UserInterface.hpp"
 #include<sstream>
 #include<cstring>
-/*
- * TODO TIMP
- * INCOGNITO MODE + BUTTON
- *
- * */
 void requestOutput(BaseData &base_data) {
   bool success = true;
   double result = 0;
@@ -19,21 +14,22 @@ void requestOutput(BaseData &base_data) {
   history_in.close();
   std::ofstream history_out("history.txt", std::ios::out | std::ios::trunc);
   history_out << base_data.input_form.input.toAnsiString() << "\n";
-  int next_dic = base_data.dimension - base_data.start_index_dictionary_second;
+  int dimension_first_dic = base_data.dimension - base_data.dimension_second_dic;
   if (intermediate.length()==0) {
     success = false;
   } else {
     char *input = new char[intermediate.length() + 1];
     strcpy(input, intermediate.c_str());
     if (base_data.switches.english_language) {
-      for (int i = 0; i < next_dic; ++i) {
+      for (int i = 0; i < dimension_first_dic; ++i) {
         std::cout << base_data.aliases[i].letters << ":" << base_data.aliases[i].digits << "\n";
       }
-      processingInput(input, success, result, base_data.aliases, next_dic);
+      processEnInput(input, success, result, base_data.aliases, dimension_first_dic);
     } else {
-      for (int i = next_dic; i < base_data.dimension; ++i) {
+      for (int i = dimension_first_dic; i < base_data.dimension; ++i) {
         std::cout << base_data.aliases[i].letters << ":" << base_data.aliases[i].digits << "\n";
       }
+      processRoInput(input, success, result, (base_data.aliases + dimension_first_dic), base_data.dimension_second_dic);
     }
     delete[]input;
   }
@@ -1419,7 +1415,7 @@ void setTheme(BaseData &base_data) {
 
 }
 void setupAliases(BaseData &base_data, std::ifstream &fin) {
-  fin >> base_data.start_index_dictionary_second;
+  fin >> base_data.dimension_second_dic;
   fin >> base_data.dimension;
   char word[MAX_KEY_DIM];
   int value;
