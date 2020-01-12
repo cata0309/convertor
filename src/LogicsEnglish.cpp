@@ -316,7 +316,6 @@ double executeOperation(double left, double op, double right, bool expression) {
   }
 }
 
-
 bool twoOperatorsTogether(double infix[], int infix_numbers) {
   for (int i = 0; i < infix_numbers - 1; i++)
     if (infix[i] < 0 && infix[i + 1] < 0)
@@ -644,4 +643,5 @@ void processEnInput(char *input,
  sum of ( one plus one ) and three=5.000000
  division of ( three ) by ten=0.300000
   what is the sum of the division of three by seven and the product of three by five=15.428571429
+ one + minus three = 2.00000
  */

@@ -1,4 +1,12 @@
 #include"UserInterface.hpp"
+#include<random>
+
+static std::random_device rd;
+static std::mt19937 rng(rd());
+int randomizator(int a, int b) {
+  std::uniform_int_distribution<int> uid(a, b); // not static
+  return uid(rng);
+}
 int main() {
   std::cout.precision(6);
   std::cout.setf(std::ios::fixed);
@@ -13,6 +21,8 @@ int main() {
     std::cerr << "The resource cannot be loaded!";
     return -1;
   }
+  base_data.theme_index = randomizator(0, base_data.number_of_themes - 1);
+
   std::ifstream fin("defines.txt");
   if (!fin.is_open()) {
     std::cout << "The definition file cannot be opened";
@@ -22,6 +32,9 @@ int main() {
 
 //  base_data.switches.is_music = false;
 //  base_data.switches.is_sfx = false;
+//  base_data.switches.is_dark_mode = true;
+//base_data.switches.is_english_language=false;
+
   int duration = 450;
   sf::Clock clock_carret;
   initialSetup(base_data);
@@ -31,7 +44,6 @@ int main() {
     sf::Event event = {};
     handleEvents(window, event, base_data);
     window.clear(base_data.colors.back);
-//    window.draw(base_data.cross_background);
     updateViewedString(base_data.input_form);
     sf::Time time_carret = clock_carret.getElapsedTime();
     if (time_carret.asMilliseconds() > duration) {
