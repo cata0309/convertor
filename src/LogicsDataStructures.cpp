@@ -114,5 +114,17 @@ int getValue(Aliases *aliases, int dimension, char *key) {
   }
   return -1;
 }
+bool isInfixatedNotation(char *str) {
+  bool numbers = false;
+  for (size_t index = 0; index < strlen(str); ++index) {
+    if (!strchr("+-/*()0123456789.", str[index])) {
+      return false;
+    }
+    if (strchr("0123456789", str[index])) {
+      numbers = true;
+    }
+  }
+  return numbers;
+}
 
 //######################################################################################################################

@@ -21,5 +21,6 @@ int prioritofoperator(int operatorr);
 void TransformFromInfixToPostFix(LLin *&infix, LLin *&postfix);
 // aceasta functie calculeaza valoarea expresiei postfixate
 double ValueOfPostfixed(LLin *&postfix);
+void InfixatedWithSpace(char *sir, double infixed[], int &longinfixed, bool IfIsOp[]);
 void processRoInput(char *input, bool &success, double &result, Aliases *aliases, int dimension);
 #endif //CONVERTOR_SRC_LOGICSROMANIAN_HPP_

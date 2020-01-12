@@ -26,8 +26,6 @@ void infixatedInPlaceTranslator(char *value,
                                 int &dimension);
 //`isInfixatedNotation()` function checks if a word contains only some `allowed` characters that could make the
 //conversion possible
-bool isInfixatedNotation(char *str);
-
 //`numberBuilder()` function constructs a number from the consecutive words that represent numbers
 void numberBuilder(int &number, int &digit_binding, int &power_ten);
 

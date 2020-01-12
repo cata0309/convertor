@@ -152,18 +152,6 @@ void infixatedDoubleTranslator(double *infix, bool *is_ope, int &infix_dim) {
   }
 }
 
-bool isInfixatedNotation(char *str) {
-  bool numbers = false;
-  for (size_t index = 0; index < strlen(str); ++index) {
-    if (!strchr("+-/*()0123456789.", str[index])) {
-      return false;
-    }
-    if (strchr("0123456789", str[index])) {
-      numbers = true;
-    }
-  }
-  return numbers;
-}
 void numberBuilder(int &number, int &digit_binding, int &power_ten) {
   if (digit_binding > 90) {
     if ((power_ten==1000 && (digit_binding==100)) ||
@@ -397,7 +385,6 @@ void processEnInput(char *input,
       bool is_operat_aux[MAX_WORDS];
       infixatedInPlaceTranslator(words[i], auxiliar, is_operat_aux, dim_aux);
       double res = 0;
-
       int right_brace = 0, left_brace = 0;
       for (int i1 = 0; i1 < dim_aux; ++i1) {
         if (is_operat_aux[i1]) {

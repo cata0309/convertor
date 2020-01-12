@@ -109,5 +109,6 @@ int getValue(Aliases *aliases, int dimension, char *key);
 //1.all the entries are lowercase
 //2.helps not writing a lot of boilerplate code
 void convertToLowerCase(char *input);
+bool isInfixatedNotation(char *str);
 //######################################################################################################################
 #endif //CONVERTOR_SRC_LOGICSCOMMON_HPP_

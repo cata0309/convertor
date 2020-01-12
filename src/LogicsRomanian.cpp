@@ -1,5 +1,5 @@
 #include "LogicsRomanian.hpp"
-
+#include<iostream>
 void insereaza(LLin *&coada, double element, bool x) {
   LLin *nod_nou = new(LLin);
   nod_nou->info = element;
@@ -114,14 +114,14 @@ void TransformAllInInfixed(int arrayofanswer[],
                            unsigned &longofarray,
                            double infixed[],
                            int &longinfixed) {
-  int j, i;
+  int j, i, x, k;
 
   for (i = longofarray - 1; i >= 0; i--) {
     if (arrayofanswer[i] <= -4 && arrayofanswer[i] >= -7) {
       for (j = i + 1; j < longofarray; j++) {
         if (arrayofanswer[j]==-8) {
           arrayofanswer[j] = arrayofanswer[i]*11;
-          if (arrayofanswer[j + 1]==-2) {
+          if (arrayofanswer[j + 1]==-2 || arrayofanswer[j + 1]==-8) {
             for (int k = j + 1; k < longofarray - 1; k++)
               arrayofanswer[k] = arrayofanswer[k + 1];
             longofarray--;
@@ -172,8 +172,9 @@ void TransformAllInInfixed(int arrayofanswer[],
     }
   }
 
-  double op;
+  int lnew = 0;
 
+  double op;
   j = 0;
   longinfixed = 0;
   while (j < longofarray) {
@@ -196,20 +197,20 @@ void TransformAllInInfixed(int arrayofanswer[],
         } else {
           if (infixed[j - 1] <= -44 && infixed[j - 1] >= -77 && IfIsOp[j - 1]) {
             if (infixed[j - 1]==-44) {
-              infixed[j - 1] = -55;
+              infixed[j + 1] = (-1)*infixed[j + 1];
 
               IfIsOp[j - 1] = true;
               for (i = j; i < longinfixed - 1; i++)infixed[i] = infixed[i + 1];
               longinfixed--;
             } else {
               if (infixed[j - 1]==-55) {
-                infixed[j - 1] = -44;
+                infixed[j + 1] = (-1)*infixed[j + 1];
                 IfIsOp[j - 1] = true;
                 for (i = j; i < longinfixed - 1; i++)infixed[i] = infixed[i + 1];
                 longinfixed--;
               } else {
                 if (infixed[j - 1]==-66 || infixed[j - 1]==-77) {
-                  if (infixed[j + 1] > 0)infixed[j + 1] = (-1)*infixed[j + 1];
+                  infixed[j + 1] = (-1)*infixed[j + 1];
                   for (i = j; i < longinfixed - 1; i++)infixed[i] = infixed[i + 1];
                   longinfixed--;
                 }
@@ -290,7 +291,12 @@ void TransformAllInInfixed(int arrayofanswer[],
         }
 
       } else {
-        for (j = i + 1; infixed[j]!=infixed[i]*(11) && !IfIsOp[j]; j++);
+        j = i + 1;
+
+        while (1) {
+          if (infixed[j]==infixed[i]*11 && IfIsOp[j]==true)break;
+          else j++;
+        }
 
         if (infixed[j + 1]==-9) {
 
@@ -432,73 +438,174 @@ double ValueOfPostfixed(LLin *&postfix) {
   return top_citeste_valoare(S);
 
 }
+
+void InfixatedWithSpace(char *sir, double infixed[], int &longinfixed, bool IfIsOp[]) {
+  double number = 0;
+  int p;
+  bool punct;
+  char nr[100];
+  int j = 0;
+
+  for (int i = 0; i < strlen(sir); i++) {
+    if (strchr("0123456789", sir[i])) {
+      if (i > 0 && infixed[longinfixed - 1]==-55 && ((i - 1==0)
+          || ((infixed[longinfixed - 2]==-9 || (infixed[longinfixed - 2] <= -44 && infixed[longinfixed - 2] >= -77))
+              && IfIsOp[longinfixed - 2]==true)))
+        strcpy(nr, "-"), longinfixed--, j = 1, std::cout << "Da" << std::endl;
+      else strcpy(nr, ""), j = 0;
+
+      while (strchr("0123456789.", sir[i])) {
+        nr[j] = sir[i];
+
+        j++;
+        i++;
+      }
+      i--;
+
+      nr[j] = '\0';
+
+      infixed[longinfixed] = atof(nr);
+
+      IfIsOp[longinfixed] = false;
+      longinfixed++;
+    } else {
+      if (strchr("+-/*", sir[i])) {
+        if (sir[i]=='+') {
+          infixed[longinfixed] = -44;
+          IfIsOp[longinfixed] = true;
+          longinfixed++;
+        }
+        if (sir[i]=='-') {
+          infixed[longinfixed] = -55;
+          IfIsOp[longinfixed] = true;
+          longinfixed++;
+        }
+        if (sir[i]=='*') {
+          infixed[longinfixed] = -66;
+          IfIsOp[longinfixed] = true;
+          longinfixed++;
+        }
+        if (sir[i]=='/') {
+          infixed[longinfixed] = -77;
+          IfIsOp[longinfixed] = true;
+          longinfixed++;
+        }
+      } else {
+        if (sir[i]=='(') {
+          infixed[longinfixed] = -9;
+          IfIsOp[longinfixed] = true;
+          longinfixed++;
+        } else {
+          infixed[longinfixed] = -10;
+          IfIsOp[longinfixed] = true;
+          longinfixed++;
+        }
+
+      }
+    }
+
+  }
+
+}
 void processRoInput(char *input, bool &success, double &result, Aliases *aliases, int dimension) {
   bool IfIsOp[200] = {};
 
   convertToLowerCase(input);
   bool corect = false;
+  LLin *infix;
+  infix = nullptr;
+  LLin *postfix;
+  postfix = nullptr;
+  double infixed[200];
+  int longinfixed = 0;
 
-  while (!corect) {
+  if (isInfixatedNotation(input)) {
 
-    int trad_inter[MAX_WORDS] = {};
-    unsigned lung_inter = 0;
+    InfixatedWithSpace(input, infixed, longinfixed, IfIsOp);
 
-    if (strlen(input)!=0) {
-      char *curent = strtok(input, " ?");
-      while (curent) {
+    int operatori, operanzi;
+    operatori = operanzi = 0;
+    for (int i = 0; i < longinfixed; i++) {
+      if (infixed[i] > 0)operanzi++;
+      else {
+        if (IfIsOp[i] && infixed[i]!=-9 && infixed[i]!=-10)operatori++;
+        else operanzi++;
 
-        if (doar_cifre(curent)) {
-
-          if (atoi(curent) < 0) {
-
-            trad_inter[lung_inter++] = -55;
-            trad_inter[lung_inter++] = atoi(curent)*(-1);
-            trad_inter[lung_inter++] = -8;
-          } else {
-            trad_inter[lung_inter++] = atoi(curent);
-            trad_inter[lung_inter++] = -8;
-          }
-        } else {
-          int t = getValue(aliases, dimension, curent);
-          if (t!=-1 && !(t==-8 && (trad_inter[lung_inter - 1]==-77 || trad_inter[lung_inter - 1]==-66)))
-            trad_inter[lung_inter++] = t;
-        }
-        curent = strtok(nullptr, " ");
       }
-
-      if (lung_inter < 3) {
-
-        corect = false;
-      } else
-        corect = validare(trad_inter, lung_inter);
     }
+    if (operanzi - 1 >= operatori)corect = true;
+    else false;
     if (corect) {
-      if (trad_inter[lung_inter - 1]==-8)lung_inter--;
 
-      double infixed[200];
-      int longinfixed = 0;
-
-      TransformAllInInfixed(trad_inter, IfIsOp, lung_inter, infixed, longinfixed);
-
-      LLin *infix;
-      infix = nullptr;
-      LLin *postfix;
-      postfix = nullptr;
+      success = true;
       for (int i = 0; i < longinfixed; i++) {
-
         insereaza(infix, infixed[i], IfIsOp[i]);
 
       }
-
       TransformFromInfixToPostFix(infix, postfix);
 
       double finalresult = ValueOfPostfixed(postfix);
       result = finalresult;
-
     } else {
+      std::cout << "Intrare incorecta! Introduceti intrebarea din nou !\n";
       success = false;
-      break;
+
+    }
+  } else {
+    while (!corect) {
+
+      int trad_inter[MAX_WORDS] = {};
+      unsigned lung_inter = 0;
+
+      if (strlen(input)!=0) {
+        char *curent = strtok(input, " ?");
+        while (curent) {
+
+          if (doar_cifre(curent) && strcmp(curent, "-")!=0) {
+
+            if (atof(curent) < 0) {
+
+              trad_inter[lung_inter++] = -55;
+              trad_inter[lung_inter++] = atof(curent)*(-1);
+              trad_inter[lung_inter++] = -8;
+            } else {
+              trad_inter[lung_inter++] = atof(curent);
+              trad_inter[lung_inter++] = -8;
+            }
+          } else {
+            int t = getValue(aliases, dimension, curent);
+            if (t!=-1 && !(t==-8 && (trad_inter[lung_inter - 1]==-77 || trad_inter[lung_inter - 1]==-66)))
+              trad_inter[lung_inter++] = t;
+          }
+          curent = strtok(nullptr, " ");
+        }
+
+        if (lung_inter < 3) {
+
+          corect = false;
+        } else
+          corect = validare(trad_inter, lung_inter);
+      }
+      if (corect) {
+        if (trad_inter[lung_inter - 1]==-8)lung_inter--;
+
+        TransformAllInInfixed(trad_inter, IfIsOp, lung_inter, infixed, longinfixed);
+
+        for (int i = 0; i < longinfixed; i++) {
+
+          insereaza(infix, infixed[i], IfIsOp[i]);
+
+        }
+
+        TransformFromInfixToPostFix(infix, postfix);
+
+        double finalresult = ValueOfPostfixed(postfix);
+        result = finalresult;
+
+      } else {
+        success = false;
+        break;
+      }
     }
   }
-
 }
