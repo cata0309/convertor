@@ -1,0 +1,52 @@
+# depslib dependency file v1.0
+1578970324 source:c:\users\catal\desktop\convertorcodeblocks\main.cpp
+	"UserInterface.hpp"
+	<random>
+
+1578968716 c:\users\catal\desktop\convertorcodeblocks\userinterface.hpp
+	"Defines.hpp"
+	"InputForm.hpp"
+	"LogicsEnglish.hpp"
+	"LogicsRomanian.hpp"
+	"SFML/Audio.hpp"
+	"SFML/Graphics.hpp"
+	<cstring>
+	<fstream>
+	<iostream>
+
+1578969904 c:\users\catal\desktop\convertorcodeblocks\defines.hpp
+
+1578854624 c:\users\catal\desktop\convertorcodeblocks\inputform.hpp
+	"SFML/Graphics.hpp"
+
+1578885426 c:\users\catal\desktop\convertorcodeblocks\logicsenglish.hpp
+	"LogicsDataStructures.hpp"
+	<iostream>
+	<fstream>
+	<cstring>
+
+1578886022 c:\users\catal\desktop\convertorcodeblocks\logicsdatastructures.hpp
+	<string>
+	<cstring>
+
+1578886198 c:\users\catal\desktop\convertorcodeblocks\logicsromanian.hpp
+	"LogicsDataStructures.hpp"
+
+1578967392 source:c:\users\catal\desktop\convertorcodeblocks\inputform.cpp
+	"InputForm.hpp"
+	<cstring>
+
+1578885426 source:c:\users\catal\desktop\convertorcodeblocks\logicsdatastructures.cpp
+	"LogicsDataStructures.hpp"
+
+1578886022 source:c:\users\catal\desktop\convertorcodeblocks\logicsenglish.cpp
+	"LogicsEnglish.hpp"
+
+1578964968 source:c:\users\catal\desktop\convertorcodeblocks\logicsromanian.cpp
+	"LogicsRomanian.hpp"
+
+1578970524 source:c:\users\catal\desktop\convertorcodeblocks\userinterface.cpp
+	"UserInterface.hpp"
+	<cstring>
+	<sstream>
+

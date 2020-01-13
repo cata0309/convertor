@@ -1,0 +1,30 @@
+cat fac cinci impartit 1/2
+10.000000
+cat fac cinci impartit la 5/7
+7.000000
+cat fac cinci impartit la 5/7
+7.000000
+cat fac cinci impartit la 5/6
+6.000000
+sss
+Intrare gresita!
+sss
+Intrare gresita!
+sss
+Intrare gresita!
+sss
+Intrare gresita!
+
+Wrong input!
+
+Intrare gresita!
+five * five
+25.000000
+five x five
+Wrong input!
+( unu plus unu
+Intrare gresita!
+unu impartit       la    0.000032
+31250.000000
+unu impartit la 1/2
+2.000000

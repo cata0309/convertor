@@ -1,7 +1,0 @@
-6
-assets/sounds/songs/Trance.wav TRANCE
-assets/sounds/songs/Summer.wav SUMMER
-assets/sounds/songs/Pirate.wav PIRATE
-assets/sounds/songs/Bomber.wav BOMBER
-assets/sounds/songs/HappyDay.wav HAPPYDAY
-assets/sounds/songs/Megalovania.wav MEGALOVANIA

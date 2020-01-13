@@ -1,0 +1,18 @@
+What kind of operations can solve ?(*note* Do not insert `->` before input !)
+( The application supports Paste/Ctrl + V operation )
+#############################################################################
+-> what is the sum of the division of three by seven and the product of three
+divided by seven and four plus three = 5.142857
+-> what is the sum of the division of three by seven and the product of three
+divided by seven and ( four plus three ) = 3.428571
+-> 4+-3/-54 = 4.055556
+-> one + one = 2.000000
+-> ( one + 32/-3 ) / -6 = 1.611111
+-> how much is one divided by 0.00032 = 3125.000000
+-> one divided by -4.5 = -0.222222
+-> sum of one plus one and three = 5.000000
+-> sum of ( one plus one ) and three = 5.000000
+-> division of ( three ) by ten = 0.300000
+-> what is the sum of the division of three by seven and the product of three
+by five=15.428571429
+-> one + minus three = -2.00000

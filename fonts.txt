@@ -1,5 +1,0 @@
-4
-assets/fonts/consolas.ttf CONSOLAS
-assets/fonts/firamono.ttf FIRAMONO
-assets/fonts/visitor.ttf VISITOR
-assets/fonts/officecode.ttf OFFICECODE

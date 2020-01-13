@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="convertorcodeblocks" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/convertorcodeblocks" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="Defines.hpp" />
+		<Unit filename="InputForm.cpp" />
+		<Unit filename="InputForm.hpp" />
+		<Unit filename="LogicsDataStructures.cpp" />
+		<Unit filename="LogicsDataStructures.hpp" />
+		<Unit filename="LogicsEnglish.cpp" />
+		<Unit filename="LogicsEnglish.hpp" />
+		<Unit filename="LogicsRomanian.cpp" />
+		<Unit filename="LogicsRomanian.hpp" />
+		<Unit filename="UserInterface.cpp" />
+		<Unit filename="UserInterface.hpp" />
+		<Unit filename="defines.txt" />
+		<Unit filename="fonts.txt" />
+		<Unit filename="history.txt" />
+		<Unit filename="instruction_en.txt" />
+		<Unit filename="instruction_ro.txt" />
+		<Unit filename="main.cpp" />
+		<Unit filename="settings.txt" />
+		<Unit filename="songs.txt" />
+		<Unit filename="themes.txt" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

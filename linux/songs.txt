@@ -1,0 +1,12 @@
+11
+assets/sounds/songs/adventure.wav Adventure
+assets/sounds/songs/comic.wav Comic
+assets/sounds/songs/light.wav Light
+assets/sounds/songs/serious.wav Serious
+assets/sounds/songs/wood.wav Wood
+assets/sounds/songs/pirate.wav Pirate
+assets/sounds/songs/trance.wav Trance
+assets/sounds/songs/summer.wav Summer
+assets/sounds/songs/bomber.wav Bomber
+assets/sounds/songs/happyday.wav HappyDay
+assets/sounds/songs/megalovania.wav Megalovania

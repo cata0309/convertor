@@ -1,0 +1,10 @@
+9
+assets/fonts/consolas.ttf Consolas
+assets/fonts/chargen6809.ttf Chargen6809
+assets/fonts/disposabledroidbb.ttf DispoDroid
+assets/fonts/dankmono.ttf DankMono
+assets/fonts/ubuntumono.ttf UbuntuMono
+assets/fonts/spacemono.ttf SpaceMono
+assets/fonts/firamono.ttf FiraMono
+assets/fonts/visitor.ttf Visitor
+assets/fonts/officecode.ttf OfficeCode
