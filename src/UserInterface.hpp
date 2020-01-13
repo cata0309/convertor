@@ -124,10 +124,10 @@ struct Switches {
   bool is_theme_pressed = false;
 };
 struct Volumes {
-  int music = 10;
-  int music_settings = 10;
-  int sfx = 50;
-  int sfx_settings = 50;
+  int music = 100;
+  int music_settings = 100;
+  int sfx = 100;
+  int sfx_settings = 100;
 };
 
 struct BaseData {
@@ -150,11 +150,13 @@ struct BaseData {
   sf::String instruction_en_string;
   sf::String history_string;
   sf::String output_string;
+  sf::String time_string;
   sf::Text history;
   sf::Text instruction;
   sf::Text label_history;
   sf::Text label_input;
   sf::Text output;
+  sf::Text time;
   sf::Texture einstein_text;
   sf::Texture texture;
   double line_height = 0;
@@ -177,7 +179,6 @@ struct BaseData {
   int theme_index = 0;
 };
 bool contains(sf::FloatRect, sf::Vector2i);
-void changeDefinitions(BaseData &base_data);
 void changeInstructionPosition(BaseData &base_data);
 void changeMode(BaseData &);
 void changeUILanguage(BaseData &base_data);

@@ -1,12 +1,7 @@
 #include"UserInterface.hpp"
 #include<random>
 
-static std::random_device rd;
-static std::mt19937 rng(rd());
-int randomizator(int a, int b) {
-  std::uniform_int_distribution<int> uid(a, b); // not static
-  return uid(rng);
-}
+
 int main() {
   std::cout.precision(6);
   std::cout.setf(std::ios::fixed);
@@ -21,8 +16,6 @@ int main() {
     std::cerr << "The resource cannot be loaded!";
     return -1;
   }
-  base_data.theme_index = randomizator(0, base_data.number_of_themes - 1);
-
   std::ifstream fin("defines.txt");
   if (!fin.is_open()) {
     std::cout << "The definition file cannot be opened";
@@ -37,6 +30,7 @@ int main() {
 
   int duration = 450;
   sf::Clock clock_carret;
+  sf::Clock elapsed_time;
   initialSetup(base_data);
   //the file that contains the key words associated with their digit representation in base 10
 //it is initially configured and after this function call it stores all the content of the `fin_en` file
@@ -50,6 +44,10 @@ int main() {
       clock_carret.restart().asMilliseconds();
       base_data.input_form.caret = !base_data.input_form.caret;
     }
+    base_data.time_string = std::to_string(int(elapsed_time.getElapsedTime().asSeconds()));
+    base_data.time.setString(base_data.time_string);
+    base_data.time.setPosition(WIDTH - IMG_SCALED - 2*PADDING - base_data.time.getLocalBounds().width,
+                               HEIGHT - IMG_SCALED - 2*PADDING);
     drawStaticElements(base_data, window);
   }
   return 0;

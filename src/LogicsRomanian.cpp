@@ -1,5 +1,4 @@
 #include "LogicsRomanian.hpp"
-#include<iostream>
 void insereaza(LLin *&coada, double element, bool x) {
   LLin *nod_nou = new(LLin);
   nod_nou->info = element;
@@ -55,6 +54,8 @@ bool doar_cifre(char sir[]) {
 
 bool validare(double *sir, unsigned lungime) {
   int operatii = 0, operanzi = 0;
+
+  int numarpar = 0;
   for (unsigned i = 0; i < lungime; ++i) {
     if ((i==0 || i==lungime - 1) && (sir[i]==-2 || sir[i]==-3)) {
 
@@ -65,13 +66,18 @@ bool validare(double *sir, unsigned lungime) {
       return false;
 
     }
+    if (sir[i]==-9)numarpar++;
+    if (sir[i]==-10)numarpar--;
     if (sir[i]!=-1 && sir[i]!=-2 && sir[i]!=-3) {
-      if (sir[i] <= -4 || sir[i] <= -44)
+      if (sir[i]==-4 || sir[i]==-5 || sir[i]==-6 || sir[i]==-7 || sir[i]==-44 || sir[i]==-55 || sir[i]==-66
+          || sir[i]==-77)
         operatii++;
       else
         operanzi++;
     }
   }
+
+  if (numarpar!=0)return false;
   return !(operatii < 1 || operanzi < 2);
 }
 //functia oper transforma din scrierea sa in litere un numar in cifre , pana la intalnirea unui operator
@@ -81,7 +87,7 @@ double oper(double sir[], unsigned lung, int &incep) {
 
   int i;
   i = incep;
-  while (!(sir[i] <= -44 && sir[i] >= -77) && i < lung) {
+  while (!((sir[i] <= -44 && sir[i] >= -77) || sir[i]==-10) && i < lung) {
     if (sir[i] > 0) {
       if (sir[i] > 0 && sir[i] <= 19) {
         if (sir[i + 1]==100)op = op + sir[i++]*100;
@@ -193,7 +199,8 @@ void TransformAllInInfixed(double arrayofanswer[],
   j = 0;
   longinfixed = 0;
   while (j < longofarray) {
-    if ((arrayofanswer[j] <= -44 && arrayofanswer[j] >= -77) || (arrayofanswer[j] <= -4 && arrayofanswer[j] >= -7)) {
+    if ((arrayofanswer[j] <= -44 && arrayofanswer[j] >= -77) || (arrayofanswer[j] <= -4 && arrayofanswer[j] >= -7)
+        || arrayofanswer[j]==-9 || arrayofanswer[j]==-10) {
       infixed[longinfixed++] = arrayofanswer[j++];
     } else {
       op = oper(arrayofanswer, longofarray, j);
@@ -253,6 +260,8 @@ void TransformAllInInfixed(double arrayofanswer[],
     } else {
       if (infixed[j] <= -4 && infixed[j] >= -7) {
         IfIsOp[j] = true;
+      } else {
+        if (infixed[j]==-9 || infixed[j]==-10)IfIsOp[j] = true;
       }
     }
   }
@@ -368,6 +377,7 @@ double result(int operatorr, double operand1, double operand2) {
       break;
 
   }
+  return 0;
 }
 
 // aceasta functie returneaza prioritatea operatorilor , adunarea si scaderea avand prioritate 1 ,iar inmultirea si impartirea 2
@@ -522,56 +532,59 @@ void InfixatedWithSpace(char *sir, double infixed[], int &longinfixed, bool IfIs
 void processRoInput(char *input, bool &success, double &result, Aliases *aliases, int dimension) {
 
   bool IfIsOp[200] = {};
-
   convertToLowerCase(input);
   bool corect = false;
+  bool ver = false;
   LLin *infix;
   infix = nullptr;
   LLin *postfix;
   postfix = nullptr;
   double infixed[200];
+  double finalresult;
   int longinfixed = 0;
 
-  if (isInfixatedNotation(input)) {
+  while (!corect) {
 
-    InfixatedWithSpace(input, infixed, longinfixed, IfIsOp);
+    double trad_inter[MAX_WORDS] = {};
+    unsigned lung_inter = 0;
 
-    int operatori, operanzi;
-    operatori = operanzi = 0;
-    for (int i = 0; i < longinfixed; i++) {
-      if (infixed[i] > 0)operanzi++;
-      else {
-        if (IfIsOp[i] && infixed[i]!=-9 && infixed[i]!=-10)operatori++;
-        else operanzi++;
+    if (strlen(input)!=0) {
+      char *curent = strtok(input, " ?");
+      while (curent) {
+        if (isInfixatedNotation(curent)) {
 
-      }
-    }
-    if (operanzi - 1 >= operatori)corect = true;
-    else false;
-    if (corect) {
+          InfixatedWithSpace(curent, infixed, longinfixed, IfIsOp);
 
-      success = true;
-      for (int i = 0; i < longinfixed; i++) {
-        insereaza(infix, infixed[i], IfIsOp[i]);
+          int operatori, operanzi;
+          operatori = operanzi = 0;
+          for (int i = 0; i < longinfixed; i++) {
+            if (infixed[i] > 0)operanzi++;
+            else {
+              if (IfIsOp[i] && infixed[i]!=-9 && infixed[i]!=-10)operatori++;
+              else operanzi++;
 
-      }
-      TransformFromInfixToPostFix(infix, postfix);
+            }
+          }
+          ver = operanzi - 1 >= operatori;
 
-      double finalresult = ValueOfPostfixed(postfix);
-      result = finalresult;
-    } else {
-      success = false;
+          if (ver) {
+            for (int i = 0; i < longinfixed; i++) {
+              insereaza(infix, infixed[i], IfIsOp[i]);
 
-    }
-  } else {
-    while (!corect) {
+            }
+            TransformFromInfixToPostFix(infix, postfix);
 
-      double trad_inter[MAX_WORDS] = {};
-      unsigned lung_inter = 0;
+            finalresult = ValueOfPostfixed(postfix);
+            if (finalresult > 0)trad_inter[lung_inter++] = finalresult;
+            else {
+              trad_inter[lung_inter++] = -55;
+              trad_inter[lung_inter++] = (-1)*finalresult;
+            }
 
-      if (strlen(input)!=0) {
-        char *curent = strtok(input, " ?");
-        while (curent) {
+            for (int i = 0; i < longinfixed; i++)infixed[i] = 0, IfIsOp[i] = false;
+          }
+
+        } else {
 
           if (doar_cifre(curent) && strcmp(curent, "-")!=0) {
 
@@ -589,38 +602,39 @@ void processRoInput(char *input, bool &success, double &result, Aliases *aliases
             if (t!=-1 && !(t==-8 && (trad_inter[lung_inter - 1]==-77 || trad_inter[lung_inter - 1]==-66)))
               trad_inter[lung_inter++] = t;
           }
-          curent = strtok(nullptr, " ");
         }
+        curent = strtok(nullptr, " ");
 
-        if (lung_inter < 3) {
-
-          corect = false;
-        } else {
-
-          corect = validare(trad_inter, lung_inter);
-
-        }
       }
-      if (corect) {
-        if (trad_inter[lung_inter - 1]==-8)lung_inter--;
-
-        TransformAllInInfixed(trad_inter, IfIsOp, lung_inter, infixed, longinfixed);
-
-        for (int i = 0; i < longinfixed; i++) {
-
-          insereaza(infix, infixed[i], IfIsOp[i]);
-
-        }
-
-        TransformFromInfixToPostFix(infix, postfix);
-
-        double finalresult = ValueOfPostfixed(postfix);
-        result = finalresult;
-
+      if (lung_inter < 3) {
+        if (lung_inter==1 && ver)corect = true, result = trad_inter[0];
+        else corect = false;
       } else {
-        success = false;
-        break;
+
+        corect = validare(trad_inter, lung_inter);
+
       }
+    }
+    if (corect && lung_inter!=1) {
+      if (trad_inter[lung_inter - 1]==-8)lung_inter--;
+
+      TransformAllInInfixed(trad_inter, IfIsOp, lung_inter, infixed, longinfixed);
+
+      for (int i = 0; i < longinfixed; i++) {
+
+        insereaza(infix, infixed[i], IfIsOp[i]);
+
+      }
+
+      TransformFromInfixToPostFix(infix, postfix);
+
+      finalresult = ValueOfPostfixed(postfix);
+      result = finalresult;
+
+    } else {
+      success = corect;
+      break;
     }
   }
 }
+

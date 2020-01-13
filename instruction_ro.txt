@@ -1,2 +1,19 @@
 Ce operatii poate executa ?(*nota* Nu insera `->` inaintea intrarii!)
+( Aplicatia suporta operatia Lipire/Ctrl + V )
 #####################################################################
+->Care este suma dintre impartirea lui trei la sapte si produsul lui
+trei impartit la sapte cu patru plus trei = 5.142857
+->Cat este suma dintre impartirea lui trei la sapte si produsul lui
+trei impartirea la sapte cu ( patru plus trei ) = 3.428571
+->4+-3/-54 = 4.055556
+->unu plus unu = 2.000
+->( one + 32/-3 ) / -6 = 1.611111
+->unu impartit       la    0.000032 = 3125.00000
+->unu impartit la -4.5 = -0.222222
+->suma lui unu plus unu si trei = 5.000000
+->suma lui ( unu plus unu ) si trei =5.00000
+->impartirea lui ( trei ) la zece =0.300000
+->Cat este suma suma dintre impartirea lui trei la sapte si produsul
+lui trei cu cinci = 15.428571429
+->unu + minus trei = -2.000000
+

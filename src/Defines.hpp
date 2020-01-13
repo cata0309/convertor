@@ -7,6 +7,7 @@
 #define CONVERTOR_SRC_DEFINES_HPP_
 #define ERROR "assets/sounds/error.wav"
 #define GLOB_TEXTURE "assets/images/texture.png"
+#define SCROLL_ERROR_FACTOR 270.589
 #define HEIGHT 768 //the height of the window
 #define IMG_REAL 96//the dimension x and y as the image
 #define IMG_SCALED 48//the dimension x and y that we render

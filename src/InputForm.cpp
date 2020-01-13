@@ -1,6 +1,5 @@
 #include "InputForm.hpp"
 #include <cstring>
-#include <iostream>
 void setupTextBox(InputForm &input_form, sf::Vector2f box_size,
                   sf::Vector2f position, sf::Font &font, sf::Color background,
                   sf::Color foreground, float thickness, int max_chars_view,

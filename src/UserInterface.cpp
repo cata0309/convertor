@@ -586,7 +586,7 @@ void handleEvents(sf::RenderWindow &window, sf::Event &event,
           lines =
               (mouse.y - base_data.distance_from_mouse - base_data.limit_top)/
                   base_data.scroll_line_height;
-        if (lines <= base_data.maximum_scrolled_lines + 1) {
+        if (lines <= base_data.maximum_scrolled_lines + 2) {
           base_data.scrolled_lines = lines;
           updateHistoryPosition(base_data);
 
@@ -603,7 +603,7 @@ void handleEvents(sf::RenderWindow &window, sf::Event &event,
           }
           switch (event.key.code) {
             case sf::Keyboard::Down:
-              if (base_data.scrolled_lines <= base_data.maximum_scrolled_lines) {
+              if (base_data.scrolled_lines <= base_data.maximum_scrolled_lines + 1) {
                 playTyping(base_data.sounds);
                 base_data.scrolled_lines++;
                 updateHistoryPosition(base_data);
@@ -1241,6 +1241,8 @@ void navigateTextFont(BaseData &base_data, bool decrement) {
 }
 
 void setTextFont(BaseData &base_data) {
+  base_data.time.setFont(
+      base_data.font_list[base_data.font_index].font);
   base_data.instruction.setFont(
       base_data.font_list[base_data.font_index].font);
 
@@ -1284,10 +1286,7 @@ void setTextFont(BaseData &base_data) {
                                  4*IMG_SCALED - base_data.font_size -
                                      THICKNESS);
   }
-  if (base_data.nr_lines!=0)
-    base_data.line_height =
-        base_data.history.getLocalBounds().height/base_data.nr_lines;
-
+  updateScrollDetails(base_data);
 }
 void navigateTextFontSize(BaseData &base_data, bool decrement) {
   if (decrement) {
@@ -1303,6 +1302,7 @@ void navigateTextFontSize(BaseData &base_data, bool decrement) {
 }
 
 void setTextFontSize(BaseData &base_data) {
+  base_data.time.setCharacterSize(base_data.font_size);
   base_data.settings_texts.song_volume.setCharacterSize(base_data.font_size);
   base_data.settings_texts.sfx_volume.setCharacterSize(base_data.font_size);
   base_data.settings_texts.song_name.setCharacterSize(base_data.font_size);
@@ -1339,9 +1339,7 @@ void setTextFontSize(BaseData &base_data) {
                                  4*IMG_SCALED - base_data.font_size -
                                      THICKNESS);
   }
-  if (base_data.nr_lines!=0)
-    base_data.line_height =
-        base_data.history.getLocalBounds().height/base_data.nr_lines;
+  updateScrollDetails(base_data);
   setFontSlideDim(base_data);
 }
 void loadAssets(BaseData &base_data, bool &success) {
@@ -1485,6 +1483,7 @@ void drawStaticElements(BaseData &base_data, sf::RenderWindow &window) {
     window.draw(base_data.boxes.font_size);
     window.draw(base_data.settings_texts.font_size);
     window.draw(base_data.sprites.spr_right_font_size);
+    window.draw(base_data.time);
   } else {
     window.draw(base_data.label_input);
     window.draw(base_data.input_form.back_box);
@@ -1512,6 +1511,7 @@ void drawStaticElements(BaseData &base_data, sf::RenderWindow &window) {
   window.display();
 }
 void updateBoxesAndTextsOutlineColor(BaseData &base_data) {
+  base_data.time.setFillColor(base_data.colors.text);
   base_data.instruction.setFillColor(base_data.colors.text);
   base_data.boxes.song_volume_visual.setFillColor(base_data.colors.text);
   base_data.boxes.sfx_volume_visual.setFillColor(base_data.colors.text);
@@ -1706,6 +1706,10 @@ void clearHistory(BaseData &base_data) {
 void loadSettings(BaseData &base_data) {
   std::ifstream settings("settings.txt");
   if (!settings.is_open()) {
+    base_data.switches.is_music = true;
+    base_data.switches.is_sfx = true;
+    base_data.switches.is_english_language = true;
+    base_data.switches.is_dark_mode = true;
     base_data.font_index = 0;
     base_data.font_size = 24;
     base_data.song_index = 0;
@@ -1715,6 +1719,10 @@ void loadSettings(BaseData &base_data) {
     base_data.volumes.sfx = 100;
     base_data.volumes.sfx_settings = 100;
   } else {
+    bool is_music = 1;
+    bool is_sfx = 1;
+    bool is_english_language = 1;
+    bool is_dark_mode = 0;
     int font_index = 0;
     int font_size = 24;
     int song_index = 0;
@@ -1723,6 +1731,14 @@ void loadSettings(BaseData &base_data) {
     int volumes_music_settings = 100;
     int volumes_sfx = 100;
     int volumes_sfx_settings = 100;
+    settings >> is_music;
+    base_data.switches.is_music = is_music;
+    settings >> is_sfx;
+    base_data.switches.is_sfx = is_sfx;
+    settings >> is_english_language;
+    base_data.switches.is_english_language = is_english_language;
+    settings >> is_dark_mode;
+    base_data.switches.is_dark_mode = is_dark_mode;
     settings >> font_index;
     base_data.font_index = font_index >= base_data.number_of_fonts ? 0 : font_index;
     settings >> font_size;
@@ -1730,7 +1746,7 @@ void loadSettings(BaseData &base_data) {
     settings >> song_index;
     base_data.song_index = song_index >= base_data.number_of_songs ? 0 : song_index;
     settings >> theme_index;
-    base_data.theme_index = theme_index >= base_data.number_of_themes ? 0 : theme_index;;
+    base_data.theme_index = theme_index >= base_data.number_of_themes ? 0 : theme_index;
     settings >> volumes_music;
     base_data.volumes.music = std::min(100, volumes_music);
     settings >> volumes_music_settings;
@@ -1744,6 +1760,10 @@ void loadSettings(BaseData &base_data) {
 }
 void dumpSettings(BaseData &base_data) {
   std::ofstream settings("settings.txt", std::ios::out | std::ios::trunc);
+  settings << base_data.switches.is_music << "\n";
+  settings << base_data.switches.is_sfx << "\n";
+  settings << base_data.switches.is_english_language << "\n";
+  settings << base_data.switches.is_dark_mode << "\n";
   settings << base_data.font_index << "\n";
   settings << base_data.font_size << "\n";
   settings << base_data.song_index << "\n";
@@ -1813,7 +1833,7 @@ void updateHistoryPosition(BaseData &base_data) {
   base_data.history.setPosition(base_data.history.getPosition().x,
                                 int(POS_HIST_BOX_Y + 2.0*PADDING -
                                     base_data.scrolled_lines*SCROLL_LINES*
-                                        (base_data.line_height - 0.06)));
+                                        (base_data.line_height - double(base_data.font_size)/SCROLL_ERROR_FACTOR)));
   base_data.boxes.scroll_rect.setPosition(
       base_data.boxes.scroll_rect.getPosition().x,
       double(base_data.limit_top) + double(base_data.scrolled_lines)*
@@ -1829,7 +1849,7 @@ void updateScrollDetails(BaseData &base_data) {
     base_data.maximum_scrolled_lines++;
   base_data.scroll_line_height =
       (double) (base_data.limit_bottom - base_data.limit_top)/
-          (base_data.maximum_scrolled_lines + 1);
+          (base_data.maximum_scrolled_lines + 2);
   base_data.history.setPosition(base_data.history.getPosition().x,
                                 int(POS_HIST_BOX_Y + 2.0*PADDING +
                                     base_data.scrolled_lines*SCROLL_LINES*
