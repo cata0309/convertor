@@ -1,0 +1,2 @@
+Ce operatii poate executa ?(*nota* Nu insera `->` inaintea intrarii!)
+#####################################################################

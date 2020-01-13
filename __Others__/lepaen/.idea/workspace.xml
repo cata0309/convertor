@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8ae8a9e6-e4b0-4fd4-8883-4df56ed3b651" name="Default Changelist" comment="added `double` numbers support and -number conversion">
+      <change afterPath="$PROJECT_DIR$/../../assets/images/AssetsForProject/UNIVERSAL/szzro.aseprite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CMakeFiles/convertor.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../../CMakeFiles/convertor.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CMakeFiles/convertor.dir/src/InputForm.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../CMakeFiles/convertor.dir/src/InputForm.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CMakeFiles/convertor.dir/src/Logics.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../CMakeFiles/convertor.dir/src/Logics.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CMakeFiles/convertor.dir/src/UserInterface.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../CMakeFiles/convertor.dir/src/UserInterface.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/rustyboy.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/lepaen.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LogicsFunctions.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LogicsFunctions.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdC/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdCXX/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lepaen.dir/CXX.includecache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lepaen.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lepaen.dir/LogicsFunctions.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lepaen.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lepaen.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lepaen.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lepaen.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lepaen.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lepaen.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lepaen.dir/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lepaen.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/defines_en.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lepaen" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lepaen.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/toy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../convertor" beforeDir="false" afterPath="$PROJECT_DIR$/../../convertor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../history.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../history.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/InputForm.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/InputForm.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/Logics.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/Logics.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/UserInterface.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/UserInterface.cpp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="aWqSHBND" />
+  </component>
+  <component name="ProjectId" id="1VRqm555tu9wqgmyjv1muc2suCG" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="cf.advertisement.text.overridden" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8ae8a9e6-e4b0-4fd4-8883-4df56ed3b651" name="Default Changelist" comment="" />
+      <created>1577226411359</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1577226411359</updated>
+      <workItem from="1577226418297" duration="820000" />
+      <workItem from="1577227263499" duration="7546000" />
+      <workItem from="1577316622319" duration="30000" />
+      <workItem from="1577316696384" duration="255000" />
+      <workItem from="1577317866675" duration="4812000" />
+      <workItem from="1577353627277" duration="3825000" />
+      <workItem from="1577357477842" duration="1489000" />
+      <workItem from="1577365147406" duration="5783000" />
+      <workItem from="1577370993880" duration="1133000" />
+      <workItem from="1577372287419" duration="314000" />
+      <workItem from="1577538595026" duration="222000" />
+      <workItem from="1578430861974" duration="10078000" />
+      <workItem from="1578521563618" duration="11282000" />
+      <workItem from="1578562419164" duration="1521000" />
+      <workItem from="1578574895845" duration="1102000" />
+      <workItem from="1578698123130" duration="6981000" />
+      <workItem from="1578738189901" duration="5688000" />
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="403" y="330" width="498" height="384" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1577370302619">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state x="403" y="330" width="498" height="384" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1048@0.0.1920.1048" timestamp="1577370302619" />
+    <state x="595" y="120" width="720" height="807" key="CommitChangelistDialog2" timestamp="1578743938080">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state x="595" y="120" width="720" height="807" key="CommitChangelistDialog2/0.0.1920.1048@0.0.1920.1048" timestamp="1578743938080" />
+    <state x="743" y="282" width="424" height="480" key="FileChooserDialogImpl" timestamp="1578744129991">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state x="743" y="282" width="424" height="480" key="FileChooserDialogImpl/0.0.1920.1048@0.0.1920.1048" timestamp="1578744129991" />
+    <state width="950" height="291" key="GridCell.Tab.0.bottom" timestamp="1578744130964">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state width="950" height="291" key="GridCell.Tab.0.bottom/0.0.1920.1048@0.0.1920.1048" timestamp="1578744130964" />
+    <state width="950" height="291" key="GridCell.Tab.0.center" timestamp="1578744130963">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state width="950" height="291" key="GridCell.Tab.0.center/0.0.1920.1048@0.0.1920.1048" timestamp="1578744130963" />
+    <state width="950" height="291" key="GridCell.Tab.0.left" timestamp="1578744130963">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state width="950" height="291" key="GridCell.Tab.0.left/0.0.1920.1048@0.0.1920.1048" timestamp="1578744130963" />
+    <state width="950" height="291" key="GridCell.Tab.0.right" timestamp="1578744130964">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state width="950" height="291" key="GridCell.Tab.0.right/0.0.1920.1048@0.0.1920.1048" timestamp="1578744130964" />
+    <state width="1920" height="339" key="GridCell.Tab.1.bottom" timestamp="1578705106202">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state width="1920" height="339" key="GridCell.Tab.1.bottom/0.0.1920.1048@0.0.1920.1048" timestamp="1578705106202" />
+    <state width="1920" height="339" key="GridCell.Tab.1.center" timestamp="1578705106202">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state width="1920" height="339" key="GridCell.Tab.1.center/0.0.1920.1048@0.0.1920.1048" timestamp="1578705106202" />
+    <state width="1920" height="339" key="GridCell.Tab.1.left" timestamp="1578705106202">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state width="1920" height="339" key="GridCell.Tab.1.left/0.0.1920.1048@0.0.1920.1048" timestamp="1578705106202" />
+    <state width="1920" height="339" key="GridCell.Tab.1.right" timestamp="1578705106202">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state width="1920" height="339" key="GridCell.Tab.1.right/0.0.1920.1048@0.0.1920.1048" timestamp="1578705106202" />
+    <state x="778" y="85" key="SettingsEditor" timestamp="1578742127157">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state x="778" y="85" key="SettingsEditor/0.0.1920.1048@0.0.1920.1048" timestamp="1578742127157" />
+    <state width="498" height="445" key="SwitcherDM" timestamp="1577367839346">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state width="498" height="445" key="SwitcherDM/0.0.1920.1048@0.0.1920.1048" timestamp="1577367839346" />
+    <state x="483" y="129" width="944" height="785" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1577369294734">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state x="483" y="129" width="944" height="785" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1048@0.0.1920.1048" timestamp="1577369294734" />
+    <state x="624" y="239" width="672" height="677" key="run.anything.popup" timestamp="1578742577373">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state x="624" y="239" width="672" height="677" key="run.anything.popup/0.0.1920.1048@0.0.1920.1048" timestamp="1578742577373" />
+    <state x="143" y="231" width="672" height="678" key="search.everywhere.popup" timestamp="1578743794305">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state x="143" y="231" width="672" height="678" key="search.everywhere.popup/0.0.1920.1048@0.0.1920.1048" timestamp="1578743794305" />
+  </component>
+</project>

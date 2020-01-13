@@ -22,17 +22,9 @@ void requestOutput(BaseData &base_data) {
     char *input = new char[intermediate.length() + 1];
     strcpy(input, intermediate.c_str());
     if (base_data.switches.is_english_language) {
-      for (int i = 0; i < dimension_first_dic; ++i) {
-        std::cout << base_data.aliases[i].letters << ":"
-                  << base_data.aliases[i].digits << "\n";
-      }
       processEnInput(input, success, result, base_data.aliases,
                      dimension_first_dic);
     } else {
-      for (int i = dimension_first_dic; i < base_data.dimension; ++i) {
-        std::cout << base_data.aliases[i].letters << ":"
-                  << base_data.aliases[i].digits << "\n";
-      }
       processRoInput(input, success, result,
                      (base_data.aliases + dimension_first_dic),
                      base_data.dimension_second_dic);
@@ -42,10 +34,13 @@ void requestOutput(BaseData &base_data) {
   if (success) {
     //    std::ostringstream strs;
     //    strs << result;
-    std::cout << "result:" << result << "\n";
     base_data.output_string = /*strs.str();*/ std::to_string(result);
   } else {
-    base_data.output_string = "WRONG INPUT !";
+    if (base_data.switches.is_english_language) {
+      base_data.output_string = "Wrong input!";
+    } else {
+      base_data.output_string = "Intrare gresita!";
+    }
   }
   base_data.output.setString(base_data.output_string);
   base_data.output.setPosition(int(WIDTH - 4*IMG_SCALED - 5*THICKNESS -
@@ -352,6 +347,7 @@ void updateSettingsView(BaseData &base_data) {
 }
 
 void initialSetup(BaseData &base_data) {
+  loadSettings(base_data);
   setBoxesDetails(base_data);
   setSpritesDetails(base_data);
   setTextFont(base_data);
@@ -362,19 +358,10 @@ void initialSetup(BaseData &base_data) {
   setTextFontSize(base_data);
   setSongToPlay(base_data);
   requestHistory(base_data);
-  base_data.switches.is_initial_setup = false;
-  base_data.settings_texts.label_font_name.setString("FONT:");
-  base_data.settings_texts.label_song_name.setString("SONG:");
-  base_data.settings_texts.label_song_volume.setString("SONG VOLUME:");
-  base_data.settings_texts.label_sfx_volume.setString("SFX VOLUME:");
-  base_data.settings_texts.label_settings.setString("SETTINGS");
-  base_data.label_history.setString("HISTORY");
-  base_data.label_input.setString("CALCULATE");
+
   base_data.settings_texts.label_settings.setStyle(sf::Text::Underlined | sf::Text::Italic);
   base_data.label_input.setStyle(sf::Text::Underlined | sf::Text::Italic);
   base_data.label_history.setStyle(sf::Text::Underlined | sf::Text::Italic);
-
-  base_data.settings_texts.label_font_size.setString("FONT SIZE:");
 
   base_data.settings_texts.font_size.setOutlineThickness(THICKNESS - 1);
   base_data.settings_texts.sfx_volume.setOutlineThickness(THICKNESS - 1);
@@ -388,10 +375,10 @@ void initialSetup(BaseData &base_data) {
       sf::Vector2f((WIDTH - 5*IMG_SCALED - 5*THICKNESS), 2));
   base_data.output_line.setOutlineThickness(0);
   base_data.output_line.setPosition(IMG_SCALED, 4.25*IMG_SCALED + THICKNESS);
-
-  updateSettingsView(base_data);
+  changeViewedInstructions(base_data);
   changeMode(base_data);
-
+  changeUILanguage(base_data);
+  updateSettingsView(base_data);
   sf::Vector2f position =
       sf::Vector2f(IMG_SCALED, 2*IMG_SCALED + 3*THICKNESS);
   sf::Vector2f box_size = sf::Vector2f(WIDTH - 5*IMG_SCALED - 5*THICKNESS,
@@ -400,8 +387,22 @@ void initialSetup(BaseData &base_data) {
                base_data.font_list[base_data.font_index].font,
                base_data.colors.back, base_data.colors.text, THICKNESS_FORM,
                MAX_CHARS_VIEW, base_data.font_size);
+  base_data.switches.is_initial_setup = false;
 }
-
+void changeViewedInstructions(BaseData &base_data) {
+  if (base_data.switches.is_english_language) {
+    base_data.instruction.setString(base_data.instruction_en_string);
+  } else {
+    base_data.instruction.setString(base_data.instruction_ro_string);
+  }
+  changeInstructionPosition(base_data);
+}
+void changeInstructionPosition(BaseData &base_data) {
+  base_data.instruction.setPosition((WIDTH - base_data.instruction.getLocalBounds().width)/2,
+                                    base_data.output_line.getPosition().y
+                                        + (HEIGHT - base_data.output_line.getPosition().y
+                                            - base_data.instruction.getLocalBounds().height)/2);
+}
 void changeMode(BaseData &base_data) {
 
   base_data.colors.back = (base_data.switches.is_dark_mode)
@@ -469,6 +470,7 @@ void handleEvents(sf::RenderWindow &window, sf::Event &event,
   while (window.pollEvent(event)) {
     sf::Vector2i mouse = sf::Mouse::getPosition(window);
     if (event.type==sf::Event::Closed) {
+      dumpSettings(base_data);
       window.close();
     }
     if (event.type==sf::Event::KeyPressed) {
@@ -667,12 +669,8 @@ void handleEvents(sf::RenderWindow &window, sf::Event &event,
         playClick(base_data.sounds);
         base_data.switches.is_english_language =
             !base_data.switches.is_english_language;
-        if (base_data.switches.is_english_language) {
-          std::cout << "SWITCHED TO ENGLISH\n";
-        } else {
-          std::cout << "SWITCHED TO ROMANIAN\n";
-        }
-
+        changeViewedInstructions(base_data);
+        changeUILanguage(base_data);
         switchLanguageSprite(base_data);
         resetInputForm(base_data.input_form, MAX_CHARS_VIEW);
         resetOutput(base_data);
@@ -1243,6 +1241,9 @@ void navigateTextFont(BaseData &base_data, bool decrement) {
 }
 
 void setTextFont(BaseData &base_data) {
+  base_data.instruction.setFont(
+      base_data.font_list[base_data.font_index].font);
+
   base_data.settings_texts.label_font_name.setFont(
       base_data.font_list[base_data.font_index].font);
   base_data.settings_texts.label_font_size.setFont(
@@ -1275,6 +1276,7 @@ void setTextFont(BaseData &base_data) {
       base_data.font_list[base_data.font_index].font);
   base_data.output.setFont(base_data.font_list[base_data.font_index].font);
   if (!base_data.switches.is_initial_setup) {
+    changeInstructionPosition(base_data);
     updateSettingsView(base_data);
     base_data.output.setPosition(int(WIDTH - 4*IMG_SCALED - 5*THICKNESS -
                                      base_data.output.getLocalBounds().width)/
@@ -1285,6 +1287,7 @@ void setTextFont(BaseData &base_data) {
   if (base_data.nr_lines!=0)
     base_data.line_height =
         base_data.history.getLocalBounds().height/base_data.nr_lines;
+
 }
 void navigateTextFontSize(BaseData &base_data, bool decrement) {
   if (decrement) {
@@ -1305,7 +1308,7 @@ void setTextFontSize(BaseData &base_data) {
   base_data.settings_texts.song_name.setCharacterSize(base_data.font_size);
   base_data.settings_texts.font_name.setCharacterSize(base_data.font_size);
   base_data.settings_texts.font_size.setCharacterSize(base_data.font_size);
-
+  base_data.instruction.setCharacterSize(std::max(std::min(base_data.font_size, 22) - 2, 19));
   base_data.settings_texts.label_song_volume.setCharacterSize(
       base_data.font_size);
   base_data.settings_texts.label_sfx_volume.setCharacterSize(
@@ -1328,6 +1331,7 @@ void setTextFontSize(BaseData &base_data) {
   base_data.input_form.text.setCharacterSize(base_data.font_size);
   base_data.output.setCharacterSize(base_data.font_size);
   if (!base_data.switches.is_initial_setup) {
+    changeInstructionPosition(base_data);
     updateSettingsView(base_data);
     base_data.output.setPosition(int(WIDTH - 4*IMG_SCALED - 5*THICKNESS -
                                      base_data.output.getLocalBounds().width)/
@@ -1341,6 +1345,7 @@ void setTextFontSize(BaseData &base_data) {
   setFontSlideDim(base_data);
 }
 void loadAssets(BaseData &base_data, bool &success) {
+  loadInstructions(base_data);
   if (!base_data.einstein_text.loadFromFile("assets/images/einstein.png")) {
     std::cerr << "Couldn't load Einsten photo";
     std::exit(1);
@@ -1415,7 +1420,7 @@ void loadAssets(BaseData &base_data, bool &success) {
   }
   base_data.files.themes_file >> base_data.number_of_themes;
   for (unsigned index = 0; index < base_data.number_of_themes; ++index) {
-    int red, green, blue;
+    int red = 0, green = 0, blue = 0;
     base_data.files.themes_file >> red;
     base_data.files.themes_file >> green;
     base_data.files.themes_file >> blue;
@@ -1491,6 +1496,7 @@ void drawStaticElements(BaseData &base_data, sf::RenderWindow &window) {
     window.draw(base_data.sprites.spr_delete);
     window.draw(base_data.sprites.spr_equal);
     window.draw(base_data.sprites.spr_clear);
+    window.draw(base_data.instruction);
   }
   window.draw(base_data.sprites.spr_mode);
   window.draw(base_data.sprites.spr_music);
@@ -1506,6 +1512,7 @@ void drawStaticElements(BaseData &base_data, sf::RenderWindow &window) {
   window.display();
 }
 void updateBoxesAndTextsOutlineColor(BaseData &base_data) {
+  base_data.instruction.setFillColor(base_data.colors.text);
   base_data.boxes.song_volume_visual.setFillColor(base_data.colors.text);
   base_data.boxes.sfx_volume_visual.setFillColor(base_data.colors.text);
   base_data.boxes.font_size_visual.setFillColor(base_data.colors.text);
@@ -1605,7 +1612,7 @@ void setBoxesDetails(BaseData &base_data) {
   base_data.boxes.mask_box_top.setSize(
       sf::Vector2f(WIDTH, IMG_SCALED + 2*PADDING + 4.6));
   base_data.boxes.mask_box_bottom.setSize(
-      sf::Vector2f(WIDTH, base_data.font_size + 5));
+      sf::Vector2f(WIDTH, base_data.font_size + 3));
 
   base_data.boxes.mask_box_bottom.setPosition(0, HEIGHT - base_data.boxes.mask_box_bottom.getSize().y);
 
@@ -1696,6 +1703,78 @@ void clearHistory(BaseData &base_data) {
   temp.close();
   resetHistoryPosition(base_data);
 }
+void loadSettings(BaseData &base_data) {
+  std::ifstream settings("settings.txt");
+  if (!settings.is_open()) {
+    base_data.font_index = 0;
+    base_data.font_size = 24;
+    base_data.song_index = 0;
+    base_data.theme_index = 0;
+    base_data.volumes.music = 100;
+    base_data.volumes.music_settings = 100;
+    base_data.volumes.sfx = 100;
+    base_data.volumes.sfx_settings = 100;
+  } else {
+    int font_index = 0;
+    int font_size = 24;
+    int song_index = 0;
+    int theme_index = 0;
+    int volumes_music = 100;
+    int volumes_music_settings = 100;
+    int volumes_sfx = 100;
+    int volumes_sfx_settings = 100;
+    settings >> font_index;
+    base_data.font_index = font_index >= base_data.number_of_fonts ? 0 : font_index;
+    settings >> font_size;
+    base_data.font_size = font_size > MAX_DIM_FONT ? 24 : font_size;
+    settings >> song_index;
+    base_data.song_index = song_index >= base_data.number_of_songs ? 0 : song_index;
+    settings >> theme_index;
+    base_data.theme_index = theme_index >= base_data.number_of_themes ? 0 : theme_index;;
+    settings >> volumes_music;
+    base_data.volumes.music = std::min(100, volumes_music);
+    settings >> volumes_music_settings;
+    base_data.volumes.music_settings = std::min(100, volumes_music_settings);
+    settings >> volumes_sfx;
+    base_data.volumes.sfx = std::min(100, volumes_sfx);
+    settings >> volumes_sfx_settings;
+    base_data.volumes.sfx_settings = std::min(100, volumes_sfx_settings);
+    settings.close();
+  }
+}
+void dumpSettings(BaseData &base_data) {
+  std::ofstream settings("settings.txt", std::ios::out | std::ios::trunc);
+  settings << base_data.font_index << "\n";
+  settings << base_data.font_size << "\n";
+  settings << base_data.song_index << "\n";
+  settings << base_data.theme_index << "\n";
+  settings << base_data.volumes.music << "\n";
+  settings << base_data.volumes.music_settings << "\n";
+  settings << base_data.volumes.sfx << "\n";
+  settings << base_data.volumes.sfx_settings;
+  settings.close();
+}
+void loadInstructions(BaseData &base_data) {
+  base_data.instruction_en_string.clear();
+  base_data.instruction_ro_string.clear();
+  std::string line;
+  std::ifstream instruction_en("instruction_en.txt");
+  if (!instruction_en.is_open()) {
+    std::cerr << "Cannot load the file with the English instructions!";
+    std::exit(1);
+  }
+  std::ifstream instruction_ro("instruction_ro.txt");
+  if (!instruction_ro.is_open()) {
+    std::cerr << "Cannot load the file with the Romanian instructions!";
+    std::exit(1);
+  }
+  while (std::getline(instruction_en, line)) {
+    base_data.instruction_en_string = base_data.instruction_en_string + line + "\n";
+  }
+  while (std::getline(instruction_ro, line)) {
+    base_data.instruction_ro_string = base_data.instruction_ro_string + line + "\n";
+  }
+}
 void requestHistory(BaseData &base_data) {
   base_data.history_string.clear();
   base_data.nr_lines = 0;
@@ -1761,4 +1840,28 @@ void resetHistoryPosition(BaseData &base_data) {
   base_data.boxes.scroll_rect.setPosition(
       base_data.boxes.scroll_rect.getPosition().x, base_data.limit_top);
   base_data.history.setPosition(POS_HIST_BOX_X, POS_HIST_BOX_Y + 2*PADDING);
+}
+void changeUILanguage(BaseData &base_data) {
+  if (base_data.switches.is_english_language) {
+    base_data.settings_texts.label_font_name.setString("Font");
+    base_data.settings_texts.label_song_name.setString("Song");
+    base_data.settings_texts.label_song_volume.setString("Song volume");
+    base_data.settings_texts.label_sfx_volume.setString("Sound volume");
+    base_data.settings_texts.label_font_size.setString("Font size");
+    base_data.settings_texts.label_settings.setString("Settings");
+    base_data.label_history.setString("History");
+    base_data.label_input.setString("Calculate");
+  } else {
+    base_data.settings_texts.label_font_name.setString("Font");
+    base_data.settings_texts.label_song_name.setString("Melodie");
+    base_data.settings_texts.label_song_volume.setString("Volum melodie");
+    base_data.settings_texts.label_sfx_volume.setString("Volum sunet");
+    base_data.settings_texts.label_font_size.setString("Marime font");
+    base_data.settings_texts.label_settings.setString("Setari");
+    base_data.label_history.setString("Istoric");
+    base_data.label_input.setString("Calculeaza");
+  }
+  if (!base_data.switches.is_initial_setup) {
+    updateSettingsView(base_data);
+  }
 }

@@ -1,7 +1,6 @@
 #include "LogicsDataStructures.hpp"
 #ifndef CONVERTOR_SRC_LOGICSROMANIAN_HPP_
 #define CONVERTOR_SRC_LOGICSROMANIAN_HPP_
-void convertToLowerCase(char *input);
 void insereaza(LLin *&coada, double element, bool x);
 double top_citeste_valoare(LLin *stiva);
 bool top_citeste_IsOp(LLin *stiva);

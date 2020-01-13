@@ -1,5 +1,5 @@
-68
-129
+69
+130
 zero 0
 one 1
 two 2
@@ -125,6 +125,7 @@ produsului -6
 impartit -77
 impartirea -7
 impartirii -7
+diviziunii -7
 / -77
 , -11
 ,si -11

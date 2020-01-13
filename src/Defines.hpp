@@ -13,8 +13,8 @@
 #define MAX_CLICKS_STROKES 5//maximum strokes that can be played simultaneous
 #define MAX_DIM_FONT 27//the maximum font size
 #define MAX_FONT_NAME 30//the maximum size of a name of a font
-#define MAX_NR_FONTS 10//the maximum numbers of fonts that can be loaded
-#define MAX_NR_SONGS 10//the maximum numbers of songs that can be loaded
+#define MAX_NR_FONTS 11//the maximum numbers of fonts that can be loaded
+#define MAX_NR_SONGS 11//the maximum numbers of songs that can be loaded
 #define MAX_NR_THEMES 10//maximum number of themes that can be loaded
 #define MAX_PATH 70//the maximum path of a variable that stores a path to a file
 #define MAX_SONG_NAME 20//the maximum size of a name of a song

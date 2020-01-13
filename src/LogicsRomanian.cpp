@@ -30,13 +30,30 @@ bool top_citeste_IsOp(LLin *stiva) {
 //functia doar_cifre(..) are rolul de a verifica daca un anumit sir de caractere contine numai cifre sau minus(pt nr negative
 //in acest caz acesta poate fi convertit direct in numere
 bool doar_cifre(char sir[]) {
-  for (size_t i = 0; i < strlen(sir); ++i)
-    if (!((sir[i] >= '0' && sir[i] <= '9') || (sir[i]=='-')))
+  bool p;
+  int nrp;
+  p = false;
+  for (size_t i = 0; i < strlen(sir); ++i) {
+    if (!((sir[i] >= '0' && sir[i] <= '9') || (sir[i]=='-') || (sir[i]=='.') || (sir[i]==',')))
       return false;
+    if (sir[i]=='.' || sir[i]==',')p = true;
+
+  }
+  nrp = 0;
+  if (p) {
+    for (size_t i = 0; i < strlen(sir); ++i) {
+      if (sir[i]=='.' || sir[i]==',') {
+        nrp++;
+        if (sir[i]==',')sir[i] = '.';
+      }
+    }
+    if (nrp!=1)return false;
+
+  }
   return true;
 }
 
-bool validare(int *sir, unsigned lungime) {
+bool validare(double *sir, unsigned lungime) {
   int operatii = 0, operanzi = 0;
   for (unsigned i = 0; i < lungime; ++i) {
     if ((i==0 || i==lungime - 1) && (sir[i]==-2 || sir[i]==-3)) {
@@ -58,7 +75,7 @@ bool validare(int *sir, unsigned lungime) {
   return !(operatii < 1 || operanzi < 2);
 }
 //functia oper transforma din scrierea sa in litere un numar in cifre , pana la intalnirea unui operator
-double oper(int sir[], unsigned lung, int &incep) {
+double oper(double sir[], unsigned lung, int &incep) {
   double op;
   op = 0;
 
@@ -109,12 +126,12 @@ double oper(int sir[], unsigned lung, int &incep) {
   return op;
 }
 // functia TransformAllInInfixed transforma toate operatiile prefixate in infixate , totodata punand si parantezele necesare in cazul unui operator prefixat
-void TransformAllInInfixed(int arrayofanswer[],
+void TransformAllInInfixed(double arrayofanswer[],
                            bool IfIsOp[],
                            unsigned &longofarray,
                            double infixed[],
                            int &longinfixed) {
-  int j, i, x, k;
+  int j, i;
 
   for (i = longofarray - 1; i >= 0; i--) {
     if (arrayofanswer[i] <= -4 && arrayofanswer[i] >= -7) {
@@ -171,8 +188,6 @@ void TransformAllInInfixed(int arrayofanswer[],
 
     }
   }
-
-  int lnew = 0;
 
   double op;
   j = 0;
@@ -294,7 +309,7 @@ void TransformAllInInfixed(int arrayofanswer[],
         j = i + 1;
 
         while (1) {
-          if (infixed[j]==infixed[i]*11 && IfIsOp[j]==true)break;
+          if (infixed[j]==infixed[i]*11 && IfIsOp[j])break;
           else j++;
         }
 
@@ -440,9 +455,6 @@ double ValueOfPostfixed(LLin *&postfix) {
 }
 
 void InfixatedWithSpace(char *sir, double infixed[], int &longinfixed, bool IfIsOp[]) {
-  double number = 0;
-  int p;
-  bool punct;
   char nr[100];
   int j = 0;
 
@@ -450,8 +462,8 @@ void InfixatedWithSpace(char *sir, double infixed[], int &longinfixed, bool IfIs
     if (strchr("0123456789", sir[i])) {
       if (i > 0 && infixed[longinfixed - 1]==-55 && ((i - 1==0)
           || ((infixed[longinfixed - 2]==-9 || (infixed[longinfixed - 2] <= -44 && infixed[longinfixed - 2] >= -77))
-              && IfIsOp[longinfixed - 2]==true)))
-        strcpy(nr, "-"), longinfixed--, j = 1, std::cout << "Da" << std::endl;
+              && IfIsOp[longinfixed - 2])))
+        strcpy(nr, "-"), longinfixed--, j = 1;
       else strcpy(nr, ""), j = 0;
 
       while (strchr("0123456789.", sir[i])) {
@@ -508,6 +520,7 @@ void InfixatedWithSpace(char *sir, double infixed[], int &longinfixed, bool IfIs
 
 }
 void processRoInput(char *input, bool &success, double &result, Aliases *aliases, int dimension) {
+
   bool IfIsOp[200] = {};
 
   convertToLowerCase(input);
@@ -547,14 +560,13 @@ void processRoInput(char *input, bool &success, double &result, Aliases *aliases
       double finalresult = ValueOfPostfixed(postfix);
       result = finalresult;
     } else {
-      std::cout << "Intrare incorecta! Introduceti intrebarea din nou !\n";
       success = false;
 
     }
   } else {
     while (!corect) {
 
-      int trad_inter[MAX_WORDS] = {};
+      double trad_inter[MAX_WORDS] = {};
       unsigned lung_inter = 0;
 
       if (strlen(input)!=0) {
@@ -583,8 +595,11 @@ void processRoInput(char *input, bool &success, double &result, Aliases *aliases
         if (lung_inter < 3) {
 
           corect = false;
-        } else
+        } else {
+
           corect = validare(trad_inter, lung_inter);
+
+        }
       }
       if (corect) {
         if (trad_inter[lung_inter - 1]==-8)lung_inter--;

@@ -124,10 +124,10 @@ struct Switches {
   bool is_theme_pressed = false;
 };
 struct Volumes {
-  int music = 100;
-  int music_settings = 100;
-  int sfx = 100;
-  int sfx_settings = 100;
+  int music = 10;
+  int music_settings = 10;
+  int sfx = 50;
+  int sfx_settings = 50;
 };
 
 struct BaseData {
@@ -146,9 +146,12 @@ struct BaseData {
   Theme themes[MAX_NR_THEMES];
   Volumes volumes;
   sf::RectangleShape output_line;
+  sf::String instruction_ro_string;
+  sf::String instruction_en_string;
   sf::String history_string;
   sf::String output_string;
   sf::Text history;
+  sf::Text instruction;
   sf::Text label_history;
   sf::Text label_input;
   sf::Text output;
@@ -175,13 +178,19 @@ struct BaseData {
 };
 bool contains(sf::FloatRect, sf::Vector2i);
 void changeDefinitions(BaseData &base_data);
+void changeInstructionPosition(BaseData &base_data);
 void changeMode(BaseData &);
+void changeUILanguage(BaseData &base_data);
+void changeViewedInstructions(BaseData &base_data);
 void clearHistory(BaseData &base_data);
 void convertIToC(int, char *);
 void drawStaticElements(BaseData &, sf::RenderWindow &);
+void dumpSettings(BaseData &base_data);
 void handleEvents(sf::RenderWindow &, sf::Event &, BaseData &);
 void initialSetup(BaseData &);
 void loadAssets(BaseData &, bool &);
+void loadInstructions(BaseData &base_data);
+void loadSettings(BaseData &base_data);
 void navigateSFXVolume(BaseData &, bool);
 void navigateSongName(BaseData &, bool);
 void navigateSongVolume(BaseData &, bool);

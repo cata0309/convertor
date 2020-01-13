@@ -1,9 +1,9 @@
 [
-{
-  "directory": "/home/rustyboy/CLionProjects/convertor",
-  "command": "/usr/bin/c++   -I/home/rustyboy/CLionProjects/convertor/SFML_INCLUDE_DIR -isystem /home/rustyboy/CLionProjects/convertor/include  -g   -std=gnu++14 -o CMakeFiles/convertor.dir/src/main.cpp.o -c /home/rustyboy/CLionProjects/convertor/src/main.cpp",
-  "file": "/home/rustyboy/CLionProjects/convertor/src/main.cpp"
-},
+  {
+    "directory": "/home/rustyboy/CLionProjects/convertor",
+    "command": "/usr/bin/c++   -I/home/rustyboy/CLionProjects/convertor/SFML_INCLUDE_DIR -isystem /home/rustyboy/CLionProjects/convertor/include  -g   -std=gnu++14 -o CMakeFiles/convertor.dir/src/main.cpp.o -c /home/rustyboy/CLionProjects/convertor/src/main.cpp",
+    "file": "/home/rustyboy/CLionProjects/convertor/src/main.cpp"
+  },
   {
     "directory": "/home/rustyboy/CLionProjects/convertor",
     "command": "/usr/bin/c++   -I/home/rustyboy/CLionProjects/convertor/SFML_INCLUDE_DIR -isystem /home/rustyboy/CLionProjects/convertor/include  -g   -std=gnu++14 -o CMakeFiles/convertor.dir/src/UserInterface.cpp.o -c /home/rustyboy/CLionProjects/convertor/src/UserInterface.cpp",
