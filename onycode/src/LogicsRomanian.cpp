@@ -603,7 +603,7 @@ void processRoInput(char *input, bool &success, double &result, Aliases *aliases
               trad_inter[lung_inter++] = t;
           }
         }
-        curent = strtok(nullptr, " ");
+        curent = strtok(nullptr, " ?");
 
       }
       if (lung_inter < 3) {
