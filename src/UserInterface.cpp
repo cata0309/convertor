@@ -41,6 +41,7 @@ void requestOutput(BaseData &base_data) {
     } else {
       base_data.output_string = "Intrare gresita!";
     }
+    base_data.sounds.error.play();
   }
   base_data.output.setString(base_data.output_string);
   base_data.output.setPosition(int(WIDTH - 4*IMG_SCALED - 5*THICKNESS -
@@ -1200,6 +1201,7 @@ void setSFXVolume(BaseData &base_data) {
     base_data.sounds.click[index].setVolume(vol_inter);
     base_data.sounds.typing[index].setVolume(vol_inter);
   }
+  base_data.sounds.error.setVolume(vol_inter);
   if (!base_data.switches.is_initial_setup) {
     updateSettingsView(base_data);
   }
