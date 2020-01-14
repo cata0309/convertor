@@ -7,7 +7,6 @@
 #define CONVERTOR_SRC_DEFINES_HPP_
 #define ERROR "assets/sounds/error.wav"
 #define GLOB_TEXTURE "assets/images/texture.png"
-#define SCROLL_ERROR_FACTOR 270.589
 #define HEIGHT 768 //the height of the window
 #define IMG_REAL 96//the dimension x and y as the image
 #define IMG_SCALED 48//the dimension x and y that we render
@@ -19,11 +18,12 @@
 #define MAX_NR_THEMES 10//maximum number of themes that can be loaded
 #define MAX_PATH 70//the maximum path of a variable that stores a path to a file
 #define MAX_SONG_NAME 20//the maximum size of a name of a song
+#define MAX_WORDS_TO_VIEW 12
 #define MIN_DIM_FONT 20 // the minimum font size
 #define PADDING 8 //the distance between the top buttons and the margins of the window
 #define POS_HIST_BOX_X 48 //the x position of the history text
 #define POS_HIST_BOX_Y 48 //the y position of the history text
-#define SCROLL_LINES 1//the numbers of lines to scroll when UP/DOWN arrows are clicked //TOD FIX SCROLL MOVEMENT WHEN SCROLL_LINES > 1
+#define SCROLL_ERROR_FACTOR 270.589
 #define THICKNESS 3 //the thickness of the outline of the boxes
 #define TITLE "Interactive calculator"//the title of the window
 #define TYPE "assets/sounds/stroke.wav"

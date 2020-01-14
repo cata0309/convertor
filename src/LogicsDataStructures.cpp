@@ -3,13 +3,6 @@
 
 //####################################### Stack(characters) operations related
 //##########################################
-
-bool isStackCharEmpty(ElStackChar *head) { return (head==nullptr); }
-bool isQueueCharEmpty(ElQueueChar *head) { return (head==nullptr); }
-bool isQueueDoubleEmpty(ElQueueDouble *head) {
-  return (head==nullptr);
-}
-
 void convertToLowerCase(char *input) {
   for (size_t i = 0; i < strlen(input); ++i) {
     if (input[i] >= 'A' && input[i] <= 'Z') {
@@ -17,8 +10,12 @@ void convertToLowerCase(char *input) {
     }
   }
 }
-
 bool isEmpty(LLin *stack) { return (stack==nullptr); }
+bool isQueueCharEmpty(ElQueueChar *head) { return (head==nullptr); }
+bool isQueueDoubleEmpty(ElQueueDouble *head) {
+  return (head==nullptr);
+}
+bool isStackCharEmpty(ElStackChar *head) { return (head==nullptr); }
 
 void popStackChar(ElStackChar *&head) {
   // if the stack is not empty already that means we can still eliminate
@@ -48,7 +45,27 @@ void pushStackChar(ElStackChar *&head, char value, bool is_operat) {
 
 //####################################### Queue(characters) operations related
 //#########################################
-
+int getValue(Aliases *aliases, int dimension, char *key) {
+  for (int i = 0; i < dimension; ++i) {
+    if (strcmp(aliases[i].letters.c_str(), key)==0) {
+      return aliases[i].digits;
+    }
+  }
+  return -1;
+}
+bool isInfixatedNotation(char *str) {
+  bool numbers = false;
+  for (size_t index = 0; index < strlen(str); ++index) {
+    if (str[index]==',')str[index] = '.';
+    if (!strchr("+-/*()0123456789.", str[index])) {
+      return false;
+    }
+    if (strchr("0123456789", str[index])) {
+      numbers = true;
+    }
+  }
+  return numbers;
+}
 void insertQueueChar(ElQueueChar *&head, char *value, bool is_operat) {
   // a new element is created
   ElQueueChar *element = new (ElQueueChar);
@@ -104,27 +121,6 @@ void pop(LLin *&stack) {
   LLin *toBeDeleted = stack;
   stack = stack->next;
   delete (toBeDeleted);
-}
-
-int getValue(Aliases *aliases, int dimension, char *key) {
-  for (int i = 0; i < dimension; ++i) {
-    if (strcmp(aliases[i].letters.c_str(), key)==0) {
-      return aliases[i].digits;
-    }
-  }
-  return -1;
-}
-bool isInfixatedNotation(char *str) {
-  bool numbers = false;
-  for (size_t index = 0; index < strlen(str); ++index) {
-    if (!strchr("+-/*()0123456789.", str[index])) {
-      return false;
-    }
-    if (strchr("0123456789", str[index])) {
-      numbers = true;
-    }
-  }
-  return numbers;
 }
 
 //######################################################################################################################

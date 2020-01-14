@@ -1,7 +1,4 @@
 #include"UserInterface.hpp"
-#include<random>
-
-
 int main() {
   std::cout.precision(6);
   std::cout.setf(std::ios::fixed);
@@ -22,12 +19,6 @@ int main() {
     return -1;
   }
   setupAliases(base_data, fin);
-
-//  base_data.switches.is_music = false;
-//  base_data.switches.is_sfx = false;
-//  base_data.switches.is_dark_mode = true;
-//base_data.switches.is_english_language=false;
-
   int duration = 450;
   sf::Clock clock_carret;
   sf::Clock elapsed_time;

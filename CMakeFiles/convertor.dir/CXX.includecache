@@ -60,12 +60,6 @@ fstream
 iostream
 -
 
-/home/rustyboy/CLionProjects/convertor/src/main.cpp
-UserInterface.hpp
-/home/rustyboy/CLionProjects/convertor/src/UserInterface.hpp
-random
--
-
 include/SFML/Audio.hpp
 SFML/System.hpp
 -
