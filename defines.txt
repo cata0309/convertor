@@ -127,7 +127,7 @@ impartirea -7
 impartirii -7
 diviziunii -7
 / -77
-, -11
-,si -11
+. -11
+.si -11
 ( -9
 ) -10

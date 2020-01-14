@@ -247,7 +247,6 @@ void insertToQueue(LLin *&coada, double element, bool x) {
 }
 
 void processRoInput(char *input, bool &success, double &result, Aliases *aliases, int dimension) {
-
   bool IfIsOp[200] = {};
   convertToLowerCase(input);
   bool corect = false;
@@ -283,14 +282,19 @@ void processRoInput(char *input, bool &success, double &result, Aliases *aliases
             }
           }
           ver = operanzi - 1 >= operatori;
-
+          int nr_ands = 0;
           if (ver) {
             for (int i = 0; i < longinfixed; i++) {
+              if (infixed[i]==-2)
+                nr_ands++;
               insertToQueue(infix, infixed[i], IfIsOp[i]);
 
             }
+            if (nr_ands==0) {
+              success = false;
+              return;
+            }
             transformFromInfixToPostFix(infix, postfix);
-
             finalresult = getValueOfPostfixed(postfix);
             if (finalresult > 0)trad_inter[lung_inter++] = finalresult;
             else {
@@ -303,7 +307,7 @@ void processRoInput(char *input, bool &success, double &result, Aliases *aliases
 
         } else {
 
-          if (onlyDigitsRo(curent) && strcmp(curent, "-")!=0) {
+          if (strcmp(curent, ".")!=0 && onlyDigitsRo(curent) && strcmp(curent, "-")!=0) {
 
             if (atof(curent) < 0) {
 
