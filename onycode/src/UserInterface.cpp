@@ -1825,11 +1825,11 @@ void transformString(std::string &str, int &number_of_lines) {
   int maximum_size = 0;
   int limit;
   while (index < str.length()) {
-    if (index < str.length() - 1 && str[index]!=' ' && (str[index + 1]==' ' || str[index + 1]=='\0')) {
+    if (index < str.length() - 1 && str[index]!=' ' && (str[index + 1]==' ' || str[index + 1]=='\0')&&str[index]!='\n') {
       current_words++;
       int aux_size = 0;
       int index_aux = index;
-      while (index_aux >= 0 && str[index_aux]!=' ') {
+      while (index_aux >= 0 && str[index_aux]!=' '&&str[index_aux]!='\n') {
         aux_size++;
         index_aux--;
       }
@@ -1846,7 +1846,7 @@ void transformString(std::string &str, int &number_of_lines) {
         number_of_lines++;
         current_words = 0;
       }
-    }
+    }else{
     if (number_of_lines==0) {
       limit = 60;
     } else {
@@ -1858,7 +1858,7 @@ void transformString(std::string &str, int &number_of_lines) {
       index += 3;
       number_of_lines++;
       current_words = 0;
-    }
+    }}
     without_space_index++;
     index++;
   }
