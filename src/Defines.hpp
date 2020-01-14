@@ -25,7 +25,8 @@
 #define POS_HIST_BOX_Y 48 //the y position of the history text
 #define SCROLL_ERROR_FACTOR 270.589
 #define THICKNESS 3 //the thickness of the outline of the boxes
-#define TITLE "Interactive calculator"//the title of the window
+#define TITLE_EN "Interactive calculator"//the title of the window
+#define TITLE_RO "Calculator interactiv"//the title of the window
 #define TYPE "assets/sounds/stroke.wav"
 #define VERTICAL_PADDING 10 //the distance between the boxes in the seconds
 #define WIDTH 1024 //the width of the window

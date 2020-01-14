@@ -32,14 +32,6 @@ cstring
 LogicsDataStructures.hpp
 /home/rustyboy/CLionProjects/convertor/src/LogicsDataStructures.hpp
 
-/home/rustyboy/CLionProjects/convertor/src/UserInterface.cpp
-UserInterface.hpp
-/home/rustyboy/CLionProjects/convertor/src/UserInterface.hpp
-cstring
--
-sstream
--
-
 /home/rustyboy/CLionProjects/convertor/src/UserInterface.hpp
 Defines.hpp
 /home/rustyboy/CLionProjects/convertor/src/Defines.hpp
@@ -59,6 +51,10 @@ fstream
 -
 iostream
 -
+
+/home/rustyboy/CLionProjects/convertor/src/main.cpp
+UserInterface.hpp
+/home/rustyboy/CLionProjects/convertor/src/UserInterface.hpp
 
 include/SFML/Audio.hpp
 SFML/System.hpp

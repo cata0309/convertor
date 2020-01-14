@@ -414,6 +414,7 @@ void handleEvents(sf::RenderWindow &window, sf::Event &event,
         playClick(base_data.sounds);
         base_data.switches.is_english_language =
             !base_data.switches.is_english_language;
+        window.setTitle(base_data.switches.is_english_language ? TITLE_EN : TITLE_RO);
         resetHistoryPosition(base_data);
         requestHistory(base_data);
         changeViewedInstructions(base_data);
