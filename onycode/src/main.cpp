@@ -1,14 +1,10 @@
 #include"UserInterface.hpp"
-#include<random>
-
-
 int main() {
   std::cout.precision(6);
   std::cout.setf(std::ios::fixed);
   sf::ContextSettings csettings;
   csettings.antialiasingLevel = 16;
-  sf::RenderWindow window(sf::VideoMode(WIDTH, HEIGHT), TITLE, sf::Style::Close | sf::Style::Titlebar, csettings);
-  window.setFramerateLimit(45);
+
   bool loaded = true;
   struct BaseData base_data;
   loadAssets(base_data, loaded);
@@ -22,18 +18,17 @@ int main() {
     return -1;
   }
   setupAliases(base_data, fin);
-
-//  base_data.switches.is_music = false;
-//  base_data.switches.is_sfx = false;
-//  base_data.switches.is_dark_mode = true;
-//base_data.switches.is_english_language=false;
-
   int duration = 450;
   sf::Clock clock_carret;
   sf::Clock elapsed_time;
   initialSetup(base_data);
   //the file that contains the key words associated with their digit representation in base 10
 //it is initially configured and after this function call it stores all the content of the `fin_en` file
+  sf::RenderWindow window(sf::VideoMode(WIDTH, HEIGHT),
+                          (base_data.switches.is_english_language ? TITLE_EN : TITLE_RO),
+                          sf::Style::Close | sf::Style::Titlebar,
+                          csettings);
+  window.setFramerateLimit(45);
   while (window.isOpen()) {
     sf::Event event = {};
     handleEvents(window, event, base_data);

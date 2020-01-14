@@ -6,174 +6,15 @@
 //################################ Priority, checking in fixated, translator,
 // conversions ##############################
 
-void infixatedInPlaceTranslator(char *value, double *array, bool *is_operator,
-                                int &dimension) {
-  // the separation of the expression into numbers and symbols, all of them are
-  // C type strings with a size of at least 1
-  // unit, they are stores in an array of C type strings.
-  char infix[MAX_WORDS][MAX_KEY_DIM];
-  int infix_dim = 0;
-  for (int index = 0; index < strlen(value); ++index) {
-    if (strchr("+-*/()", value[index])) {
-      infix[infix_dim][0] = value[index];
-      infix[infix_dim++][1] = '\0';
-    } else {
-      int aux = 0;
-      while (index < strlen(value) && strchr("0123456789.", value[index])) {
-        infix[infix_dim][aux++] = value[index++];
-      }
-      index--;
-      infix[infix_dim++][aux] = '\0';
-    }
-  }
-  for (int i = 0; i < infix_dim; ++i) {
-    if ((i==0 || (i > 0 && strstr("+*-+/()", infix[i - 1])))
-        && strcmp(infix[i], "-")==0 && onlyDigits(infix[i + 1])) {
-      char chei[MAX_KEY_DIM];
-      chei[0] = '\0';
-      strcat(chei, "-");
-      strcat(chei, infix[i + 1]);
-      strcpy(infix[i + 1], chei);
-      for (int j = i; j < infix_dim - 1; j++) {
-        strcpy(infix[j], infix[j + 1]);
-      }
-      infix_dim--;
-    }
-  }
-  for (int i = 0; i < infix_dim; ++i) {
-  }
-
-  // The conversion from in fixated notation to post fixated notation using a
-  // queue, a stack and an array(it behaves as a queue)
-  ElQueueChar *postfixate = nullptr;
-  ElStackChar *stack = nullptr;
-
-  for (int index = 0; index < infix_dim; ++index) {
-    if (onlyDigits(infix[index])) { // if it's a number(written with characters)
-      // it gets inserted to the queue
-      insertQueueChar(postfixate, infix[index], true);
-    } else {
-      if (infix[index][0]==')') { // otherwise if it matched a closing round
-        // bracket it means that it must have been
-        // finished `()` expression
-        while (stack->value!='(') {
-          char aux[2];
-          aux[0] = stack->value;
-          aux[1] = '\0';
-          insertQueueChar(postfixate, aux, true);
-          popStackChar(stack);
-        }
-        popStackChar(stack);
-
-      } else {
-        while (!isStackCharEmpty(stack) && stack->value!='(' &&
-            prioritiesChar(stack->value) >=
-                prioritiesChar(infix[index][0])) {
-          char aux[2];
-          aux[0] = stack->value;
-          aux[1] = '\0';
-          insertQueueChar(postfixate, aux, true);
-          popStackChar(stack);
-        }
-        pushStackChar(stack, infix[index][0], is_operator[index]);
-      }
-    }
-  }
-  while (!isStackCharEmpty(stack)) {
-    char aux[2];
-    aux[0] = stack->value;
-    aux[1] = '\0';
-    insertQueueChar(postfixate, aux, true);
-    popStackChar(stack);
-  }
-  // while the queue is not empty we insertChar all the elements into the post
-  // fixated notation array but also updating its size The actual check of the
-  // validity of this notation is made with the last form of expression
-  while (!isQueueCharEmpty(postfixate)) {
-    if (postfixate->value[0]=='+') {
-      is_operator[dimension] = true;
-      array[dimension++] = -3;
-    } else if (postfixate->value[0]=='-' && !onlyDigits(postfixate->value)) {
-      is_operator[dimension] = true;
-      array[dimension++] = -4;
-    } else if (postfixate->value[0]=='*') {
-      is_operator[dimension] = true;
-      array[dimension++] = -5;
-    } else if (postfixate->value[0]=='/') {
-      is_operator[dimension] = true;
-      array[dimension++] = -6;
-    } else {
-      is_operator[dimension] = false;
-      array[dimension++] = atof(postfixate->value);
-    }
-    postfixate = postfixate->next;
-  }
-}
-void infixatedDoubleTranslator(double *infix, bool *is_ope, int &infix_dim) {
-  ElQueueDouble *postfixate = nullptr;
-  LLin *stack = nullptr;
-
-  for (int index = 0; index < infix_dim; ++index) {
-    if (!is_ope[index]) { // if it's a number(written with characters) it
-      // gets inserted to the queue
-      insertQueueDouble(postfixate, infix[index], false);
-    } else {
-      if (infix[index]==-8) { // otherwise if it matched a closing round
-        // bracket it means that it must have been
-        // finished `()` expression
-        while (stack->info!=-7 || !stack->is_operat) {
-          insertQueueDouble(postfixate, stack->info, stack->is_operat);
-          pop(stack);
-        }
-        pop(stack);
-      } else {
-        while (!isEmpty(stack) && stack->info!=-7 &&
-            prioritiesDouble(stack->info) >=
-                prioritiesDouble(infix[index])) {
-          insertQueueDouble(postfixate, stack->info, stack->is_operat);
-          pop(stack);
-        }
-        push(stack, infix[index], is_ope[index]);
-      }
-    }
-  }
-  while (!isEmpty(stack)) {
-    insertQueueDouble(postfixate, stack->info, stack->is_operat);
-    pop(stack);
-  }
-  // while the queue is not empty we insertDouble all the elements into the post
-  // fixated notation array but also updating its size The actual check of the
-  // validity of this notation is made with the last form of expression
-  infix_dim = 0;
-  while (!isQueueDoubleEmpty(postfixate)) {
-    is_ope[infix_dim] = postfixate->is_operat;
-    infix[infix_dim++] = postfixate->value;
-    postfixate = postfixate->next;
-  }
-}
-
-void numberBuilder(int &number, int &digit_binding, int &power_ten) {
-  if (digit_binding > 90) {
-    if ((power_ten==1000 && (digit_binding==100)) ||
-        (power_ten==1000000 && (digit_binding==100)))
-      power_ten *= digit_binding;
-    else if (digit_binding > power_ten)
-      power_ten = digit_binding;
-  } else if (digit_binding > 9 && digit_binding < 100 && power_ten < 100) {
-    number += digit_binding;
-  } else {
-    number += digit_binding*power_ten;
-  }
-}
-
-bool onlyDigits(char *str) {
+bool onlyDigitsEn(char *str) {
   bool condition = true;
   int nr_of_dots = 0;
   int numbers = 0;
   for (size_t index = 0; str[index] && condition; ++index) {
-    if (!strchr("0123456789.-", str[index])) {
+    if (!strchr("0123456789.,-", str[index])) {
       condition = false;
     }
+    if (str[index]==',')str[index] = '.';
     if (str[index]=='-' && index!=0)
       condition = false;
     if (str[index]=='.') {
@@ -188,6 +29,30 @@ bool onlyDigits(char *str) {
   if (numbers==0)
     condition = false;
   return condition;
+}
+
+bool twoOperatorsTogether(double infix[], int infix_numbers) {
+  for (int i = 0; i < infix_numbers - 1; i++)
+    if (infix[i] < 0 && infix[i + 1] < 0)
+      return true;
+  return false;
+}
+
+double executeOperation(double left, double op, double right, bool expression) {
+  switch (int(op)) {
+    case -3:return (left + right);
+    case -4:
+      if (expression)
+        return (left - right);
+      else
+        return (right - left);
+    case -5:return (left*right);
+    default:
+      if (expression)
+        return (left/right);
+      else
+        return (right/left);
+  }
 }
 
 int prioritiesChar(char symbol) {
@@ -287,35 +152,171 @@ void calculateFinalResult(bool &success,
   final_result = final_value;
 }
 
-double executeOperation(double left, double op, double right, bool expression) {
-  switch (int(op)) {
-    case -3:return (left + right);
-    case -4:
-      if (expression)
-        return (left - right);
-      else
-        return (right - left);
-    case -5:return (left*right);
-    default:
-      if (expression)
-        return (left/right);
-      else
-        return (right/left);
-  }
-}
-
-bool twoOperatorsTogether(double infix[], int infix_numbers) {
-  for (int i = 0; i < infix_numbers - 1; i++)
-    if (infix[i] < 0 && infix[i + 1] < 0)
-      return true;
-  return false;
-}
-
 void deleteAtPosition(double infix_array[], bool is_ope[], int &infix_numbers, int i) {
   for (int k = i; k < infix_numbers - 1; k++)
     infix_array[k] = infix_array[k + 1], is_ope[k] = is_ope[k + 1];
   infix_numbers--;
 }
+void infixatedDoubleTranslator(double *infix, bool *is_ope, int &infix_dim) {
+  ElQueueDouble *postfixate = nullptr;
+  LLin *stack = nullptr;
+
+  for (int index = 0; index < infix_dim; ++index) {
+    if (!is_ope[index]) { // if it's a number(written with characters) it
+      // gets inserted to the queue
+      insertQueueDouble(postfixate, infix[index], false);
+    } else {
+      if (infix[index]==-8) { // otherwise if it matched a closing round
+        // bracket it means that it must have been
+        // finished `()` expression
+        while (stack->info!=-7 || !stack->is_operat) {
+          insertQueueDouble(postfixate, stack->info, stack->is_operat);
+          pop(stack);
+        }
+        pop(stack);
+      } else {
+        while (!isEmpty(stack) && stack->info!=-7 &&
+            prioritiesDouble(stack->info) >=
+                prioritiesDouble(infix[index])) {
+          insertQueueDouble(postfixate, stack->info, stack->is_operat);
+          pop(stack);
+        }
+        push(stack, infix[index], is_ope[index]);
+      }
+    }
+  }
+  while (!isEmpty(stack)) {
+    insertQueueDouble(postfixate, stack->info, stack->is_operat);
+    pop(stack);
+  }
+  // while the queue is not empty we insertDouble all the elements into the post
+  // fixated notation array but also updating its size The actual check of the
+  // validity of this notation is made with the last form of expression
+  infix_dim = 0;
+  while (!isQueueDoubleEmpty(postfixate)) {
+    is_ope[infix_dim] = postfixate->is_operat;
+    infix[infix_dim++] = postfixate->value;
+    postfixate = postfixate->next;
+  }
+}
+
+void infixatedInPlaceTranslator(char *value, double *array, bool *is_operator,
+                                int &dimension) {
+  // the separation of the expression into numbers and symbols, all of them are
+  // C type strings with a size of at least 1
+  // unit, they are stores in an array of C type strings.
+  char infix[MAX_WORDS][MAX_KEY_DIM];
+  int infix_dim = 0;
+  for (int index = 0; index < strlen(value); ++index) {
+    if (strchr("+-*/()", value[index])) {
+      infix[infix_dim][0] = value[index];
+      infix[infix_dim++][1] = '\0';
+    } else {
+      int aux = 0;
+      while (index < strlen(value) && strchr("0123456789.", value[index])) {
+        infix[infix_dim][aux++] = value[index++];
+      }
+      index--;
+      infix[infix_dim++][aux] = '\0';
+    }
+  }
+  for (int i = 0; i < infix_dim; ++i) {
+    if ((i==0 || (i > 0 && strstr("+*-+/()", infix[i - 1])))
+        && strcmp(infix[i], "-")==0 && onlyDigitsEn(infix[i + 1])) {
+      char chei[MAX_KEY_DIM];
+      chei[0] = '\0';
+      strcat(chei, "-");
+      strcat(chei, infix[i + 1]);
+      strcpy(infix[i + 1], chei);
+      for (int j = i; j < infix_dim - 1; j++) {
+        strcpy(infix[j], infix[j + 1]);
+      }
+      infix_dim--;
+    }
+  }
+  for (int i = 0; i < infix_dim; ++i) {
+  }
+
+  // The conversion from in fixated notation to post fixated notation using a
+  // queue, a stack and an array(it behaves as a queue)
+  ElQueueChar *postfixate = nullptr;
+  ElStackChar *stack = nullptr;
+
+  for (int index = 0; index < infix_dim; ++index) {
+    if (onlyDigitsEn(infix[index])) { // if it's a number(written with characters)
+      // it gets inserted to the queue
+      insertQueueChar(postfixate, infix[index], true);
+    } else {
+      if (infix[index][0]==')') { // otherwise if it matched a closing round
+        // bracket it means that it must have been
+        // finished `()` expression
+        while (stack->value!='(') {
+          char aux[2];
+          aux[0] = stack->value;
+          aux[1] = '\0';
+          insertQueueChar(postfixate, aux, true);
+          popStackChar(stack);
+        }
+        popStackChar(stack);
+
+      } else {
+        while (!isStackCharEmpty(stack) && stack->value!='(' &&
+            prioritiesChar(stack->value) >=
+                prioritiesChar(infix[index][0])) {
+          char aux[2];
+          aux[0] = stack->value;
+          aux[1] = '\0';
+          insertQueueChar(postfixate, aux, true);
+          popStackChar(stack);
+        }
+        pushStackChar(stack, infix[index][0], is_operator[index]);
+      }
+    }
+  }
+  while (!isStackCharEmpty(stack)) {
+    char aux[2];
+    aux[0] = stack->value;
+    aux[1] = '\0';
+    insertQueueChar(postfixate, aux, true);
+    popStackChar(stack);
+  }
+  // while the queue is not empty we insertChar all the elements into the post
+  // fixated notation array but also updating its size The actual check of the
+  // validity of this notation is made with the last form of expression
+  while (!isQueueCharEmpty(postfixate)) {
+    if (postfixate->value[0]=='+') {
+      is_operator[dimension] = true;
+      array[dimension++] = -3;
+    } else if (postfixate->value[0]=='-' && !onlyDigitsEn(postfixate->value)) {
+      is_operator[dimension] = true;
+      array[dimension++] = -4;
+    } else if (postfixate->value[0]=='*') {
+      is_operator[dimension] = true;
+      array[dimension++] = -5;
+    } else if (postfixate->value[0]=='/') {
+      is_operator[dimension] = true;
+      array[dimension++] = -6;
+    } else {
+      is_operator[dimension] = false;
+      array[dimension++] = atof(postfixate->value);
+    }
+    postfixate = postfixate->next;
+  }
+}
+void numberBuilder(int &number, int &digit_binding, int &power_ten) {
+  if (digit_binding > 90) {
+    if ((power_ten==1000 && (digit_binding==100)) ||
+        (power_ten==1000000 && (digit_binding==100)))
+      power_ten *= digit_binding;
+    else if (digit_binding > power_ten)
+      power_ten = digit_binding;
+  } else if (digit_binding > 9 && digit_binding < 100 && power_ten < 100) {
+    number += digit_binding;
+  } else {
+    number += digit_binding*power_ten;
+  }
+}
+
 void processEnInput(char *input,
                     bool &success,
 
@@ -338,7 +339,7 @@ void processEnInput(char *input,
     // we ignore all the words that are not in the `dictionary` file(it's not
     // treating all the misleading inputs !!)
     bool ver = false;
-    if (isInfixatedNotation(p) || onlyDigits(p)) {
+    if (isInfixatedNotation(p) || onlyDigitsEn(p)) {
       strcpy(words[nr_words++], p);
       ver = true;
     } else {
@@ -374,7 +375,7 @@ void processEnInput(char *input,
   int number_of_postorder_operations = 0;
 
   for (int i = nr_words - 1; i >= 0; --i) {
-    if (onlyDigits(words[i])) {
+    if (onlyDigitsEn(words[i])) {
       only_expression = false;
       is_operator[post_numbers] = false;
       postfix_array[post_numbers++] = atof(words[i]);

@@ -1,34 +1,7 @@
 #include "LogicsRomanian.hpp"
-void insereaza(LLin *&coada, double element, bool x) {
-  LLin *nod_nou = new(LLin);
-  nod_nou->info = element;
-  nod_nou->is_operat = x;
-  nod_nou->next = nullptr;
-  if (coada==nullptr) {
-    coada = nod_nou;
-  } else {
-    LLin *curent = coada;
-    while (curent->next!=nullptr) {
-      curent = curent->next;
-    }
-    curent->next = nod_nou;
-  }
-}
-
-double top_citeste_valoare(LLin *stiva) {
-  if (stiva==nullptr)
-    return -10;
-  return stiva->info;
-}
-bool top_citeste_IsOp(LLin *stiva) {
-  if (stiva==nullptr)
-    return false;
-  return stiva->is_operat;
-}
-
-//functia doar_cifre(..) are rolul de a verifica daca un anumit sir de caractere contine numai cifre sau minus(pt nr negative
+//functia onlyDigitsRo(..) are rolul de a verifica daca un anumit sir de caractere contine numai cifre sau minus(pt nr negative
 //in acest caz acesta poate fi convertit direct in numere
-bool doar_cifre(char sir[]) {
+bool onlyDigitsRo(char *sir) {
   bool p;
   int nrp;
   p = false;
@@ -50,6 +23,12 @@ bool doar_cifre(char sir[]) {
 
   }
   return true;
+}
+
+bool topIsOperatorRetriever(LLin *stiva) {
+  if (stiva==nullptr)
+    return false;
+  return stiva->is_operat;
 }
 
 bool validare(double *sir, unsigned lungime) {
@@ -131,11 +110,256 @@ double oper(double sir[], unsigned lung, int &incep) {
 
   return op;
 }
-// functia TransformAllInInfixed transforma toate operatiile prefixate in infixate , totodata punand si parantezele necesare in cazul unui operator prefixat
-void TransformAllInInfixed(double arrayofanswer[],
-                           bool IfIsOp[],
+double result(int operatorr, double operand1, double operand2) {
+  switch (operatorr) {
+    case -44:return operand1 + operand2;
+    case -55:return operand1 - operand2;
+    case -66:return operand1*operand2;
+    case -77:return operand1/operand2;
+      break;
+
+  }
+  return 0;
+}
+
+double topValueRetriever(LLin *stiva) {
+  if (stiva==nullptr)
+    return -10;
+  return stiva->info;
+}
+double getValueOfPostfixed(LLin *&postfix) {
+  LLin *S;
+  S = nullptr;
+  double x;
+  double resultt = 0;
+  double op1, op2;
+  bool t;
+  bool p = false;
+  while (!isEmpty(postfix)) {
+    x = postfix->info;
+    t = postfix->is_operat;
+    pop(postfix);
+    if (x > 0)push(S, x, t);
+    else {
+      if (!t)push(S, x, t);
+      else {
+        op1 = topValueRetriever(S);
+        pop(S);
+        op2 = topValueRetriever(S);
+        pop(S);
+        resultt = result(x, op2, op1);
+        push(S, resultt, p);
+      }
+    }
+
+  }
+
+  return topValueRetriever(S);
+
+}
+
+// aceasta functie returneaza prioritatea operatorilor , adunarea si scaderea avand prioritate 1 ,iar inmultirea si impartirea 2
+
+int priorityOfOperator(int operatorr) {
+  if (operatorr >= -55)return 1;
+  return 2;
+}
+// aceasta functie transforma ecuatia din infixata in postfixata
+void infixatedWithSpace(char *sir, double *infixed, int &longinfixed, bool *IfIsOp) {
+  char nr[100];
+  int j = 0;
+
+  for (int i = 0; i < strlen(sir); i++) {
+    if (strchr("0123456789", sir[i])) {
+      if (i > 0 && infixed[longinfixed - 1]==-55 && ((i - 1==0)
+          || ((infixed[longinfixed - 2]==-9 || (infixed[longinfixed - 2] <= -44 && infixed[longinfixed - 2] >= -77))
+              && IfIsOp[longinfixed - 2])))
+        strcpy(nr, "-"), longinfixed--, j = 1;
+      else strcpy(nr, ""), j = 0;
+
+      while (strchr("0123456789.", sir[i])) {
+        nr[j] = sir[i];
+
+        j++;
+        i++;
+      }
+      i--;
+
+      nr[j] = '\0';
+
+      infixed[longinfixed] = atof(nr);
+
+      IfIsOp[longinfixed] = false;
+      longinfixed++;
+    } else {
+      if (strchr("+-/*", sir[i])) {
+        if (sir[i]=='+') {
+          infixed[longinfixed] = -44;
+          IfIsOp[longinfixed] = true;
+          longinfixed++;
+        }
+        if (sir[i]=='-') {
+          infixed[longinfixed] = -55;
+          IfIsOp[longinfixed] = true;
+          longinfixed++;
+        }
+        if (sir[i]=='*') {
+          infixed[longinfixed] = -66;
+          IfIsOp[longinfixed] = true;
+          longinfixed++;
+        }
+        if (sir[i]=='/') {
+          infixed[longinfixed] = -77;
+          IfIsOp[longinfixed] = true;
+          longinfixed++;
+        }
+      } else {
+        if (sir[i]=='(') {
+          infixed[longinfixed] = -9;
+          IfIsOp[longinfixed] = true;
+          longinfixed++;
+        } else {
+          infixed[longinfixed] = -10;
+          IfIsOp[longinfixed] = true;
+          longinfixed++;
+        }
+
+      }
+    }
+
+  }
+
+}
+void insertToQueue(LLin *&coada, double element, bool x) {
+  LLin *nod_nou = new(LLin);
+  nod_nou->info = element;
+  nod_nou->is_operat = x;
+  nod_nou->next = nullptr;
+  if (coada==nullptr) {
+    coada = nod_nou;
+  } else {
+    LLin *curent = coada;
+    while (curent->next!=nullptr) {
+      curent = curent->next;
+    }
+    curent->next = nod_nou;
+  }
+}
+
+void processRoInput(char *input, bool &success, double &result, Aliases *aliases, int dimension) {
+
+  bool IfIsOp[200] = {};
+  convertToLowerCase(input);
+  bool corect = false;
+  bool ver = false;
+  LLin *infix;
+  infix = nullptr;
+  LLin *postfix;
+  postfix = nullptr;
+  double infixed[200];
+  double finalresult;
+  int longinfixed = 0;
+
+  while (!corect) {
+
+    double trad_inter[MAX_WORDS] = {};
+    unsigned lung_inter = 0;
+
+    if (strlen(input)!=0) {
+      char *curent = strtok(input, " ?");
+      while (curent) {
+        if (isInfixatedNotation(curent)) {
+
+          infixatedWithSpace(curent, infixed, longinfixed, IfIsOp);
+
+          int operatori, operanzi;
+          operatori = operanzi = 0;
+          for (int i = 0; i < longinfixed; i++) {
+            if (infixed[i] > 0)operanzi++;
+            else {
+              if (IfIsOp[i] && infixed[i]!=-9 && infixed[i]!=-10)operatori++;
+              else operanzi++;
+
+            }
+          }
+          ver = operanzi - 1 >= operatori;
+
+          if (ver) {
+            for (int i = 0; i < longinfixed; i++) {
+              insertToQueue(infix, infixed[i], IfIsOp[i]);
+
+            }
+            transformFromInfixToPostFix(infix, postfix);
+
+            finalresult = getValueOfPostfixed(postfix);
+            if (finalresult > 0)trad_inter[lung_inter++] = finalresult;
+            else {
+              trad_inter[lung_inter++] = -55;
+              trad_inter[lung_inter++] = (-1)*finalresult;
+            }
+
+            for (int i = 0; i < longinfixed; i++)infixed[i] = 0, IfIsOp[i] = false;
+          }
+
+        } else {
+
+          if (onlyDigitsRo(curent) && strcmp(curent, "-")!=0) {
+
+            if (atof(curent) < 0) {
+
+              trad_inter[lung_inter++] = -55;
+              trad_inter[lung_inter++] = atof(curent)*(-1);
+              trad_inter[lung_inter++] = -8;
+            } else {
+              trad_inter[lung_inter++] = atof(curent);
+              trad_inter[lung_inter++] = -8;
+            }
+          } else {
+            int t = getValue(aliases, dimension, curent);
+            if (t!=-1 && !(t==-8 && (trad_inter[lung_inter - 1]==-77 || trad_inter[lung_inter - 1]==-66)))
+              trad_inter[lung_inter++] = t;
+          }
+        }
+        curent = strtok(nullptr, " ");
+
+      }
+      if (lung_inter < 3) {
+        if (lung_inter==1 && ver)corect = true, result = trad_inter[0];
+        else corect = false;
+      } else {
+
+        corect = validare(trad_inter, lung_inter);
+
+      }
+    }
+    if (corect && lung_inter!=1) {
+      if (trad_inter[lung_inter - 1]==-8)lung_inter--;
+
+      transformAllInInfixed(trad_inter, IfIsOp, lung_inter, infixed, longinfixed);
+
+      for (int i = 0; i < longinfixed; i++) {
+
+        insertToQueue(infix, infixed[i], IfIsOp[i]);
+
+      }
+
+      transformFromInfixToPostFix(infix, postfix);
+
+      finalresult = getValueOfPostfixed(postfix);
+      result = finalresult;
+
+    } else {
+      success = corect;
+      break;
+    }
+  }
+}
+// functia transformAllInInfixed transforma toate operatiile prefixate in infixate , totodata punand si parantezele necesare in cazul unui operator prefixat
+
+void transformAllInInfixed(double *arrayofanswer,
+                           bool *IfIsOp,
                            unsigned &longofarray,
-                           double infixed[],
+                           double *infixed,
                            int &longinfixed) {
   int j, i;
 
@@ -368,25 +592,7 @@ void TransformAllInInfixed(double arrayofanswer[],
 
 }
 
-double result(int operatorr, double operand1, double operand2) {
-  switch (operatorr) {
-    case -44:return operand1 + operand2;
-    case -55:return operand1 - operand2;
-    case -66:return operand1*operand2;
-    case -77:return operand1/operand2;
-      break;
-
-  }
-  return 0;
-}
-
-// aceasta functie returneaza prioritatea operatorilor , adunarea si scaderea avand prioritate 1 ,iar inmultirea si impartirea 2
-int prioritofoperator(int operatorr) {
-  if (operatorr >= -55)return 1;
-  return 2;
-}
-// aceasta functie transforma ecuatia din infixata in postfixata
-void TransformFromInfixToPostFix(LLin *&infix, LLin *&postfix) {
+void transformFromInfixToPostFix(LLin *&infix, LLin *&postfix) {
   LLin *S;
   S = nullptr;
   double x;
@@ -395,16 +601,16 @@ void TransformFromInfixToPostFix(LLin *&infix, LLin *&postfix) {
     x = infix->info;
     t = infix->is_operat;
     pop(infix);
-    if (x > 0)insereaza(postfix, x, t);
+    if (x > 0)insertToQueue(postfix, x, t);
     else {
       if (!t) {
-        insereaza(postfix, x, t);
+        insertToQueue(postfix, x, t);
       } else {
         if (x==-10) {
           while (1) {
-            if (top_citeste_valoare(S)==-9 && top_citeste_IsOp(S))break;
+            if (topValueRetriever(S)==-9 && topIsOperatorRetriever(S))break;
             else {
-              insereaza(postfix, top_citeste_valoare(S), top_citeste_IsOp(S));
+              insertToQueue(postfix, topValueRetriever(S), topIsOperatorRetriever(S));
               pop(S);
             }
           }
@@ -412,10 +618,10 @@ void TransformFromInfixToPostFix(LLin *&infix, LLin *&postfix) {
 
         } else {
 
-          while (!isEmpty(S) && top_citeste_IsOp(S)
-              && (prioritofoperator(top_citeste_valoare(S)) >= prioritofoperator(x)) && top_citeste_valoare(S)!=-9
+          while (!isEmpty(S) && topIsOperatorRetriever(S)
+              && (priorityOfOperator(topValueRetriever(S)) >= priorityOfOperator(x)) && topValueRetriever(S)!=-9
               && (x <= -44 && x >= -77)) {
-            insereaza(postfix, top_citeste_valoare(S), top_citeste_IsOp(S));
+            insertToQueue(postfix, topValueRetriever(S), topIsOperatorRetriever(S));
             pop(S);
 
           }
@@ -427,214 +633,9 @@ void TransformFromInfixToPostFix(LLin *&infix, LLin *&postfix) {
     }
   }
   while (!isEmpty(S)) {
-    insereaza(postfix, top_citeste_valoare(S), top_citeste_IsOp(S));
+    insertToQueue(postfix, topValueRetriever(S), topIsOperatorRetriever(S));
     pop(S);
 
   }
 }
 // aceasta functie calculeaza valoarea expresiei postfixate
-double ValueOfPostfixed(LLin *&postfix) {
-  LLin *S;
-  S = nullptr;
-  double x;
-  double resultt = 0;
-  double op1, op2;
-  bool t;
-  bool p = false;
-  while (!isEmpty(postfix)) {
-    x = postfix->info;
-    t = postfix->is_operat;
-    pop(postfix);
-    if (x > 0)push(S, x, t);
-    else {
-      if (!t)push(S, x, t);
-      else {
-        op1 = top_citeste_valoare(S);
-        pop(S);
-        op2 = top_citeste_valoare(S);
-        pop(S);
-        resultt = result(x, op2, op1);
-        push(S, resultt, p);
-      }
-    }
-
-  }
-
-  return top_citeste_valoare(S);
-
-}
-
-void InfixatedWithSpace(char *sir, double infixed[], int &longinfixed, bool IfIsOp[]) {
-  char nr[100];
-  int j = 0;
-
-  for (int i = 0; i < strlen(sir); i++) {
-    if (strchr("0123456789", sir[i])) {
-      if (i > 0 && infixed[longinfixed - 1]==-55 && ((i - 1==0)
-          || ((infixed[longinfixed - 2]==-9 || (infixed[longinfixed - 2] <= -44 && infixed[longinfixed - 2] >= -77))
-              && IfIsOp[longinfixed - 2])))
-        strcpy(nr, "-"), longinfixed--, j = 1;
-      else strcpy(nr, ""), j = 0;
-
-      while (strchr("0123456789.", sir[i])) {
-        nr[j] = sir[i];
-
-        j++;
-        i++;
-      }
-      i--;
-
-      nr[j] = '\0';
-
-      infixed[longinfixed] = atof(nr);
-
-      IfIsOp[longinfixed] = false;
-      longinfixed++;
-    } else {
-      if (strchr("+-/*", sir[i])) {
-        if (sir[i]=='+') {
-          infixed[longinfixed] = -44;
-          IfIsOp[longinfixed] = true;
-          longinfixed++;
-        }
-        if (sir[i]=='-') {
-          infixed[longinfixed] = -55;
-          IfIsOp[longinfixed] = true;
-          longinfixed++;
-        }
-        if (sir[i]=='*') {
-          infixed[longinfixed] = -66;
-          IfIsOp[longinfixed] = true;
-          longinfixed++;
-        }
-        if (sir[i]=='/') {
-          infixed[longinfixed] = -77;
-          IfIsOp[longinfixed] = true;
-          longinfixed++;
-        }
-      } else {
-        if (sir[i]=='(') {
-          infixed[longinfixed] = -9;
-          IfIsOp[longinfixed] = true;
-          longinfixed++;
-        } else {
-          infixed[longinfixed] = -10;
-          IfIsOp[longinfixed] = true;
-          longinfixed++;
-        }
-
-      }
-    }
-
-  }
-
-}
-void processRoInput(char *input, bool &success, double &result, Aliases *aliases, int dimension) {
-
-  bool IfIsOp[200] = {};
-  convertToLowerCase(input);
-  bool corect = false;
-  bool ver = false;
-  LLin *infix;
-  infix = nullptr;
-  LLin *postfix;
-  postfix = nullptr;
-  double infixed[200];
-  double finalresult;
-  int longinfixed = 0;
-
-  while (!corect) {
-
-    double trad_inter[MAX_WORDS] = {};
-    unsigned lung_inter = 0;
-
-    if (strlen(input)!=0) {
-      char *curent = strtok(input, " ?");
-      while (curent) {
-        if (isInfixatedNotation(curent)) {
-
-          InfixatedWithSpace(curent, infixed, longinfixed, IfIsOp);
-
-          int operatori, operanzi;
-          operatori = operanzi = 0;
-          for (int i = 0; i < longinfixed; i++) {
-            if (infixed[i] > 0)operanzi++;
-            else {
-              if (IfIsOp[i] && infixed[i]!=-9 && infixed[i]!=-10)operatori++;
-              else operanzi++;
-
-            }
-          }
-          ver = operanzi - 1 >= operatori;
-
-          if (ver) {
-            for (int i = 0; i < longinfixed; i++) {
-              insereaza(infix, infixed[i], IfIsOp[i]);
-
-            }
-            TransformFromInfixToPostFix(infix, postfix);
-
-            finalresult = ValueOfPostfixed(postfix);
-            if (finalresult > 0)trad_inter[lung_inter++] = finalresult;
-            else {
-              trad_inter[lung_inter++] = -55;
-              trad_inter[lung_inter++] = (-1)*finalresult;
-            }
-
-            for (int i = 0; i < longinfixed; i++)infixed[i] = 0, IfIsOp[i] = false;
-          }
-
-        } else {
-
-          if (doar_cifre(curent) && strcmp(curent, "-")!=0) {
-
-            if (atof(curent) < 0) {
-
-              trad_inter[lung_inter++] = -55;
-              trad_inter[lung_inter++] = atof(curent)*(-1);
-              trad_inter[lung_inter++] = -8;
-            } else {
-              trad_inter[lung_inter++] = atof(curent);
-              trad_inter[lung_inter++] = -8;
-            }
-          } else {
-            int t = getValue(aliases, dimension, curent);
-            if (t!=-1 && !(t==-8 && (trad_inter[lung_inter - 1]==-77 || trad_inter[lung_inter - 1]==-66)))
-              trad_inter[lung_inter++] = t;
-          }
-        }
-        curent = strtok(nullptr, " ?");
-
-      }
-      if (lung_inter < 3) {
-        if (lung_inter==1 && ver)corect = true, result = trad_inter[0];
-        else corect = false;
-      } else {
-
-        corect = validare(trad_inter, lung_inter);
-
-      }
-    }
-    if (corect && lung_inter!=1) {
-      if (trad_inter[lung_inter - 1]==-8)lung_inter--;
-
-      TransformAllInInfixed(trad_inter, IfIsOp, lung_inter, infixed, longinfixed);
-
-      for (int i = 0; i < longinfixed; i++) {
-
-        insereaza(infix, infixed[i], IfIsOp[i]);
-
-      }
-
-      TransformFromInfixToPostFix(infix, postfix);
-
-      finalresult = ValueOfPostfixed(postfix);
-      result = finalresult;
-
-    } else {
-      success = corect;
-      break;
-    }
-  }
-}
-

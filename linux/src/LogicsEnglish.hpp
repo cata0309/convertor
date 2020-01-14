@@ -5,15 +5,16 @@
 #ifndef CONVERTOR_SRC_LOGICS_HPP_
 #define CONVERTOR_SRC_LOGICS_HPP_
 
-
-//######################################################################################################################
-
-//######################################## Input related ###############################################################
-
-
-//######################################################################################################################
-
-
+//`calculateFinalResult()` function calculates the final result from a post fixated notation array and changes the
+//status of the bool variable from `true` to `false` if it didn't succeeded
+void calculateFinalResult(bool &success,
+                          double &final_result,
+                          double *final_translation,
+                          bool *is_operator,
+                          int final_dimension,
+                          bool expression);
+//`executeOperation()` function takes three arguments, left operand, the operation and the right operand
+double executeOperation(double left, double op, double right, bool expression);
 
 //#################################### Helpers/Checkers functions ######################################################
 
@@ -29,33 +30,17 @@ void infixatedInPlaceTranslator(char *value,
 //`numberBuilder()` function constructs a number from the consecutive words that represent numbers
 void numberBuilder(int &number, int &digit_binding, int &power_ten);
 
-//`onlyDigits()` function checks if a word can be the ASCII representation of a number
-bool onlyDigits(char *str);
+//`onlyDigitsRo()` function checks if a word can be the ASCII representation of a number
+bool onlyDigitsEn(char *str);
 
+//`operand()` function helps at checking if a number is operand or not
+bool operand(double);
 //`prioritiesChar()` and `prioritiesDouble()` functions return what priorities operators have, this is important when we are converting
 // from in fixated notation to post fixated notation as it could be some operators on the stack that must wait before
 // they are inserted in the queue
 int prioritiesChar(char symbol);
 int prioritiesDouble(double symbol);
 
-//######################################################################################################################
-
-
-//################################### LIST IMPLEMENTATION FOR CALCULUS #################################################
-
-//`calculateFinalResult()` function calculates the final result from a post fixated notation array and changes the
-//status of the bool variable from `true` to `false` if it didn't succeeded
-void calculateFinalResult(bool &success,
-                          double &final_result,
-                          double *final_translation,
-                          bool *is_operator,
-                          int final_dimension,
-                          bool expression);
-//`executeOperation()` function takes three arguments, left operand, the operation and the right operand
-double executeOperation(double left, double op, double right, bool expression);
-
-//`operand()` function helps at checking if a number is operand or not
-bool operand(double);
 //`processingInput()` function takes the input as a C type string
 //converts it to lower case
 //searches all the definition that are written in the definition file

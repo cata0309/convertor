@@ -1,3 +1,5 @@
+asdff
+Intrare gresita!
 cat fac cinci impartit 1/2
 10.000000
 cat fac cinci impartit la 5/7

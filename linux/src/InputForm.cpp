@@ -1,33 +1,5 @@
 #include "InputForm.hpp"
 #include <cstring>
-void setupTextBox(InputForm &input_form, sf::Vector2f box_size,
-                  sf::Vector2f position, sf::Font &font, sf::Color background,
-                  sf::Color foreground, float thickness, int max_chars_view,
-                  int font_size) {
-//sets the maximum chars that can be viewed to `max_chars_view`
-  input_form.max_chars_view = max_chars_view;
-  //sets the fill of the back box to `background` color
-  input_form.back_box.setFillColor(background);
-  //sets the outline thickness of the back box to `thickness`
-  input_form.back_box.setOutlineThickness(thickness);
-  //sets the color of the outline to `foreground` color, the same with the text
-  input_form.back_box.setOutlineColor(foreground);
-  //this sets the position of the back box to `position`
-  input_form.back_box.setPosition(position);
-  //this sets the size of the back box to `box_size`
-  input_form.back_box.setSize(box_size);
-  //this sets the text font to `font`
-  input_form.text.setFont(font);
-  //this sets the size of the text to `font_size`
-  input_form.text.setCharacterSize(font_size);
-  //this sets the fill of the font to `foreground`
-  input_form.text.setFillColor(foreground);
-  //this sets the viewed string to `input_form.input`
-  input_form.text.setString(input_form.input);
-  //this sets the position of the viewed text object
-  input_form.text.setPosition(int(position.x) + 20, int(position.y) + 3);
-}
-
 void deleteKey(InputForm &input_form) {
 
   if (!input_form.input.isEmpty()) {//if the text of the input is not empty
@@ -63,6 +35,47 @@ void handleKeyEvent(InputForm &input_form, char c) {
       //when it will be incremented it will be again equal to max_chars_view
       input_form.start_index++, input_form.ruler--;
   }
+}
+
+void resetInputForm(InputForm &input_form, int max_chars_view) {
+  input_form.input.clear();//clears the showed text
+  input_form.with_caret = "|";//resets to the default single caret
+  input_form.without_caret = " ";//resets the other side with no caret to the default
+  input_form.caret = true;//it sets the caret to true so it will be viewed instantly before blinking
+  input_form.focus = true;//it sets the focus to true so we can still type keys
+  input_form.insert_position = 0;//it defaults to 0 because we'll insert to the end
+  input_form.ruler = 0;//it defaults to 0 because we have again to reach max_chars_view
+  input_form.max_chars_view = max_chars_view;//this is not necessary but is good for clean code or changing the
+  // max_chars_view over time
+  input_form.start_index = 0;//it defaults to 0 because we must type again at least max_chars_view number of characters
+  //before the view will be moved to the right with one position at a time
+}
+void setupTextBox(InputForm &input_form, sf::Vector2f box_size,
+                  sf::Vector2f position, sf::Font &font, sf::Color background,
+                  sf::Color foreground, float thickness, int max_chars_view,
+                  int font_size) {
+//sets the maximum chars that can be viewed to `max_chars_view`
+  input_form.max_chars_view = max_chars_view;
+  //sets the fill of the back box to `background` color
+  input_form.back_box.setFillColor(background);
+  //sets the outline thickness of the back box to `thickness`
+  input_form.back_box.setOutlineThickness(thickness);
+  //sets the color of the outline to `foreground` color, the same with the text
+  input_form.back_box.setOutlineColor(foreground);
+  //this sets the position of the back box to `position`
+  input_form.back_box.setPosition(position);
+  //this sets the size of the back box to `box_size`
+  input_form.back_box.setSize(box_size);
+  //this sets the text font to `font`
+  input_form.text.setFont(font);
+  //this sets the size of the text to `font_size`
+  input_form.text.setCharacterSize(font_size);
+  //this sets the fill of the font to `foreground`
+  input_form.text.setFillColor(foreground);
+  //this sets the viewed string to `input_form.input`
+  input_form.text.setString(input_form.input);
+  //this sets the position of the viewed text object
+  input_form.text.setPosition(int(position.x) + 20, int(position.y) + 3);
 }
 
 void updateViewedString(InputForm &input_form) {
@@ -103,16 +116,3 @@ void updateViewedString(InputForm &input_form) {
   input_form.text.setString(input_form.viewed_string);
 }
 
-void resetInputForm(InputForm &input_form, int max_chars_view) {
-  input_form.input.clear();//clears the showed text
-  input_form.with_caret = "|";//resets to the default single caret
-  input_form.without_caret = " ";//resets the other side with no caret to the default
-  input_form.caret = true;//it sets the caret to true so it will be viewed instantly before blinking
-  input_form.focus = true;//it sets the focus to true so we can still type keys
-  input_form.insert_position = 0;//it defaults to 0 because we'll insert to the end
-  input_form.ruler = 0;//it defaults to 0 because we have again to reach max_chars_view
-  input_form.max_chars_view = max_chars_view;//this is not necessary but is good for clean code or changing the
-  // max_chars_view over time
-  input_form.start_index = 0;//it defaults to 0 because we must type again at least max_chars_view number of characters
-  //before the view will be moved to the right with one position at a time
-}
